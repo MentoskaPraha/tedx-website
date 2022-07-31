@@ -65,11 +65,16 @@ header nav ul li a{
     background-color: white;
 }
 
+#currentPage{
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
 /*page banner*/
 #pageBanner{
     margin: 0px;
     padding: 100px;
-    background-color: grey;
     background-size: cover;
     background-image: url(../materials/images/WebsiteBanner.png);
 }
@@ -94,6 +99,12 @@ header nav ul li a{
     text-decoration: none;
 }
 
+/*content divider*/
+hr{
+    margin: 20px;
+    border-top: 5px solid grey;
+}
+
 /*content rows*/
 .contentRow{
     margin: 0;
@@ -101,15 +112,17 @@ header nav ul li a{
 }
 
 .contentRow ul{
-    margin: 0px;
+    margin: 20px 0px;
     padding: 0px;
+    justify-content: center;
+    display: flex;
+    list-style: none;
 }
 
 .contentRow ul li{
-    margin: 5px;
+    margin: 10px;
     padding: 0px;
     border: 5px solid black;
-    display: inline-block;
 }
 
 .contentRow ul li a{
@@ -124,13 +137,14 @@ header nav ul li a{
     margin: 0px;
     padding: 0px;
     border: 5px solid black;
-    max-width: 512px;
-    max-height: 512px;
+    max-width: 360px;
+    max-height: 360px;
 }
 
 .contentRow ul li a div{
     margin: 0px;
     padding: 0px;
+    max-width: 360px;
     border: 5px solid black;
 }
 
@@ -140,4 +154,43 @@ header nav ul li a{
 
 .contentRow ul li a div p{
     font-size: 20px;
+}
+
+/*footer*/
+footer{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+footer ul{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    list-style: none;
+}
+
+footer ul li{
+    margin: auto;
+    width: 33%;
+    padding: 0px;
+    display: inline-block;
+}
+
+footer ul li div{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+footer ul li div h2{
+    font-size: 35px;
+}
+
+footer ul li div p{
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
 }
