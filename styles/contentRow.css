@@ -1,7 +1,7 @@
 /*content rows*/
 .contentRow{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 .contentRow h3{
@@ -55,4 +55,23 @@
 
 .contentRow ul li a div p{
     font-size: 20px;
+}
+
+@media screen and (max-width: 980px) {
+    .contentRow ul{
+        margin: 20px 0px;
+        padding: 0px;
+        width: 100%;
+        display: block;
+        list-style: none;
+    }
+    
+    .contentRow ul li{
+        margin: 20px auto;
+        width: 310px;
+        display: block;
+        padding: 0px;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
 }

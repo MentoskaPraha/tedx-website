@@ -13,6 +13,12 @@ header{
     color: white;
 }
 
+@media screen and (max-width: 450px){
+    header {
+        padding: 10px 10px 20px 10px
+    }
+}
+
 /*site title styles*/
 #siteTitle{
     padding: 0px;
@@ -25,15 +31,41 @@ header{
     display: inline-block;
 }
 
-#siteTitle li a{
-    font-size: 25px;
-    color: white;
+#siteTitle li a {
     text-decoration: none;
+}
+
+#siteTitle li a h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 28px;
+    color: white;
 }
 
 #siteTitle li a img{
     max-width: 20px;
     max-height: 20px;
+}
+
+@media screen and (max-width: 690px){
+    #siteTitle li a h1{
+        display: none;
+    }
+
+    #siteTitle li a img{
+        max-width: 25px;
+        max-height: 25px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    #siteTitle li a h1{
+        display: none;
+    }
+
+    #siteTitle li a img{
+        display: none;
+    }
 }
 
 /*nav bar styles*/
@@ -71,18 +103,49 @@ header nav ul li a{
     text-decoration: underline;
 }
 
+@media screen and (max-width: 450px){
+    header nav ul li{
+        float: inline-end;
+        margin: 0px 3px;
+        display: inline;
+    }
+}
+
 /*page banner*/
 #pageBanner{
     margin: 0px;
-    padding: 100px;
+    padding: 100px 100px;
     background-image: url(../materials/images/WebsiteBanner.png);
     background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 #pageBanner h1{
     text-align: center;
     font-size: 60px;
     color: white;
+}
+
+@media screen and (max-width: 750px) {
+    #pageBanner{
+        padding: 50px 100px
+    }
+}
+
+@media screen and (max-width: 565px) {
+    #pageBanner{
+        padding: 25px 100px
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #pageBanner{
+        padding: 15px 100px
+    }
+
+    #pageBanner h1{
+        font-size: 40px;
+    }
 }
 
 /*page summary*/
