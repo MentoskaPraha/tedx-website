@@ -184,7 +184,7 @@ hr{
 /*footer*/
 footer{
     margin: 0px;
-    padding: 10px;
+    padding: 20px;
     background-color: black;
     color: white;
 }
@@ -195,11 +195,11 @@ footer div{
 }
 
 footer div h2{
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
 }
 
 footer div p{
-    font-size: 20px;
+    font-size: 15px;
     text-align: justify;
 }
