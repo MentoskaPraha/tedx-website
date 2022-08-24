@@ -50,6 +50,11 @@ header nav a:hover{
     text-decoration: underline;
 }
 
+#currentPageAndLastInNav{
+    margin-right: 30px;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 450px){
     header nav ul li{
         float: right;
