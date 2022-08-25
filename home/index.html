@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" href="/styles/main.css">
         <link rel="stylesheet" href="/styles/contentRow.css">
+        <script src = "/scripts/navBar.js"></script>
     </head>
 
     <body>
@@ -23,7 +24,14 @@
                 <a href="/projects">Projects</a>
                 <a href="/about-me">About Me</a>
                 <a id="currentPage" href="/home" >Home</a>
-            </nav>  
+                <a href="javascript:void(0)" onclick="toggleNav()" id = "menuButton">Menu</a>
+                <div id = "menu">
+                    <a id="currentPage" href="/home" >Home</a>
+                    <a href="/about-me">About Me</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/social">Social</a>
+                </div>
+            </nav>
         </header>
 
         <hr>
