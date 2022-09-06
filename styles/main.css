@@ -45,26 +45,6 @@ header nav a:hover{
 
 
 /*mobil nav*/
-@media screen and (min-width: 750px){
-    header nav a{
-        display: inline;
-    }
-
-    #menuButton{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 749px) {
-    header nav a{
-        display: none;
-    }
-
-    #menuButton{
-        display: inline;
-    }
-}
-
 #menuButton{
     margin-right: 30px;
 }
@@ -97,8 +77,28 @@ header nav a:hover{
     color: white;
 }
 
+@media screen and (min-width: 749px){
+    header nav a{
+        display: inline;
+    }
+
+    #menuButton{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header nav a{
+        display: none;
+    }
+
+    #menuButton{
+        display: inline;
+    }
+}
+
 /*extra nav styles*/
-#currentPage{
+.currentPage{
     text-decoration: underline;
 }
 
