@@ -1,5 +1,6 @@
 /*content rows*/
 .contentRow{
+    all: revert;
     margin: 0px;
     padding: 0px;
 }
