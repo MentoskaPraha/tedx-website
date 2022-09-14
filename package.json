@@ -1,0 +1,27 @@
+{
+  "name": "mp-website",
+  "version": "1.0.0",
+  "description": "MentoskaPraha's official website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MentoskaPraha/MP-Website.git"
+  },
+  "keywords": [
+    "website",
+    "personal"
+  ],
+  "author": "MentoskaPraha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MentoskaPraha/MP-Website/issues"
+  },
+  "homepage": "https://github.com/MentoskaPraha/MP-Website#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  }
+}
