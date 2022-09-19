@@ -8,43 +8,51 @@
         <title>MP's Official Website</title>
         <link rel="shortcut icon" href="/images/Favicon.ico" type="image/x-icon">
 
-        <link rel="stylesheet" href="/websiteUI/styles/main.css">
-        <script src = "/websiteUI/scripts/navBar.js"></script>
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="/styles/contentBlock.css">
+        <script src = "/scripts/navBar.js"></script>
     </head>
     <body>
         <header>
             <ul id="siteTitle">
-                <li><a href="/home"><img src="/images/WebsiteLogo.png" alt="website logo"></a></li>
-                <li><a href="/home"><h1>MP's Official Website</h1></a></li>
+                <li><a href="/"><img src="/images/WebsiteLogo.png" alt="website logo"></a></li>
+                <li><a href="/"><h1>MP's Official Website</h1></a></li>
             </ul>
             <nav>
                 <a id="lastInNav" href="/social">Social</a>
-                <a class="currentPage" href="/projects">Projects</a>
-                <a href="/about-me">About Me</a>
+                <a href="/project">Projects</a>
+                <a class="currentPage" href="/about-me">About Me</a>
                 <a href="/home" >Home</a>
                 <a href="javascript:void(0)" onclick="toggleNav()" id = "menuButton">Menu</a>
                 <div id = "menu">
                     <a href="/home" >Home</a>
-                    <a href="/about-me">About Me</a>
-                    <a class="currentPage" href="/projects">Projects</a>
+                    <a class="currentPage" href="/about-me">About Me</a>
+                    <a href="/project">Projects</a>
                     <a href="/social">Social</a>
                 </div>
             </nav> 
         </header>
 
         <div id="pageBanner">
-            <h1>Projects</h1>
+            <h1>About Me</h1>
         </div>
 
         <div id="pageSummary">
             <p>
-                [Placeholder]
+                On this page you can view information about me,
+                such as what languages I speak,
+                what languages I use to code,
+                what I like or dislike, etc.
             </p>
         </div>
 
         <hr>
         
-        <h2>[Placeholder]</h2>
+        <div class = "contentBlock">
+            <img src="/images/PlaceholderImage.png" alt="image of MentoskaPraha">
+            <h3>About Me</h3>
+            <p>Testing...</p>
+        </div>
 
         <hr>
 
