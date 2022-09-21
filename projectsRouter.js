@@ -5,9 +5,6 @@ const favicon = require('serve-favicon');
 // middleware that is specific to this router
 router.use((req, res, next) => {
     favicon(__dirname + '/public/images/favicon.ico');
-    if (req.url === '/projects') {
-        req.url = '/projects';
-    }
     next();
 });
 
