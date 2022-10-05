@@ -10,13 +10,13 @@ const app = express();
 const project = require('./projectsRouter');
 app.use('/project', project);
 
-//url corrections
+//main request handler
 app.use(function(req, res, next) {
     express.static(__dirname + '/public');
     favicon(__dirname + '/public/images/Favicon.ico');
     next();
- });
- 
+});
+
 //create route listen event
 app.get("/", (req, res) => {
     //send file

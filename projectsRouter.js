@@ -18,4 +18,5 @@ router.get('/about', (req, res) => {
     res.send('Placeholder Page.');
 });
 
+//export the router
 module.exports = router;
