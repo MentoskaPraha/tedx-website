@@ -1,0 +1,28 @@
+//libraries
+const express = require('express');
+const favicon = require('serve-favicon');
+const log = require('./logger.js');
+
+//configure enviroment variables
+require('dotenv').config();
+
+//create app
+const app = express();
+
+//add stuff to be used by the app
+app.use(express.static('public'));
+//app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+//add the routes for getting pages
+app.get('/', (req, res) => {
+    res.sendFile('./public/pages/home.html');
+});
+
+app.get('*', (req, res) => {
+    res.sendFile('./public/pages/err_404.html');
+});
+
+//start listening on the port set by enviroment variables or on port 8080 as backup
+app.listen(process.env.PORT || 8080, () => {
+    log.info("App listening on port " + (process.env.PORT || 8080) + ".");
+});

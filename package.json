@@ -1,0 +1,30 @@
+{
+  "name": "mp-website",
+  "version": "1.0.0",
+  "description": "This is the official code for the official website of MentoskaPraha.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MentoskaPraha/MP-Website.git"
+  },
+  "keywords": [
+    "website",
+    "personal"
+  ],
+  "author": "MentoskaPraha",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/MentoskaPraha/MP-Website/issues"
+  },
+  "homepage": "https://github.com/MentoskaPraha/MP-Website#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "pino": "^7.0.0-rc.9",
+    "pino-pretty": "^9.1.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
