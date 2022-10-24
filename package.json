@@ -1,10 +1,10 @@
 {
   "name": "mp-website",
-  "version": "1.0.0",
+  "version": "1.0.0.dev",
   "description": "This is the official code for the official website of MentoskaPraha.",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",

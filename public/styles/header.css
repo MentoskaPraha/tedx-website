@@ -1,0 +1,77 @@
+nav{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+}
+
+#navLogoTitle{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#navLogoTitle li{
+    display: inline-block;
+}
+
+#navLogoTitle img{
+    margin-bottom: 2px;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#navLogoTitle h1{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 35px;
+}
+
+#navButtons{
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    float: right;
+}
+
+#navButtons li{
+    display: inline-block;
+}
+
+#navButtons a{
+    margin: 5px 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+#navButtons a:hover{
+    background-color: gray;
+    border-color: gray;
+    color: white;
+}
+
+#pageTitle{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 35px;
+    background-image: url(/images/banner.png);
+    background-color: gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}    
+
+#pageTitle h1{
+    padding: 150px 10px;
+    color: white;
+}

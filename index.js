@@ -11,15 +11,22 @@ const app = express();
 
 //add stuff to be used by the app
 app.use(express.static('public'));
-//app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 //add the routes for getting pages
 app.get('/', (req, res) => {
-    res.sendFile('./public/pages/home.html');
+    res.sendFile(__dirname + '/public/pages/home.html');
+    log.info("Responded to request for the Home page.");
+});
+
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/public/pages/home.html');
+    log.info("Responded to request for the Home page.");
 });
 
 app.get('*', (req, res) => {
-    res.sendFile('./public/pages/err_404.html');
+    res.sendFile(__dirname + '/public/pages/err_404.html');
+    log.warn("User requested invalid page.");
 });
 
 //start listening on the port set by enviroment variables or on port 8080 as backup
