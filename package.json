@@ -2,9 +2,9 @@
   "name": "mp-website",
   "version": "1.0.0.dev",
   "description": "This is the official code for the official website of MentoskaPraha.",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "node -r dotenv/config index.js",
+    "test": "node -r dotenv/config ./src/index.js",
     "start": "node index.js"
   },
   "repository": {

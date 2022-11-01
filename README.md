@@ -8,6 +8,13 @@ This website is copyrighted under the GNU General Public License V3 and was made
 - banner.png
     - Screenshot from Elite Dangerous by MentoskaPraha
 
+## Docker
+DOCKER HUB IS NOT CURRENTLY READY!  
+  
+Link to the Docker Hub page: N/A  
+Please make sure you replace `[]` with the needed parameters.  
+Build command: `docker build -t mentoskapraha/mp-website:[version] --platform linux/amd64 .`  
+Run command: `docker run --name mp-website --env WEBSITE_PORT="[your bot token here]"  mentoskapraha/mp-website:[version]`
 ## Credits
 Your name will be added here if you make a meaningful contribution on Github.
 

@@ -7,7 +7,7 @@ const log = require('./logger.js');
 const app = express();
 
 //add stuff to be used by the app
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 //add the routes for getting pages
