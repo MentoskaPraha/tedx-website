@@ -1,0 +1,19 @@
+{
+    "list":[
+        {
+            "id": "1",
+            "content":"I didn't know dinamite explodes.",
+            "author":"MentoskaPraha"
+        },
+        {
+            "id": "2",
+            "content":"Cold is just a state of mind.",
+            "author":"Anthony Tucker"
+        },
+        {
+            "id": "3",
+            "content":"Live long and prosper.",
+            "author":"Spock"
+        }
+    ]
+}
