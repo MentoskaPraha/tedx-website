@@ -14,8 +14,8 @@ DOCKER HUB IS NOT CURRENTLY READY!
 Link to the Docker Hub page: N/A  
 Please make sure you replace `[]` with the needed parameters.  
 Build command: `docker build -t mentoskapraha/mp-website:[version] --platform linux/amd64 .`  
-Run command: `docker run --name mp-website --env WEBSITE_PORT="[your bot token here]"  mentoskapraha/mp-website:[version]`
+Run command: `docker run --name mp-website -p [your port]:4427 mentoskapraha/mp-website:[version]`
 ## Credits
 Your name will be added here if you make a meaningful contribution on Github.
 
-- MentoskaPraha
+MentoskaPraha
