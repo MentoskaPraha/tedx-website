@@ -21,12 +21,17 @@ app.get('/home', (req, res) => {
     log.info("Responded to request for the Home page.");
 });
 
-app.get('*', (req, res) => {
+app.get('/err_404', (req, res) => {
     res.sendFile(__dirname + '/public/pages/err_404.html');
+    log.info("Responded to request for the Error_404 page.");
+});
+
+app.get('*', (req, res) => {
+    res.redirect('/err_404');
     log.warn("User requested invalid page.");
 });
 
 //start listening on the port set by enviroment variables
 app.listen(process.env.WEBSITE_PORT, () => {
-    log.info("App listening on port " + (process.env.WEBSITE_PORT || "not found") + ".");
+    log.info("App listening on port " + (process.env.WEBSITE_PORT || "was not found") + ".");
 });
