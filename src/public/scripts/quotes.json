@@ -1,19 +1,20 @@
 {
     "list":[
         {
-            "id": "1",
-            "content":"I didn't know dinamite explodes.",
+            "content": "I didn't know dinamite explodes.",
             "author":"MentoskaPraha"
         },
         {
-            "id": "2",
-            "content":"Cold is just a state of mind.",
-            "author":"Anthony Tucker"
+            "content": "Cold is just a state of mind.",
+            "author": "Anthony Tucker"
         },
         {
-            "id": "3",
-            "content":"Live long and prosper.",
-            "author":"Spock"
+            "content": "Live long and prosper.",
+            "author": "Spock"
+        },
+        {
+            "content": "We are rich, yet we are poor.",
+            "author": "Hakainde Hichilema"
         }
     ]
 }
