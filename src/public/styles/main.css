@@ -22,3 +22,8 @@ hr{
     text-align: justify;
     font-size: 20px;
 }
+
+.youtubePlayer{
+    margin: 0px auto;
+    display: block;
+}

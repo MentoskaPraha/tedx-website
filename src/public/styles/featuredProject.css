@@ -1,0 +1,12 @@
+.featuredProject h2{
+    font-size: 30px;
+    text-align: center; 
+    margin-bottom: 10px;
+}
+
+.projectFolder p{
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    font-style: normal;
+}
