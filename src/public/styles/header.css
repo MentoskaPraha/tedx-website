@@ -52,6 +52,7 @@ nav{
     background-color: white;
     border: 5px solid white;
     border-radius: 5px;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
 }
 
 #navButtons a:hover{
