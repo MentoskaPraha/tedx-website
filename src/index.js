@@ -21,6 +21,11 @@ app.get('/home', (req, res) => {
     log.info("Responded to request for the Home page.");
 });
 
+app.get('/about-me', (req, res) => {
+    res.sendFile(__dirname + '/public/pages/about-me.html');
+    log.info("Responded to request for the About Me page.");
+});
+
 app.get('/err_404', (req, res) => {
     res.sendFile(__dirname + '/public/pages/err_404.html');
     log.info("Responded to request for the Error_404 page.");
