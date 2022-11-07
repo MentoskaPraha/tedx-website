@@ -10,6 +10,6 @@ window.onload = async function(){
     quote = quotes.list[quote];
 
     //display that quote
-    content.innerHTML = quote.content;
-    author.innerHTML = quote.author;
+    content.innerHTML = "\"" + quote.content + "\"";
+    author.innerHTML = "- " + quote.author;
 }
