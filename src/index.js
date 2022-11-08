@@ -28,7 +28,7 @@ app.get('/about-me', (req, res) => {
 
 app.get('/social', (req, res) => {
     res.sendFile(__dirname + '/public/pages/social.html');
-    log.info("Responded to request for the About Me page.");
+    log.info("Responded to request for the Social page.");
 });
 
 app.get('/err_404', (req, res) => {
