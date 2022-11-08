@@ -1,14 +1,16 @@
 //libraries
 const express = require('express');
 const favicon = require('serve-favicon');
+const projectsRouter = require('./projectRouter.js');
 const log = require('./logger.js');
 
 //create app
 const app = express();
 
-//add stuff to be used by the app
+//add middleware
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use('/project', projectsRouter);
 
 //add the routes for getting pages
 app.get('/', (req, res) => {
