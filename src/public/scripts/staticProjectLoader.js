@@ -6,6 +6,11 @@ window.onload = function(){
     const projectFile = "/projects/" + project + ".html";
 
     //update the page
-    const embed = document.getElementsByTagName("iframe")[0]
-    embed.src = projectFile;
+    const iframe = document.getElementsByTagName("iframe")[0];
+    iframe.src = projectFile;
+
+    //get the height of the project content
+    iframe.addEventListener("load", function() {
+        iframe.height = `${iframe.contentDocument.body.scrollHeight}px`;
+    });
 }
