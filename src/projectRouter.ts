@@ -1,8 +1,10 @@
 //libraries
-const fs = require('node:fs');
-const express = require('express');
+import express from "express";
+import fs from "node:fs";
+import log from "./logger";
+
+//create router
 const router = express.Router();
-const log = require('./logger.js');
 
 //add main route
 router.get('/', (req, res) => {
@@ -22,4 +24,4 @@ projects.forEach(project => {
 });
 
 //export the logger
-module.exports = router;
+export = router;

@@ -1,8 +1,8 @@
 //libraries
-const express = require('express');
-const favicon = require('serve-favicon');
-const projectsRouter = require('./projectRouter.js');
-const log = require('./logger.js');
+import express from "express";
+import favicon from "serve-favicon";
+import projectsRouter from "./projectRouter";
+import log from "./logger";
 
 //create app
 const app = express();

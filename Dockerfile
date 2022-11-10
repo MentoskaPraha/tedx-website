@@ -6,7 +6,7 @@ COPY package.json ./
 
 RUN npm install --omit=dev
 
-ADD ./src .
+ADD ./prod .
 
 ENV WEBSITE_PORT=4427
 
