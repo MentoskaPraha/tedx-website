@@ -23,5 +23,5 @@ projects.forEach(project => {
     });
 });
 
-//export the logger
+//export the router
 export = router;

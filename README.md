@@ -18,4 +18,4 @@ Run command: `docker run --name mp-website -p [your port]:4427 mentoskapraha/mp-
 ## Credits
 Your name will be added here if you make a meaningful contribution on Github.
 
-MentoskaPraha
+- MentoskaPraha

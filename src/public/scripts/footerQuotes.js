@@ -1,4 +1,4 @@
-//when the window is loaded run the following
+//on page load run
 window.onload = async function(){
     //get elements from files
     const quotes = await fetch('/scripts/quotes.json').then((response) => response.json());

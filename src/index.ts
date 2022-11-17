@@ -10,6 +10,8 @@ const app = express();
 //add middleware
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+//add project router
 app.use('/project', projectsRouter);
 
 //add the routes for getting pages
