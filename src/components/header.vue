@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-    import { RouterLink } from 'vue-router';
-</script>
-
 <template>
 <header>
     <nav>
@@ -11,10 +7,10 @@
         </ul>
             
         <ul id="navButtons">
-            <li><RouterLink to="/home">Home</RouterLink></li>
-            <li><RouterLink to="/about-me">About Me</RouterLink></li>
-            <li><RouterLink to="/project">Projects</RouterLink></li>
-            <li><RouterLink to="/social">Social</RouterLink></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about-me">About Me</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/social">Social</a></li>
         </ul>
     </nav>
 </header>

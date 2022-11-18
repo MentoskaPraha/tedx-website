@@ -6,10 +6,9 @@
     
       <hr>
         <p id="pageDescription">
-          Welcome to MentoskaPraha's Official Website!
-          Below you can see a list of interesting pages to check out,
-          a featured project and an inspiring quote.
-          Enjoy your stay!
+          It would seem that you have tried to walk into the land beyond.
+          It's just a barren waste land here.
+          Please leave.
         </p>
       <hr>
     </main>

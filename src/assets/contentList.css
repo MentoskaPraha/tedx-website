@@ -55,3 +55,18 @@
         display: block;
     }
 }
+
+@media screen and (max-width: 349px) {
+    .contentList img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .contentList a{
+        width: 210px;
+    }
+
+    .contentList p{
+        text-align: center;
+    }
+}

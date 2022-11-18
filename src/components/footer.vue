@@ -1,23 +1,39 @@
 <script lang="ts" setup>
-//fix random quotes later
-/*
-    //on page load run
-    window.onload = async function(){
+import * as quotes from "../assets/quotes.json";
+
+//on page load run
+window.onload = function(){
     //get elements from files
-    const quotes = await fetch('/scripts/quotes.json').then((response) => response.json());
-    const content = document.getElementById('footerQuoteContentField');
-    const author = document.getElementById('footerQuoteAuthorField');
+    const content = document.getElementById('footerQuoteContentField') as HTMLElement;
+    const author = document.getElementById('footerQuoteAuthorField') as HTMLElement;
 
     //get a random quote
-    let quote = Math.floor(Math.random()*quotes.list.length);
-    quote = quotes.list[quote];
+    const quoteNum = Math.floor(Math.random()*quotes.list.length);
+    const quote = quotes.list[quoteNum];
 
     //display that quote
     content.innerHTML = "\"" + quote.content + "\"";
-    author.innerHTML = "- " + quote.author;
-    
+    author.innerHTML = "- " + quote.author; 
 }
-*/
+
+//change navBar color depending on size and state
+function updateNavColor (){
+    //get elements
+    const footer = document.getElementsByTagName("footer")[0];
+    const rect = footer.getBoundingClientRect();
+    const navBar = document.getElementsByTagName("nav")[0];
+
+    if(rect.bottom > 0 && rect.top <= 60){
+        navBar.style.backgroundColor = "silver";
+        return;
+    } else{
+        navBar.style.backgroundColor = "black";
+        return;
+    }
+}
+
+//on page scroll run
+document.addEventListener("scroll", updateNavColor);
 </script>
 
 <template>
@@ -106,6 +122,7 @@ footer{
 #copyright h2{
     font-size: 35px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 #copyright p{
@@ -129,4 +146,33 @@ footer{
     text-align: justify;
 }
 
+@media screen and (max-width: 661px){
+    #copyright p{
+        text-align: center;
+    }
+
+    #privacyPolicy p{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 405px){
+    #mainFooter li{
+        display: block;
+    }
+
+    #footerQuoteAuthor{
+        margin-left: 100px;
+    }
+
+    #copyright{
+        margin-left: auto;
+        width: 50%;
+    }
+
+    #privacyPolicy{
+        margin-right: auto;
+        width: 50%;
+    }
+}
 </style>
