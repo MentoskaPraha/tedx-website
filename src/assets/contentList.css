@@ -49,3 +49,9 @@
 .contentList a:hover{
     box-shadow: 10px 10px gray;
 }
+
+@media screen and (max-width: 1028px) {
+    .contentList li{
+        display: block;
+    }
+}

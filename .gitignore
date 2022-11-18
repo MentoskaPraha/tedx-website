@@ -1,6 +1,34 @@
+# My ignores
 .DS_Store
 package-lock.json
 node_modules
 .env
 volume
-prod
+.vscode
+old_src
+
+#Vue Generated Ignores
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+dist
+dist-ssr
+coverage
+*.local
+
+/cypress/videos/
+/cypress/screenshots/
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
