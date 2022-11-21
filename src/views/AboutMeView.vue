@@ -1,8 +1,8 @@
 <template>
-  <main>
-    <div id="pageTitle">
-      <h1>About Me</h1>
-    </div>
+<main>
+  <div id="pageTitle">
+    <h1>About Me</h1>
+  </div>
   
     <hr>
       <p id="pageDescription">
@@ -32,11 +32,11 @@
       </section>
     </div>
 
-    <hr>
-  </main>
-  </template>
+  <hr>
+</main>
+</template>
   
-  <style scoped>
+<style scoped>
   @import "../assets/pageTitle.css";
   @import "../assets/contentBlock.css";
-  </style>
+</style>

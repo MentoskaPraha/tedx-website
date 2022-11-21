@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import * as quotes from "../assets/quotes.json";
+import quotes from "../assets/quotes.json";
 
 //on page load run
 window.onload = function(){

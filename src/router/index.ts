@@ -1,6 +1,5 @@
 //libraries
 import { createRouter, createWebHistory } from "vue-router";
-//import projects from "./projectsRouter";
 
 //create routes
 const router = createRouter({
@@ -18,8 +17,18 @@ const router = createRouter({
     },
     {
       path: "/about-me",
-      name: "about-me",
+      name: "aboutMe",
       component: () => import("../views/AboutMeView.vue")
+    },
+    {
+      path: "/projects",
+      name: "projects",
+      component: () => import("../views/ProjectsView.vue")
+    },
+    {
+      path: "/projects/:project",
+      name: "specificProjectView",
+      component: () => import("../views/ProjectsView.vue")
     },
     {
       path: "/social",

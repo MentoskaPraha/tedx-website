@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-  import { RouterLink } from 'vue-router';
-</script>
-
 <template>
 <main>
   <div id="pageTitle">
@@ -50,6 +46,6 @@
 </template>
 
 <style scoped>
-@import "../assets/pageTitle.css";
-@import "../assets/contentList.css";
+    @import "../assets/pageTitle.css";
+    @import "../assets/contentList.css";
 </style>
