@@ -5,30 +5,17 @@
 <template>
 <main>
     <div id="pageTitle">
-        <h1>Projects</h1>
+        <h1>Specific Project View</h1>
     </div>
 
     <hr>
         <p id="pageDescription">
-            Welcome to my Projects page.
-            Here you can see all of my projects that I've worked on.
-            There's not many I know.
+            This is a special view that only show one specific project.
+            This feature makes it easy to share projects with other people.
         </p>
     <hr>
 
-    <div id="favProject">
-
-    </div>
-
-    <hr>
-
-    <div id="featuredProject">
-
-    </div>
-
-    <hr>
-    
-    <div id="projectsList">
+    <div id="project">
 
     </div>
 
