@@ -75,13 +75,13 @@ document.addEventListener("scroll", updateNavColor);
 footer{
     background-color: black;
     color: white;
-    display: inline-block;
     text-align: center;
     width: 100%;
 }
 
 #footerQuote{
-    margin: 10px;
+    display: inline-block;
+    margin: 10px 30px;
 }
 
 #footerQuoteContent{

@@ -1,0 +1,16 @@
+{
+    "mp-website":{
+        "title": "MP's Website",
+        "description": "",
+        "share": "mp-website",
+        "git": "",
+        "discord": "none"
+    },
+    "big-chungus-bot":{
+        "title": "Big Chungus Bot",
+        "description": "",
+        "share": "big-chungus-bot",
+        "git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
+        "discord": "none"
+    }
+}
