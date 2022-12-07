@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-    import { computed, watch, type ImgHTMLAttributes } from "vue";
+    import { computed } from "vue";
     import { useRoute } from "vue-router";
     import type { projectType } from "../types";
     import projects from "../assets/projects.json";
 
     //function to update project
     function updateProject(project:projectType | undefined) {
-        if(document.readyState != "complete"){
-            return;
-        }
+        if(document.readyState != "complete") return;
 
         if (project == undefined){
             const projectSection = document.getElementById("project") as HTMLElement;

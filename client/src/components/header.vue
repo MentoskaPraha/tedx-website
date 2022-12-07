@@ -10,13 +10,18 @@
             <li><a href="/home">Home</a></li>
             <li><a href="/about-me">About Me</a></li>
             <li><a href="/projects">Projects</a></li>
-            <li><a href="/social">Social</a></li>
+            <li><a href="/blog">Blog</a></li>
         </ul>
     </nav>
 </header>
 </template>
 
 <style scoped>
+header{
+    position: relative;
+    z-index: 999;
+}
+
 nav{
     background-color: black;
     color: white;

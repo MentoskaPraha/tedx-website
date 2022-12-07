@@ -63,8 +63,8 @@ document.addEventListener("readystatechange", updateQuote);
         <li id="privacyPolicy">
             <h2>Privacy Policy</h2>
             <p>
-                This website uses no cookie to the knowledge of the creator.
-                Your activity on this page is not monitored or tracked.
+                This website uses no cookie set by the creator.
+                Your activity on this page is not monitored or tracked by the creator.
                 The creator is not responsible for cookies managed by 3rd party services
                 that are either linked to or embeded on this site.
             </p>

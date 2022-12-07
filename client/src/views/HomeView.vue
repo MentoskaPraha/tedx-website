@@ -34,10 +34,10 @@
       </a></li>
 
       <li><a href="social">
-        <img src="/images/placeholderV2.png" alt="Social page icon.">
+        <img src="/images/placeholderV2.png" alt="Blog page icon.">
           <section>
-            <h3>Social</h3>
-            <p>See how you can contact me or view my social media.</p>
+            <h3>Blog</h3>
+            <p>See what I'm working on and how's it going.</p>
           </section>   
       </a></li>
     </ul>

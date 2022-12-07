@@ -68,14 +68,9 @@
     text-align: center;
 }
 
-.shareLinkContainer li{
-    display: inline-block;
-}
-
 .shareLink{
     border: 0px;
     background-color: white;
-    margin: 0px 10px;
 }
 
 .shareLink img{
@@ -93,10 +88,11 @@
     box-shadow: 3px 3px gray;
 }
 
-.shareLinkContainer li {
+.shareLinkContainer li{
     position: relative;
     display: inline-block;
     border-radius: 100px;
+    margin: 0px 10px;
 }
   
 .shareLinkContainer li .toolTip {
@@ -108,7 +104,6 @@
     border-radius: 6px;
     padding: 5px;
     position: absolute;
-    z-index: 1;
     bottom: 110%;
     left: 50%;
     margin-left: -75px;
