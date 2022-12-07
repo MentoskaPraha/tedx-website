@@ -16,7 +16,7 @@
 
         <ul>
             <li><a href="https://github.com/MentoskaPraha" target="_blank">
-                <img src="/placeholderV2.png" alt="Github icon.">
+                <img src="/images/placeholderV2.png" alt="Github icon.">
                 <section>
                     <h3>Github</h3>
                     <p>My Github page. Here you can see all my repos.</p>
@@ -24,7 +24,7 @@
             </a></li>
 
             <li><a target="_blank">
-                <img src="/placeholderV2.png" alt="Discord icon.">
+                <img src="/images/placeholderV2.png" alt="Discord icon.">
                 <section>
                     <h3>Discord</h3>
                     <p>If you want to contact me via Discord, join this server.</p>
@@ -32,7 +32,7 @@
             </a></li>
 
             <li><a target="_blank">
-                <img src="/placeholderV2.png" alt="Placeholder image.">
+                <img src="/images/placeholderV2.png" alt="Placeholder image.">
                 <section>
                     <h3>Empty</h3>
                     <p>An empty entry. There's not much more to it.</p>

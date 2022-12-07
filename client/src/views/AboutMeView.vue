@@ -13,7 +13,7 @@
     <hr>
 
     <div class="contentBlock">
-      <img src="/placeholderV2.png" alt="Picture of me.">
+      <img src="/images/placeholderV2.png" alt="Picture of me.">
       <h2>Basic Information</h2>
       <section>
           <p>

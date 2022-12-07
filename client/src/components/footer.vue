@@ -2,14 +2,22 @@
 import quotes from "../assets/quotes.json";
 
 //on page load run
-window.onload = function(){
+function updateQuote(){
+    if(document.readyState != "complete"){
+        return;
+    }
+
     //get elements from files
     const content = document.getElementById('footerQuoteContentField') as HTMLElement;
     const author = document.getElementById('footerQuoteAuthorField') as HTMLElement;
 
+    //get quote list
+    let list = [];
+    for(let i in quotes.content) list.push(quotes.content[i]);
+
     //get a random quote
-    const quoteNum = Math.floor(Math.random()*quotes.list.length);
-    const quote = quotes.list[quoteNum];
+    const quoteNum = Math.floor(Math.random()*list.length);
+    const quote = list[quoteNum];
 
     //display that quote
     content.innerHTML = "\"" + quote.content + "\"";
@@ -17,7 +25,7 @@ window.onload = function(){
 }
 
 //change navBar color depending on size and state
-function updateNavColor (){
+function updateNavColor(){
     //get elements
     const footer = document.getElementsByTagName("footer")[0];
     const rect = footer.getBoundingClientRect();
@@ -34,6 +42,10 @@ function updateNavColor (){
 
 //on page scroll run
 document.addEventListener("scroll", updateNavColor);
+
+//onpage load run
+document.addEventListener("readystatechange", updateQuote);
+
 </script>
 
 <template>

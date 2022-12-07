@@ -2,7 +2,7 @@
 <header>
     <nav>
         <ul id="navLogoTitle">
-            <li><img src="/placeholder.png" alt="Site Logo"></li>
+            <li><img src="/images/placeholder.png" alt="Site Logo"></li>
             <li><h1>MP's Official Website</h1></li>
         </ul>
             

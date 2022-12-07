@@ -18,7 +18,7 @@
 
     <ul>
       <li><a href="/about-me">
-        <img src="/placeholderV2.png" alt="About me page icon.">
+        <img src="/images/placeholderV2.png" alt="About me page icon.">
         <section>
           <h3>About Me</h3>
             <p>See all the information about me.</p>
@@ -26,7 +26,7 @@
       </a></li>
 
       <li><a href="/projects">
-          <img src="/placeholderV2.png" alt="Projects page icon.">
+          <img src="/images/placeholderV2.png" alt="Projects page icon.">
           <section>
             <h3>Projects</h3>
             <p>See all the projects I've worked on or I'm working on.</p>
@@ -34,7 +34,7 @@
       </a></li>
 
       <li><a href="social">
-        <img src="/placeholderV2.png" alt="Social page icon.">
+        <img src="/images/placeholderV2.png" alt="Social page icon.">
           <section>
             <h3>Social</h3>
             <p>See how you can contact me or view my social media.</p>

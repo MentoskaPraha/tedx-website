@@ -1,16 +1,19 @@
-{
-    "mp-website":{
+{"content":[
+    {
         "title": "MP's Website",
         "description": "",
+        "image": "/images/placeholderV2.png",
         "share": "mp-website",
-        "git": "",
-        "discord": "none"
+        "git": "none",
+        "external": "none"
     },
-    "big-chungus-bot":{
+    {
         "title": "Big Chungus Bot",
         "description": "",
+        "image": "/images/placeholderV2.png",
         "share": "big-chungus-bot",
         "git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
-        "discord": "none"
+        "external": "none"
     }
+]    
 }

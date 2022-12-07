@@ -61,3 +61,73 @@
         text-align: center;
     }
 }
+
+.shareLinkContainer{
+    margin: 10px 10px;
+    list-style: none;
+    text-align: center;
+}
+
+.shareLinkContainer li{
+    display: inline-block;
+}
+
+.shareLink{
+    border: 0px;
+    background-color: white;
+    margin: 0px 10px;
+}
+
+.shareLink img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 200px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.shareLink img:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px gray;
+}
+
+.shareLinkContainer li {
+    position: relative;
+    display: inline-block;
+    border-radius: 100px;
+}
+  
+.shareLinkContainer li .toolTip {
+    visibility: hidden;
+    width: 140px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.shareLinkContainer li .toolTip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+  
+.shareLinkContainer li:hover .toolTip {
+    visibility: visible;
+    opacity: 1;
+}

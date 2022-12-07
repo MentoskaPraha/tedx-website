@@ -1,19 +1,19 @@
 <template>
-    <main>
-      <div id="pageTitle">
+<main>
+    <div id="pageTitle">
         <h1>Error 404</h1>
-      </div>
+    </div>
     
-      <hr>
-        <p id="pageDescription">
-          It would seem that you have tried to walk into the land beyond.
-          It's just a barren waste land here.
-          Please leave.
+    <hr>
+    	<p id="pageDescription">
+          	It would seem that you have tried to walk into the land beyond.
+          	It's just a barren waste land here.
+          	Please leave.
         </p>
-      <hr>
-    </main>
-    </template>
+    <hr>
+</main>
+</template>
     
-    <style scoped>
+<style scoped>
     @import "../assets/pageTitle.css";
-    </style>
+</style>
