@@ -7,7 +7,7 @@ volume
 .vscode
 old_src
 
-#Vue Generated Ignores
+# Vue Generated Ignores
 # Logs
 logs
 *.log
