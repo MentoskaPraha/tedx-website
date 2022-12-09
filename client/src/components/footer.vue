@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-    import quotes from "../assets/quotes.json";
+    import content from "../assets/content.json";
 
-
+    
     //change navBar color depending on size and state
     function updateNavColor(){
         const footer = document.getElementsByTagName("footer")[0];
@@ -18,8 +18,7 @@
 
     
     //random quote
-    let list = [];
-    for(let i in quotes.content) list.push(quotes.content[i]);
+    let list = content.quotes;
 
     const quoteNum = Math.floor(Math.random()*list.length);
     const quote = list[quoteNum];
@@ -29,7 +28,7 @@
 <footer>
     <div id="footerQuote">
         <div id="footerQuoteContent">
-            <p id="footerQuoteContentField">{{quote.content}}</p>
+            <p id="footerQuoteContentField">"{{quote.content}}"</p>
         </div>
         <div id="footerQuoteAuthor">
             <p id="footerQuoteAuthorField">- {{quote.author}}</p> 

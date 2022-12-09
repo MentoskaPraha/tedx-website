@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import { onMounted, reactive } from "vue";
     import type { pageTitleParams } from "../types";
-    import pages from "../assets/pageDesc.json";
+    import content from "../assets/content.json";
 
 
     let params = reactive({
@@ -12,9 +12,9 @@
     function onload(){
         let location = window.location.pathname;
 
-        let page:pageTitleParams = pages.content.find(element => element.location == location) as pageTitleParams;
+        let page:pageTitleParams = content.pageDesc.find(element => element.location == location) as pageTitleParams;
         if(page == undefined && location.includes("/projects/")){
-            page = pages.content.find(element => element.location == "projects-view") as pageTitleParams;
+            page = content.pageDesc.find(element => element.location == "projects-view") as pageTitleParams;
         } 
 
         params.title = page.title;

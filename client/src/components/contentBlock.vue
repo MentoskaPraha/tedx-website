@@ -1,21 +1,25 @@
 <script lang="ts" setup>
     import { reactive } from "vue";
+    import type {contentBlockParams} from "../types";
     
     const props = defineProps(["params"]);
     const params = reactive({
         title: props.params.title,
         description: props.params.description,
         image: props.params.image,
+        links: props.params.links,
         share: props.params.share,
         git: props.params.git,
         external: props.params.external
-    });
+    }) as contentBlockParams;
 
+    let linksStyle = "inherit";
     let gitStyle = "inline-block";
     let externalStyle = "inline-block";
 
     if(params.git == "none") gitStyle = "none";
     if(params.external == "none") externalStyle = "none";
+    if(!params.links) linksStyle = "none";
 
 
     function copyLink(){
@@ -31,10 +35,10 @@
 <template>
 <div class="contentBlock">
     <img :src="params.image" alt="Content Block image.">
-    <h2>{{params.title}}</h2>
+    <h3>{{params.title}}</h3>
     <section>
         <p> {{params.description}} </p>
-        <ul class="shareLinkContainer">
+        <ul class="shareLinkContainer" :style="{display: linksStyle}">
             <li>
                 <span class="toolTip" id="copyLinkToolTip">Copy link to this project.</span>
                 <a v-on:click="copyLink();" class="shareLink">
@@ -75,7 +79,7 @@
     grid-row: 1;
 }
 
-.contentBlock h2{
+.contentBlock h3{
     grid-column: 2;
     grid-row: 1;
     margin: auto 0px;
@@ -99,7 +103,7 @@
         grid-template-columns: 500px;
     }
 
-    .contentBlock h2{
+    .contentBlock h3{
         grid-column: 1;
         grid-row: 1;
     }

@@ -1,48 +1,34 @@
 <script lang="ts" setup>
-    import { computed, onMounted } from "vue";
+    import { computed } from "vue";
     import { useRoute } from "vue-router";
-    import contentBlock  from "../components/projectContentBlock.vue";
-    import type { projectType } from "../types";
-    import projects from "../assets/projects.json";
+    import contentBlock  from "../components/contentBlock.vue";
+    import type { projectType, contentBlockParams } from "../types";
+    import content from "../assets/content.json";
 
 
     const route = useRoute();
     const projectId = computed(() => route.params.project as string);
 
-    let list:projectType[] = [];
-    for (let i in projects.content) list.push(projects.content[i]);
-    let project = list.find(element => element.share == projectId.value);
+    const list = content.projects;
+    let project = list.find(element => element.share == projectId.value) as contentBlockParams;
+    project.links = true;
 
-    const contentBlockParams = {
-        title: project?.title,
-        description: project?.description,
-        image: project?.image,
-        links: true,
-        share: project?.share,
-        git: project?.git,
-        external: project?.external
-    };
-
-
-    function onload(){
-        if (project == undefined){
-            const projectSection = document.getElementById("project") as HTMLElement;
-            const notFound = document.getElementById("projectNotFound") as HTMLElement;
-
-            projectSection.style.display = "none";
-            notFound.style.display = "block";
-        }
+    let projectStyle = "inherit";
+    let notFoundStyle = "none";
+    
+    if (project == undefined){
+        projectStyle = "none";
+        notFoundStyle = "inherit";
     }
-    onMounted(onload);
 </script>
 
 <template>
 <main>
-    <div id="project">
-        <contentBlock :params="contentBlockParams"/>
+    <div id="project" :style="{display: projectStyle}">
+        <contentBlock :params="project"/>
     </div>
 
-    <div id="projectNotFound">
+    <div id="projectNotFound" :style="{display: notFoundStyle}">
         <p>
             The project you are looking for doesn't exist.
             You can see a full list of projects on the project page.
@@ -55,10 +41,6 @@
 </template>
 
 <style scoped>
-    #projectNotFound{
-        display: none;
-    }
-
     #projectNotFound p{
         margin: 10px auto;
         width: 30%;
