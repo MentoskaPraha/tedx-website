@@ -1,53 +1,39 @@
 <template>
 <main>
-  <div id="pageTitle">
-    <h1>MP's Official Website</h1>
-  </div>
+	<div class="contentList">
+    	<h2>Main Pages</h2>
 
-  <hr>
-    <p id="pageDescription">
-      Welcome to MentoskaPraha's Official Website!
-      Below you can see a list of interesting pages to check out,
-      a featured project and an inspiring quote.
-      Enjoy your stay!
-    </p>
-  <hr>
+		<ul>
+      		<li><a href="/about-me">
+        		<img src="/images/placeholderV2.png" alt="About me page icon.">
+        		<section>
+          			<h3>About Me</h3>
+            		<p>See all the information about me.</p>
+        		</section>
+      		</a></li>
 
-  <div class="contentList">
-    <h2>Main Pages</h2>
+      		<li><a href="/projects">
+          		<img src="/images/placeholderV2.png" alt="Projects page icon.">
+        		<section>
+        			<h3>Projects</h3>
+        			<p>See all the projects I've worked on or I'm working on.</p>
+      			</section>
+      		</a></li>
 
-    <ul>
-      <li><a href="/about-me">
-        <img src="/images/placeholderV2.png" alt="About me page icon.">
-        <section>
-          <h3>About Me</h3>
-            <p>See all the information about me.</p>
-        </section>
-      </a></li>
+      		<li><a href="social">
+        		<img src="/images/placeholderV2.png" alt="Blog page icon.">
+          		<section>
+            		<h3>Blog</h3>
+            		<p>See what I'm working on and how's it going.</p>
+          		</section>   
+      		</a></li>
+    	</ul>
+  	</div>
 
-      <li><a href="/projects">
-          <img src="/images/placeholderV2.png" alt="Projects page icon.">
-          <section>
-            <h3>Projects</h3>
-            <p>See all the projects I've worked on or I'm working on.</p>
-          </section>
-      </a></li>
-
-      <li><a href="social">
-        <img src="/images/placeholderV2.png" alt="Blog page icon.">
-          <section>
-            <h3>Blog</h3>
-            <p>See what I'm working on and how's it going.</p>
-          </section>   
-      </a></li>
-    </ul>
-  </div>
-
-  <hr>
+	<hr>
 </main>
 </template>
 
 <style scoped>
-@import "../assets/pageTitle.css";
-@import "../assets/contentList.css";
+	@import "../assets/contentList.css";
 </style>

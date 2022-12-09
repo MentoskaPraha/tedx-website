@@ -1,17 +1,5 @@
 <template>
 <main>
-  <div id="pageTitle">
-    <h1>About Me</h1>
-  </div>
-  
-    <hr>
-      <p id="pageDescription">
-        Welcome to the About Me page.
-        Here you can see all the information you would want to know about me.
-        There's nothing too personal though.
-      </p>
-    <hr>
-
     <div class="contentBlock">
       <img src="/images/placeholderV2.png" alt="Picture of me.">
       <h2>Basic Information</h2>
@@ -67,9 +55,8 @@
 	<hr>
 </main>
 </template>
-  
+
 <style scoped>
-  @import "../assets/pageTitle.css";
-  @import "../assets/contentBlock.css";
-  @import "../assets/contentList.css";
+  	@import "../assets/contentBlock.css";
+  	@import "../assets/contentList.css";
 </style>

@@ -1,3 +1,28 @@
+<script lang="ts" setup>
+    import { onMounted, reactive } from "vue";
+    import type { pageTitleParams } from "../types";
+    import pages from "../assets/pageDesc.json";
+
+
+    let params = reactive({
+        title: "Error 404",
+        description: "The page you're looking for was not found."
+    });
+
+    function onload(){
+        let location = window.location.pathname;
+
+        let page:pageTitleParams = pages.content.find(element => element.location == location) as pageTitleParams;
+        if(page == undefined && location.includes("/projects/")){
+            page = pages.content.find(element => element.location == "projects-view") as pageTitleParams;
+        } 
+
+        params.title = page.title;
+        params.description = page.description;
+    }
+    onMounted(onload);
+</script>
+
 <template>
 <header>
     <nav>
@@ -13,6 +38,14 @@
             <li><a href="/blog">Blog</a></li>
         </ul>
     </nav>
+
+    <div id="pageTitle">
+        <h1>{{params.title}}</h1>
+    </div>
+
+    <hr>
+        <p id="pageDescription">{{params.description}}</p>
+    <hr>
 </header>
 </template>
 
@@ -20,6 +53,35 @@
 header{
     position: relative;
     z-index: 999;
+}
+
+#pageTitle{
+    margin-top: 60px;
+    background-image: url(/images/banner.png);
+    background-color: gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}    
+
+#pageTitle h1{
+    text-align: center;
+    font-size: 75px;
+    padding: 150px 10px;
+    color: white;
+}
+
+#pageDescription{
+    margin: 10px auto;
+    width: 40%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 661px) {
+    #pageDescription{
+        text-align: center;
+    }
 }
 
 nav{

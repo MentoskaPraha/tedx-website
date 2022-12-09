@@ -36,10 +36,15 @@ const router = createRouter({
       	name: "blog",
       	component: () => import("../views/BlogView.vue")
     },
-    {
-      	path: "/:pathMatch(.*)*",
+	{
+		path: "/error_404",
       	name: "err_404",
       	component: () => import("../views/Error404View.vue")
+	},
+    {
+      	path: "/:pathMatch(.*)*",
+      	name: "Catch all.",
+      	redirect: "/error_404"
     }
   ]
 });

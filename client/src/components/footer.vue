@@ -1,61 +1,38 @@
 <script lang="ts" setup>
-import quotes from "../assets/quotes.json";
+    import quotes from "../assets/quotes.json";
 
-//on page load run
-function updateQuote(){
-    if(document.readyState != "complete"){
-        return;
+
+    //change navBar color depending on size and state
+    function updateNavColor(){
+        const footer = document.getElementsByTagName("footer")[0];
+        const rect = footer.getBoundingClientRect();
+        const navBar = document.getElementsByTagName("nav")[0];
+
+        if(rect.bottom > 0 && rect.top <= 60){
+            navBar.style.backgroundColor = "silver";
+        } else{
+            navBar.style.backgroundColor = "black";
+        }
     }
+    document.addEventListener("scroll", updateNavColor);
 
-    //get elements from files
-    const content = document.getElementById('footerQuoteContentField') as HTMLElement;
-    const author = document.getElementById('footerQuoteAuthorField') as HTMLElement;
-
-    //get quote list
+    
+    //random quote
     let list = [];
     for(let i in quotes.content) list.push(quotes.content[i]);
 
-    //get a random quote
     const quoteNum = Math.floor(Math.random()*list.length);
     const quote = list[quoteNum];
-
-    //display that quote
-    content.innerHTML = "\"" + quote.content + "\"";
-    author.innerHTML = "- " + quote.author; 
-}
-
-//change navBar color depending on size and state
-function updateNavColor(){
-    //get elements
-    const footer = document.getElementsByTagName("footer")[0];
-    const rect = footer.getBoundingClientRect();
-    const navBar = document.getElementsByTagName("nav")[0];
-
-    if(rect.bottom > 0 && rect.top <= 60){
-        navBar.style.backgroundColor = "silver";
-        return;
-    } else{
-        navBar.style.backgroundColor = "black";
-        return;
-    }
-}
-
-//on page scroll run
-document.addEventListener("scroll", updateNavColor);
-
-//onpage load run
-document.addEventListener("readystatechange", updateQuote);
-
 </script>
 
 <template>
 <footer>
     <div id="footerQuote">
         <div id="footerQuoteContent">
-            <p id="footerQuoteContentField">"Knowledge can be passed down through good quotes."</p>
+            <p id="footerQuoteContentField">{{quote.content}}</p>
         </div>
         <div id="footerQuoteAuthor">
-            <p id="footerQuoteAuthorField">- MentoskaPraha</p> 
+            <p id="footerQuoteAuthorField">- {{quote.author}}</p> 
         </div>
     </div>
 
