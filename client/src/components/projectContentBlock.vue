@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { onMounted, reactive } from "vue";
+    import { reactive } from "vue";
     
     const props = defineProps(["params"]);
     const params = reactive({
