@@ -1,6 +1,7 @@
 # My ignores
 .DS_Store
 package-lock.json
+yarn.lock
 node_modules
 .env
 volume

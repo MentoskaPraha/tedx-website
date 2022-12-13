@@ -2,7 +2,7 @@
     import { computed } from "vue";
     import { useRoute } from "vue-router";
     import contentBlock  from "../components/contentBlock.vue";
-    import type { projectType, contentBlockParams } from "../types";
+    import type { contentBlockParams } from "../types";
     import content from "../assets/content.json";
 
 
