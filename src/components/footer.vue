@@ -15,6 +15,7 @@
         }
     }
     document.addEventListener("scroll", updateNavColor);
+    document.addEventListener("resize", updateNavColor);
 
     
     //random quote
@@ -41,8 +42,8 @@
             <p>
                 This website uses no cookie set by the creator.
                 Your activity on this page is not monitored or tracked by the creator.
-                The creator is not responsible for cookies managed by 3rd party services
-                that are either linked to or embeded on this site.
+                The creator is not responsible for cookies managed by 3rd party services,
+                such as Firebase, Youtube or others.
             </p>
         </li>
 
@@ -50,9 +51,8 @@
             <h2>Copyright</h2>
             <p>
                 This website was made by MentoskaPraha using VSCode, MS-Paint
-                and other tools. All image sources can be found in the README.md file
-                on Github. This website is published under the GNU General Public License V3,
-                so feel free to borrow my code from Github.
+                and other tools. All static image sources can be found in the README.md file
+                on Github. This website is published under the GNU General Public License V3.
             </p>
         </li>
     </ul>

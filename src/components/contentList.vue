@@ -2,12 +2,14 @@
     import { reactive } from "vue";
     import type { contentListParams } from "../types"
     
+
     const props = defineProps(["params"]);
     const params = reactive({
         title: props.params.title,
         displayTitle: props.params.displayTitle,
         entries: props.params.entries
     }) as contentListParams;
+    
 
     let titleStyle = "inherit";
     if(!params.displayTitle) titleStyle = "none";

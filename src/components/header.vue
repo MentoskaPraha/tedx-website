@@ -9,7 +9,7 @@
         description: "The page you're looking for was not found."
     });
 
-    function onload(){
+    onMounted(() => {
         let location = window.location.pathname;
 
         let page:pageTitleParams = content.pageDesc.find(element => element.location == location) as pageTitleParams;
@@ -19,8 +19,7 @@
 
         params.title = page.title;
         params.description = page.description;
-    }
-    onMounted(onload);
+    });
 </script>
 
 <template>

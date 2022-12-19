@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { reactive } from "vue";
-    import type {contentBlockParams} from "../types";
+    import type { contentBlockParams } from "../types";
     
     const props = defineProps(["params"]);
     const params = reactive({
@@ -37,7 +37,7 @@
     <img :src="params.image" alt="Content Block image.">
     <h3>{{params.title}}</h3>
     <section>
-        <p> {{params.description}} </p>
+        <p>{{params.description}}</p>
         <ul class="shareLinkContainer" :style="{display: linksStyle}">
             <li>
                 <span class="toolTip" id="copyLinkToolTip">Copy link to this project.</span>
