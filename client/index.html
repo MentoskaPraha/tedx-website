@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP's Official Website</title>
 
+	<script defer src="/__/firebase/9.15.0/firebase-app-compat.js"></script>
+	<script defer src="/__/firebase/9.15.0/firebase-database-compat.js"></script>
+	<script defer src="/__/firebase/9.15.0/firebase-storage-compat.js"></script>
+	<script defer src="/__/firebase/init.js?useEmulator=false"></script>
+
+	<script type="module" src="/src/main.ts"></script>
+
 	<style>
 		#screenSizeError{
     		display: none;
@@ -34,8 +41,7 @@
 
 <body>
 	<div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-
+    
 	<div id="screenSizeError">
 		<h1>Your Screen is too Small</h1>
 		<p>

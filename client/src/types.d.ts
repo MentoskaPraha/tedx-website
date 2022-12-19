@@ -5,6 +5,7 @@ export interface pageTitleParams{
 
 export interface projectType {
     title: string
+    shortDesc: string
     description: string
     image: string
     share: string
@@ -33,7 +34,5 @@ export interface contentListEntry{
 export interface contentListParams{
     title: string
     displayTitle: boolean
-    entry1: contentListEntry
-    entry2: contentListEntry
-    entry3: contentListEntry
+    entries: contentListEntry[]
 }

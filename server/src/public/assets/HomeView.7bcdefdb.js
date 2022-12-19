@@ -1,1 +1,0 @@
-import{c as n}from"./contentList.b914d840.js";import{d as t,c as o,a as s,b as r,u as c,e as l,o as m}from"./index.9de5fbf3.js";const i=l("hr",null,null,-1),f=t({__name:"HomeView",setup(p){let a=o.home.find(e=>e.title=="Main Pages");return(e,u)=>(m(),s("main",null,[r(n,{params:c(a)},null,8,["params"]),i]))}});export{f as default};

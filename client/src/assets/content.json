@@ -18,7 +18,7 @@
         {
             "location": "/projects",
             "title": "Projects",
-            "description": "Here you can see all the projects I've worked on inclueding my favourite one."
+            "description": "Here you can see all the projects I've worked on including my favourite one."
         },
         {
             "location":"projects-view" ,
@@ -67,6 +67,7 @@
     "projects":[
         {
             "title": "MP's Website",
+            "shortDesc": "This here very website. What else can I say?",
             "description": "This website is my personal website. I use it to display the things I've worked on and my blog which contain updates on my upcoming projects. The website is made using Vue.js for the client and the server is running an Express.js app to allow for API end points and more creative options.",
             "image": "/images/placeholderV2.png",
             "share": "mp-website",
@@ -75,40 +76,13 @@
         },
         {
             "title": "Big Chungus Bot",
+            "shortDesc": "A Big Chungus themed Discord bot, need I say more?",
             "description": "Big Chungus Bot is a API application for Discord build with Discord.js. He's a general purpose Discord bot that can give users custom colors, make announcements and titles. He has many for awsome features you can check the Github or try him out to find out more. Big Chungus Bot development is paused until futher notice!",
             "image": "/images/placeholderV2.png",
             "share": "big-chungus-bot",
             "git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
             "external": "none"
         }
-    ],
-
-    "projectsList":[
-        {
-            "title": "row1",
-            "displayTitle": false,
-            "entry1":{
-                "title": "MP's Website",
-                "description": "This here very website. What else can I say?",
-                "image": "/images/placeholderV2.png",
-                "link": "/projects/mp-website",
-                "target": "_self"
-            },
-            "entry2":{
-                "title": "Big Chungus Bot",
-                "description": "A Big Chungus themed Discord bot, need I say more?",
-                "image": "/images/placeholderV2.png",
-                "link": "/projects/big-chungus-bot",
-                "target": "_self"
-            },
-            "entry3":{
-                "title": "Coming Soon",
-                "description": "Another project will be added here soon.",
-                "image": "/images/placeholderV2.png",
-                "link": "#",
-                "target": "_self"
-            }
-        }    
     ],
 
     "aboutMe": [
@@ -124,27 +98,29 @@
         {
             "title": "Social Media",
             "displayTitle": true,
-            "entry1":{
-                "title": "Github",
-                "description": "My Github page. Here you can see all my repos.",
-                "image": "/images/placeholderV2.png",
-                "link": "https://github.com/MentoskaPraha",
-                "target": "_blank"
-            },
-            "entry2":{
-                "title": "Discord",
-                "description": "If you want to contact me via Discord, join this server.",
-                "image": "/images/placeholderV2.png",
-                "link": "",
-                "target": "_self"
-            },
-            "entry3":{
-                "title": "Empty",
-                "description": "An empty entry. There's not much more to it.",
-                "image": "/images/placeholderV2.png",
-                "link": "",
-                "target": "_self"
-            }
+            "entries":[
+                {
+                    "title": "Github",
+                    "description": "My Github page. Here you can see all my repos.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "https://github.com/MentoskaPraha",
+                    "target": "_blank"
+                },
+                {
+                    "title": "Discord",
+                    "description": "If you want to contact me via Discord, join this server.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "",
+                    "target": "_self"
+                },
+                {
+                    "title": "Empty",
+                    "description": "An empty entry. There's not much more to it.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "",
+                    "target": "_self"
+                }
+            ]
         }
     ],
 
@@ -152,27 +128,29 @@
         {
             "title": "Main Pages",
             "displayTitle": true,
-            "entry1":{
-                "title": "About Me",
-                "description": "See who I am and what social media I have.",
-                "image": "/images/placeholderV2.png",
-                "link": "/about-me",
-                "target": "_self"
-            },
-            "entry2":{
-                "title": "Projects",
-                "description": "See all the projects I've worked or working on.",
-                "image": "/images/placeholderV2.png",
-                "link": "/projects",
-                "target": "_self"
-            },
-            "entry3":{
-                "title": "Blog",
-                "description": "A blog in which I update you on development of my projects.",
-                "image": "/images/placeholderV2.png",
-                "link": "/blog",
-                "target": "_self"
-            }
+            "entries":[
+                {
+                    "title": "About Me",
+                    "description": "See who I am and what social media I have.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "/about-me",
+                    "target": "_self"
+                },
+                {
+                    "title": "Projects",
+                    "description": "See all the projects I've worked or working on.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "/projects",
+                    "target": "_self"
+                },
+                {
+                    "title": "Blog",
+                    "description": "A blog in which I update you on development of my projects.",
+                    "image": "/images/placeholderV2.png",
+                    "link": "/blog",
+                    "target": "_self"
+                }
+            ]
         }
     ]
 }

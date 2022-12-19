@@ -1,15 +1,12 @@
 <script lang="ts" setup>
     import { reactive } from "vue";
-    import type {contentListEntry, contentListParams} from "../types"
+    import type { contentListParams } from "../types"
     
     const props = defineProps(["params"]);
     const params = reactive({
         title: props.params.title,
         displayTitle: props.params.displayTitle,
-        image: props.params.image,
-        entry1: props.params.entry1 as contentListEntry,
-        entry2: props.params.entry2 as contentListEntry,
-        entry3: props.params.entry3 as contentListEntry
+        entries: props.params.entries
     }) as contentListParams;
 
     let titleStyle = "inherit";
@@ -21,27 +18,27 @@
     <h3 :style="{display: titleStyle}">{{params.title}}</h3>
 
     <ul>
-        <li><a :href="params.entry1.link" :target="params.entry1.target">
-            <img :src="params.entry1.image" alt="Github icon.">
+        <li><a :href="params.entries[0].link" :target="params.entries[0].target">
+            <img :src="params.entries[0].image" alt="Github icon.">
             <section>
-                <h4>{{params.entry1.title}}</h4>
-                <p>{{params.entry1.description}}</p>
+                <h4>{{params.entries[0].title}}</h4>
+                <p>{{params.entries[0].description}}</p>
             </section>
         </a></li>
 
-        <li><a :href="params.entry2.link" :target="params.entry2.target">
-            <img :src="params.entry2.image" alt="Discord icon.">
+        <li><a :href="params.entries[1].link" :target="params.entries[1].target">
+            <img :src="params.entries[1].image" alt="Discord icon.">
             <section>
-                <h4>{{params.entry2.title}}</h4>
-                <p>{{params.entry2.description}}</p>
+                <h4>{{params.entries[1].title}}</h4>
+                <p>{{params.entries[1].description}}</p>
             </section>
         </a></li>
 
-        <li><a :href="params.entry3.link" :target="params.entry3.target">
-            <img :src="params.entry3.image" alt="Placeholder image.">
+        <li><a :href="params.entries[2].link" :target="params.entries[2].target">
+            <img :src="params.entries[2].image" alt="Placeholder image.">
             <section>
-                <h4>{{params.entry3.title}}</h4>
-                <p>{{params.entry3.description}}</p>
+                <h4>{{params.entries[2].title}}</h4>
+                <p>{{params.entries[2].description}}</p>
             </section>   
         </a></li>
     </ul>
