@@ -11,7 +11,6 @@
 
     const list = getProjects();
     let project = list.find(element => element.share == projectId.value) as unknown as contentBlockParams;
-    project.links = true;
 
     let projectStyle = "inherit";
     let notFoundStyle = "none";
@@ -19,6 +18,9 @@
     if (project == undefined){
         projectStyle = "none";
         notFoundStyle = "inherit";
+        project = list[0] as unknown as contentBlockParams;
+    }else{
+        project.links = true;
     }
 </script>
 
