@@ -1,24 +1,7 @@
 <script lang="ts" setup>
     import content from "../assets/content.json";
 
-    
-    //change navBar color depending on size and state
-    function updateNavColor(){
-        const footer = document.getElementsByTagName("footer")[0];
-        const rect = footer.getBoundingClientRect();
-        const navBar = document.getElementsByTagName("nav")[0];
 
-        if(rect.bottom > 0 && rect.top <= 60){
-            navBar.style.backgroundColor = "silver";
-        } else{
-            navBar.style.backgroundColor = "black";
-        }
-    }
-    document.addEventListener("scroll", updateNavColor);
-    document.addEventListener("resize", updateNavColor);
-
-    
-    //random quote
     let list = content.quotes;
 
     const quoteNum = Math.floor(Math.random()*list.length);
@@ -50,7 +33,7 @@
         <li id="copyright">
             <h2>Copyright</h2>
             <p>
-                This website was made by MentoskaPraha using VSCode, MS-Paint
+                This website was made by MentoskaPraha using VSCode, Github
                 and other tools. All static image sources can be found in the README.md file
                 on Github. This website is published under the GNU General Public License V3.
             </p>

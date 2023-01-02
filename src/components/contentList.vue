@@ -7,12 +7,16 @@
     const params = reactive({
         title: props.params.title,
         displayTitle: props.params.displayTitle,
+        displayImages: props.params.displayImages,
         entries: props.params.entries
     }) as contentListParams;
     
 
     let titleStyle = "inherit";
     if(!params.displayTitle) titleStyle = "none";
+
+    let imageStyle = "inherit";
+    if(!params.displayImages) imageStyle = "none";
 </script>
 
 <template>
@@ -21,7 +25,7 @@
 
     <ul>
         <li><a :href="params.entries[0].link" :target="params.entries[0].target">
-            <img :src="params.entries[0].image" alt="Github icon.">
+            <img :src="params.entries[0].image" alt="Entry image." :style="{display: imageStyle}">
             <section>
                 <h4>{{params.entries[0].title}}</h4>
                 <p>{{params.entries[0].description}}</p>
@@ -29,7 +33,7 @@
         </a></li>
 
         <li><a :href="params.entries[1].link" :target="params.entries[1].target">
-            <img :src="params.entries[1].image" alt="Discord icon.">
+            <img :src="params.entries[1].image" alt="Entry image." :style="{display: imageStyle}">
             <section>
                 <h4>{{params.entries[1].title}}</h4>
                 <p>{{params.entries[1].description}}</p>
@@ -37,7 +41,7 @@
         </a></li>
 
         <li><a :href="params.entries[2].link" :target="params.entries[2].target">
-            <img :src="params.entries[2].image" alt="Placeholder image.">
+            <img :src="params.entries[2].image" alt="Entry image." :style="{display: imageStyle}">
             <section>
                 <h4>{{params.entries[2].title}}</h4>
                 <p>{{params.entries[2].description}}</p>
@@ -78,6 +82,7 @@
     width: 300px;
     height: 300px;
     border: 5px solid black;
+    background-color: white;
 }
 
 .contentList section{

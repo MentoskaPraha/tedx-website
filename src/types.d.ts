@@ -1,9 +1,10 @@
-export interface pageTitleParams{
+export interface headerParams{
     title: string
     description: string
+    image: string
 }
 
-export interface projectType {
+export interface projectObject {
     title: string
     shortDesc: string
     description: string
@@ -34,5 +35,21 @@ export interface contentListEntry{
 export interface contentListParams{
     title: string
     displayTitle: boolean
+    displayImages: boolean
     entries: contentListEntry[]
+}
+
+export interface basicInfoObject{
+    title: string,
+    image: string,
+    name: string,
+    timezone: string,
+    languages: string,
+    description: string
+}
+
+export interface aboutMeObject{
+    basicInfo: basicInfoObject
+    socialMedia: contentListParams
+    tech: contentListEntry[]
 }

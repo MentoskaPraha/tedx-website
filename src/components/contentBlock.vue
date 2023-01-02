@@ -16,6 +16,9 @@
     let linksStyle = "inherit";
     let gitStyle = "inline-block";
     let externalStyle = "inline-block";
+    let toolTip = reactive({
+        text: "Copy link to this project."
+    });
 
     if(params.git == "none") gitStyle = "none";
     if(params.external == "none") externalStyle = "none";
@@ -26,9 +29,8 @@
         const link = window.location.origin + "/projects/" + params.share
 
         navigator.clipboard.writeText(link);
-        const toolTip = document.getElementById("copyLinkToolTip") as HTMLElement;
-        toolTip.innerHTML = "Copied!";
-        setTimeout(() => toolTip.innerHTML = "Copy link to this project.", 600);
+        toolTip.text = "Copied!";
+        setTimeout(() => toolTip.text =  "Copy link to this project.", 600);
     }
 </script>
 
@@ -40,23 +42,23 @@
         <p>{{params.description}}</p>
         <ul class="shareLinkContainer" :style="{display: linksStyle}">
             <li>
-                <span class="toolTip" id="copyLinkToolTip">Copy link to this project.</span>
+                <span class="toolTip" id="copyLinkToolTip">{{toolTip.text}}</span>
                 <a v-on:click="copyLink();" class="shareLink">
-                    <img src="/images/placeholderV3.png" alt="Copy link icon.">
+                    <img src="/images/shareLink.svg" alt="Copy link icon.">
                 </a>
             </li>
 
             <li :style="{display: gitStyle}">
                 <span class="toolTip">Link to the Github for this project.</span>
                 <a :href="params.git" target="_blank" class="shareLink" >
-                    <img src="/images/placeholderV3.png" alt="Github link icon.">
+                    <img src="/images/github-mark.svg" alt="Github link icon.">
                 </a>
             </li>
 
             <li :style="{display: externalStyle}">
                 <span class="toolTip">Link to this project's external website.</span>
                 <a :href="params.external" target="_blank" class="shareLink">
-                    <img src="/images/placeholderV3.png" alt="External link icon.">
+                    <img src="/images/externalLink.svg" alt="External link icon.">
                 </a>
             </li>
         </ul>
@@ -77,6 +79,7 @@
     height: 300px;
     grid-column: 1;
     grid-row: 1;
+    background-color: white;
 }
 
 .contentBlock h3{

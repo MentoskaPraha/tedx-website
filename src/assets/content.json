@@ -1,42 +1,4 @@
 {
-    "pageDesc":[
-        {
-            "location": "/",
-            "title": "MP's Official Website",
-            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!"
-        },
-        {
-            "location": "/home",
-            "title": "MP's Official Website",
-            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!"
-        },
-        {
-            "location": "/about-me",
-            "title": "About Me",
-            "description": "Here you can see all the information about me and my contact information."
-        },
-        {
-            "location": "/projects",
-            "title": "Projects",
-            "description": "Here you can see all the projects I've worked on including my favourite one."
-        },
-        {
-            "location":"projects-view" ,
-            "title": "Specific Project View",
-            "description": "Here you can see a specific project and only that project."
-        },
-        {
-            "location": "/blog",
-            "title": "Coming Soon!",
-            "description": "The blog feature is not yet finished."
-        },
-        {
-            "location": "/error_404",
-            "title": "Error 404",
-            "description": "The page you're looking for was not found."
-        }
-    ],
-
     "quotes":[
         {
             "content": "I didn't know dynamite explodes.",
@@ -44,7 +6,7 @@
         },
         {
             "content": "Cold is just a state of mind.",
-            "author": "Anthony Tucker"
+            "author": "My old school Principal"
         },
         {
             "content": "Live long and prosper.",
@@ -61,6 +23,30 @@
         {
             "content": "F*ck you Nvidia.",
             "author": "Linus Torvalds"
+        },
+        {
+            "content": "I know how it feels when everything you think is true becomes a lie!",
+            "author": "MentoskaPraha"
+        },
+        {
+            "content": "Weak people revenge, Strong people forgive, Intelligent people ignore.",
+            "author": "Albert Einstein"
+        },
+        {
+            "content": "How do you not dead.",
+            "author": "Gljue"
+        },
+        {
+            "content": "I'm not simping, I'm admiring art.",
+            "author": "MentoskaPraha"
+        },
+        {
+            "content": "Das uniet sovion.",
+            "author": "Gljue"
+        },
+        {
+            "content": "It's better to suffer with friends.",
+            "author": "MentoskaPraha"
         }
     ],
 
@@ -68,89 +54,96 @@
         {
             "title": "MP's Website",
             "shortDesc": "This here very website. What else can I say?",
-            "description": "This website is my personal website. I use it to display the things I've worked on and my blog which contain updates on my upcoming projects. The website is made using Vue.js for the client and the server is running an Express.js app to allow for API end points and more creative options.",
-            "image": "/images/placeholderV2.png",
+            "description": "This website is my personal website. I use it to display the things I've worked on and my blog which contain updates on my upcoming projects. The website is made using Vue.js for the client and is deployed using Firebase, which allows for dynamic content such as the blog.",
+            "image": "/images/siteLogo.svg",
             "share": "mp-website",
-            "git": "none",
+            "git": "https://github.com/MentoskaPraha/MP-Website",
             "external": "none"
         },
         {
             "title": "Big Chungus Bot",
             "shortDesc": "A Big Chungus themed Discord bot, need I say more?",
-            "description": "Big Chungus Bot is a API application for Discord build with Discord.js. He's a general purpose Discord bot that can give users custom colors, make announcements and titles. He has many for awsome features you can check the Github or try him out to find out more. Big Chungus Bot development is paused until futher notice!",
-            "image": "/images/placeholderV2.png",
+            "description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
+            "image": "/images/projects/big-chungus-image.png",
             "share": "big-chungus-bot",
             "git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
             "external": "none"
         }
     ],
 
-    "aboutMe": [
-        {
+    "aboutMe": {
+        "basicInfo": {
             "title": "Basic Information",
-            "description": "I'm MentoskaPraha, I’m an amateur programmer and average gamer. I program in HTML/CSS and Typescript and my timezone is EET/EEST or GMT+2/GMT+3. I speak a few languages like: English, Czech and French. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves, Don’t Starve Together, Prison Architect and Satisfactory. That’s me in a nutshell, I play video games and I write code.",
-            "image": "/images/placeholderV2.png",
-            "links": false,
-            "share": "none",
-            "git": "none",
-            "external": "none"
+            "image": "/images/siteLogo.svg",
+            "name": "MentoskaPraha",
+            "timezone": "EET/EEST or GMT+2/GMT+3",
+            "languages": "English, French and Czech",
+            "description": "I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves, Don't Starve Together, Prison Architect and Satisfactory. That's me in a nutshell, I play video games and I write code."
         },
-        {
+        "socialMedia": {
             "title": "Social Media",
             "displayTitle": true,
+            "displayImages": true,
             "entries":[
                 {
                     "title": "Github",
                     "description": "My Github page. Here you can see all my repos.",
-                    "image": "/images/placeholderV2.png",
+                    "image": "/images/github-mark.svg",
                     "link": "https://github.com/MentoskaPraha",
                     "target": "_blank"
                 },
                 {
                     "title": "Discord",
                     "description": "If you want to contact me via Discord, join this server.",
-                    "image": "/images/placeholderV2.png",
-                    "link": "",
-                    "target": "_self"
+                    "image": "/images/discord-mark-blue.svg",
+                    "link": "https://discord.gg/QKSDMaYg5R",
+                    "target": "_blank"
                 },
                 {
-                    "title": "Empty",
-                    "description": "An empty entry. There's not much more to it.",
-                    "image": "/images/placeholderV2.png",
+                    "title": "Coming Soon!",
+                    "description": "This social media account is still in the works.",
+                    "image": "/images/comingSoonLogo.svg",
                     "link": "",
                     "target": "_self"
                 }
             ]
-        }
-    ],
-
-    "home": [
-        {
-            "title": "Main Pages",
-            "displayTitle": true,
-            "entries":[
-                {
-                    "title": "About Me",
-                    "description": "See who I am and what social media I have.",
-                    "image": "/images/placeholderV2.png",
-                    "link": "/about-me",
-                    "target": "_self"
-                },
-                {
-                    "title": "Projects",
-                    "description": "See all the projects I've worked or working on.",
-                    "image": "/images/placeholderV2.png",
-                    "link": "/projects",
-                    "target": "_self"
-                },
-                {
-                    "title": "Blog",
-                    "description": "A blog in which I update you on development of my projects.",
-                    "image": "/images/placeholderV2.png",
-                    "link": "/blog",
-                    "target": "_self"
-                }
-            ]
-        }
-    ]
+        },
+        "tech":[
+            {
+                "title": "VS-Code",
+                "description": "Visual Studio Code is a light weight Integrated Development Environment, which I use to write my all of my code.",
+                "link": "https://code.visualstudio.com"
+            },
+            {
+                "title": "Github",
+                "description": "Github is a source control tool, which is an extension of Git. I use this to ensure my code is up to date everywhere.",
+                "link": "https://github.com"
+            },
+            {
+                "title": "Firebase",
+                "description": "Firebase is a cloud service from Google that allows for hosting serverless apps. I use it to deploy my projects.",
+                "link": "https://firebase.google.com"
+            },
+            {
+                "title": "Node.js",
+                "description": "Node.js is a back-end runtime used to execute Javascript on a server. I use this for apps like the Big Chungus Bot.",
+                "link": "https://nodejs.org"
+            },
+            {
+                "title": "Typescript",
+                "description": "Typescript is a Javascript addon that adds type safety to Javascript. I always use this as it's better Javascript.",
+                "link": "https://www.typescriptlang.org"
+            },
+            {
+                "title": "Vue.js",
+                "description": "Vue.js is a framework used for making websites or UIs. I used this framework to create this website.",
+                "link": "https://vuejs.org"
+            },
+            {
+                "title": "MongoDB",
+                "description": "MongoDB is a document based database used to store user data. I use MongoDB for Big Chungus Bot.",
+                "link": "https://www.mongodb.com"
+            }
+        ]
+    }
 }

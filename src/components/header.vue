@@ -1,33 +1,96 @@
 <script lang="ts" setup>
     import { onMounted, reactive } from "vue";
-    import type { pageTitleParams } from "../types";
-    import content from "../assets/content.json";
+    import type { headerParams } from "../types";
+
+
+    const pageDesc = [
+        {
+            "location": "/",
+            "title": "MP's Official Website",
+            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!",
+            "image": "/images/siteLogo.svg"
+        },
+        {
+            "location": "/home",
+            "title": "MP's Official Website",
+            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!",
+            "image": "/images/siteLogo.svg"
+        },
+        {
+            "location": "/about-me",
+            "title": "About Me",
+            "description": "Here you can see all the information about me and my contact information.",
+            "image": "/images/aboutMeLogo.svg"
+        },
+        {
+            "location": "/projects",
+            "title": "Projects",
+            "description": "Here you can see all the projects I've worked on including my favourite one.",
+            "image": "/images/projectLogo.svg"
+        },
+        {
+            "location":"projects-view" ,
+            "title": "Specific Project View",
+            "description": "Here you can see a specific project and only that project.",
+            "image": "/images/projectLogo.svg"
+        },
+        {
+            "location": "/blog",
+            "title": "Coming Soon!",
+            "description": "The blog feature is not yet finished.",
+            "image": "/images/comingSoonLogo.svg"
+        },
+        {
+            "location": "/error_404",
+            "title": "Error 404",
+            "description": "The page you're looking for was not found.",
+            "image": "/images/siteLogo.svg"
+        }
+    ];
 
 
     let params = reactive({
         title: "Error 404",
-        description: "The page you're looking for was not found."
+        description: "The page you're looking for was not found.",
+        image: "/images/siteLogo.svg"
     });
 
     onMounted(() => {
-        let location = window.location.pathname;
+        const location = window.location.pathname;
 
-        let page:pageTitleParams = content.pageDesc.find(element => element.location == location) as pageTitleParams;
+        let page:headerParams = pageDesc.find(element => element.location == location) as headerParams;
         if(page == undefined && location.includes("/projects/")){
-            page = content.pageDesc.find(element => element.location == "projects-view") as pageTitleParams;
+            page = pageDesc.find(element => element.location == "projects-view") as headerParams;
         } 
 
         params.title = page.title;
         params.description = page.description;
+        params.image = page.image;
     });
+
+
+    //change navBar color depending on size and state
+    function updateNavColor(){
+        const footer = document.getElementsByTagName("footer")[0];
+        const rect = footer.getBoundingClientRect();
+        const navBar = document.getElementsByTagName("nav")[0];
+
+        if(rect.bottom > 0 && rect.top <= 60){
+            navBar.style.backgroundColor = "silver";
+        } else{
+            navBar.style.backgroundColor = "black";
+        }
+    }
+    document.addEventListener("scroll", updateNavColor);
+    document.addEventListener("resize", updateNavColor);
 </script>
 
 <template>
 <header>
     <nav>
         <ul id="navLogoTitle">
-            <li><img src="/images/placeholder.png" alt="Site Logo"></li>
-            <li><h1>MP's Official Website</h1></li>
+            <li><img :src="params.image" alt="Page logo."></li>
+            <li><h1>{{params.title}}</h1></li>
         </ul>
             
         <ul id="navButtons">
@@ -110,6 +173,7 @@ nav{
     width: 35px;
     display: inline-block;
     vertical-align: middle;
+    background-color: white;
 }
 
 #navLogoTitle h1{

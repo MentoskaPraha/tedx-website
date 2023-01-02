@@ -2,44 +2,29 @@
     import { createApp, createVNode, onMounted } from "vue";
     import contentBlock from "../components/contentBlock.vue";
     import contentList from "../components/contentList.vue";
-    import content from "../assets/content.json";
-    import type { contentBlockParams, contentListParams, projectType } from "../types";
+    import { getProjects } from "../firebase";
+    import type { contentBlockParams, contentListParams, projectObject } from "../types";
 
 
     let favProject:contentBlockParams;
     let featProject:contentBlockParams;
     let projectsList:contentListParams[] = [];
-    const list = content.projects;
+    const list = getProjects();
 
 
-    const favProjectObj = list.find(element => element.share == "big-chungus-bot") as projectType;
-    favProject = {
-        title: favProjectObj.title,
-        description: favProjectObj.description,
-        image: favProjectObj.image,
-        links: true,
-        share: favProjectObj.share,
-        git: favProjectObj.git,
-        external: favProjectObj.external
-    }
+    favProject = list.find(element => element.share == "big-chungus-bot") as unknown as contentBlockParams;
+    favProject.links = true;
 
     const featProjectNum = Math.floor(Math.random()*list.length);
-    const featProjectObj = list[featProjectNum] as projectType;
-    featProject = {
-        title: featProjectObj.title,
-        description: featProjectObj.description,
-        image: featProjectObj.image,
-        links: true,
-        share: featProjectObj.share,
-        git: featProjectObj.git,
-        external: featProjectObj.external
-    }
+    featProject = list[featProjectNum] as unknown as contentBlockParams;
+    featProject.links = true;
 
 
     for(let i = 0; i < list.length; i = i + 3){
         let row:contentListParams = {
             title: "",
             displayTitle: false,
+            displayImages: true,
             entries: []
         };
 
@@ -48,7 +33,7 @@
                 row.entries.push({
                     title: "Empty",
                     description: "An empty entry. There's not much more to it.",
-                    image: "/images/placeholderV2.png",
+                    image: "/images/comingSoonLogo.svg",
                     link: "#",
                     target: "_self",
                 });
