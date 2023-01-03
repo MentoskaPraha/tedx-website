@@ -75,7 +75,7 @@
             <p>
                 <strong>My name is: </strong>{{basicInfo.name}}.<br>
                 <strong>I speak: </strong>{{basicInfo.languages}}.<br>
-                <strong>My time zone is: </strong>{{basicInfo.timezone}}.<br><br>
+                <strong>My time zone is: </strong>{{basicInfo.timezone}}.<br>
                 <strong>A little bit more about me: </strong><br>
                 {{basicInfo.description}}
             </p>
