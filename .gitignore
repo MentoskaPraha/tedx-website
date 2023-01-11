@@ -7,6 +7,7 @@ node_modules
 volume
 .vscode
 old_src
+.firebaserc
 
 # Vue Generated Ignores
 # Logs
