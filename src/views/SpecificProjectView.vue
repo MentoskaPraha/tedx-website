@@ -3,13 +3,13 @@
     import { useRoute } from "vue-router";
     import contentBlock  from "../components/contentBlock.vue";
     import type { contentBlockParams } from "../types";
-    import { getProjects } from "../firebase";
+    import content from "../assets/content.json";
 
 
     const route = useRoute();
     const projectId = computed(() => route.params.project as string);
 
-    const list = getProjects();
+    const list = content.projects;
     let project = list.find(element => element.share == projectId.value) as unknown as contentBlockParams;
 
     let projectStyle = "inherit";
