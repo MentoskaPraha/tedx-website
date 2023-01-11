@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-    import { createApp, createVNode, onMounted } from "vue";
     import contentList from "../components/contentList.vue";
-    import { getAboutMe } from "../firebase";
-    import type { contentListParams, aboutMeObject } from "../types";
+    import type { contentListParams } from "../types";
+    import content from "../assets/content.json";
     
-    const aboutMe = getAboutMe();
+    const aboutMe = content.aboutMe;
 
     let basicInfo = aboutMe.basicInfo
     let socialMedia = aboutMe.socialMedia as contentListParams;
@@ -43,27 +42,6 @@
 
         techList.push(row);
     }
-
-    const projectListElement = createVNode(
-        "div",
-        {id: "rendered-list"},
-        techList.map(row => {
-            return createVNode(
-                contentList,
-                {params: row}
-            );
-        })
-    );
-    
-    const projectListApp = createApp(projectListElement);
-    
-    onMounted(() => {
-        try {
-            projectListApp.mount("#list-mount");
-        } catch (error) {
-            //nothing will happen lol
-        }
-    });
 </script>
 
 <template>
@@ -86,7 +64,9 @@
 
     <div id="techList">
         <h2>Technology I use</h2>
-        <div id="list-mount"></div>
+        <li v-for="item in techList">
+            <contentList :params="item"/>
+        </li>
     </div>
 
 	<hr>

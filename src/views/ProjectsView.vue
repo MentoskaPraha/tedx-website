@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-    import { createApp, createVNode, onMounted } from "vue";
     import contentBlock from "../components/contentBlock.vue";
     import contentList from "../components/contentList.vue";
-    import { getProjects } from "../firebase";
-    import type { contentBlockParams, contentListParams, projectObject } from "../types";
+    import type { contentBlockParams, contentListParams } from "../types";
+    import content from "../assets/content.json";
 
 
     let favProject:contentBlockParams;
     let featProject:contentBlockParams;
     let projectsList:contentListParams[] = [];
-    const list = getProjects();
+    const list = content.projects
 
 
     favProject = list.find(element => element.share == "big-chungus-bot") as unknown as contentBlockParams;
@@ -51,27 +50,6 @@
 
         projectsList.push(row);
     }
-
-    const projectListElement = createVNode(
-        "div",
-        {id: "rendered-list"},
-        projectsList.map(row => {
-            return createVNode(
-                contentList,
-                {params: row}
-            );
-        })
-    );
-    
-    const projectListApp = createApp(projectListElement);
-    
-    onMounted(() => {
-        try {
-            projectListApp.mount("#list-mount");
-        } catch (error) {
-            //nothing will happen lol
-        }
-    });
 </script>
 
 <template>
@@ -93,7 +71,9 @@
     
     <div id="projectsList">
         <h2>Project List</h2>
-        <div id="list-mount"></div>
+        <li v-for="item in projectsList">
+            <contentList :params="item"/>
+        </li>
     </div>
 
     <hr>
