@@ -1,53 +1,10 @@
 <script lang="ts" setup>
-    import { onMounted, reactive } from "vue";
+    import { onMounted, reactive, Transition } from "vue";
     import type { headerParams } from "../types";
+    import content from "../assets/content.json";
 
 
-    const pageDesc = [
-        {
-            "location": "/",
-            "title": "MP's Official Website",
-            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!",
-            "image": "/images/siteLogo.svg"
-        },
-        {
-            "location": "/home",
-            "title": "MP's Official Website",
-            "description": "Welcome to my website, here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!",
-            "image": "/images/siteLogo.svg"
-        },
-        {
-            "location": "/about-me",
-            "title": "About Me",
-            "description": "Here you can see all the information about me and my contact information.",
-            "image": "/images/aboutMeLogo.svg"
-        },
-        {
-            "location": "/projects",
-            "title": "Projects",
-            "description": "Here you can see all the projects I've worked on including my favourite one.",
-            "image": "/images/projectLogo.svg"
-        },
-        {
-            "location":"projects-view" ,
-            "title": "Specific Project View",
-            "description": "Here you can see a specific project and only that project.",
-            "image": "/images/projectLogo.svg"
-        },
-        {
-            "location": "/blog",
-            "title": "Coming Soon!",
-            "description": "The blog feature is not yet finished.",
-            "image": "/images/comingSoonLogo.svg"
-        },
-        {
-            "location": "/error_404",
-            "title": "Error 404",
-            "description": "The page you're looking for was not found.",
-            "image": "/images/siteLogo.svg"
-        }
-    ];
-
+    const pageDesc = content.pageDesc;
 
     let params = reactive({
         title: "Error 404",
@@ -66,192 +23,103 @@
         params.title = page.title;
         params.description = page.description;
         params.image = page.image;
+
+        window.addEventListener("resize", checkSize);
+        checkSize();
     });
 
 
-    //change navBar color depending on size and state
-    function updateNavColor(){
-        const footer = document.getElementsByTagName("footer")[0];
-        const rect = footer.getBoundingClientRect();
-        const navBar = document.getElementsByTagName("nav")[0];
+    //functions for menu toggle
+    let menuState = reactive({
+        show: false,
+        showBG: false,
+        buttonText: '☰'
+    });
 
-        if(rect.bottom > 0 && rect.top <= 60){
-            navBar.style.backgroundColor = "silver";
+    function toggleMenu(){
+        if(!menuState.show){
+            menuState.show = true;
+            setTimeout(() => {menuState.showBG = true;}, 500);
+            menuState.buttonText = '×';
         } else{
-            navBar.style.backgroundColor = "black";
+            menuState.showBG = false;
+            setTimeout(() => {menuState.show = false;}, 300);
+            menuState.buttonText = '☰';
         }
     }
-    document.addEventListener("scroll", updateNavColor);
-    document.addEventListener("resize", updateNavColor);
+
+    function checkSize(){
+        const width = innerWidth;
+
+        if(width >= 640){
+            menuState.showBG = false;
+            menuState.show = true;
+        } else{
+            menuState.showBG = false;
+            menuState.show = false;
+            menuState.buttonText = '☰';
+        }
+    }
 </script>
 
 <template>
 <header>
-    <nav>
-        <ul id="navLogoTitle">
-            <li><img :src="params.image" alt="Page logo."></li>
-            <li><h1>{{params.title}}</h1></li>
-        </ul>
-            
-        <ul id="navButtons">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about-me">About Me</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
-        </ul>
+    <nav id="navBar" class="fixed top-0 z-50 w-full sm:flex">
+        <div class="flex flex-wrap bg-gray-300 relative z-50 h-14 sm:w-1/2">
+            <ul class="flex place-items-center m-1">
+                <li class="inline"><img :src="params.image" alt="Page logo." class="bg-white w-8 h-8 mr-1 md:ml-2"></li>
+                <li class="inline"><h1 class="text-xl font-bold text-black">{{params.title}}</h1></li>
+            </ul>
+            <button @click="toggleMenu()" class="bg-gray-900 m-2 pb-0.5 w-10 h-10 text-xl rounded hover:bg-gray-400 hover:text-black transition-colors ml-auto sm:hidden">{{menuState.buttonText}}</button>
+        </div>
+
+        <Transition name="navBar">
+            <div v-if="menuState.show" class="flex flex-wrap place-content-center py-4 bg-gray-600 relative z-40 sm:place-content-end sm:w-1/2 sm:bg-gray-300 sm:pr-3.5"> 
+                <ul  class="place-items-center flex justify-center text-white">
+                    <li class="inline"><a href="/home" class="bg-gray-900 m-1 p-2 rounded hover:bg-gray-400 hover:text-black transition-colors">Home</a></li>
+                    <li class="inline"><a href="/about-me" class="bg-gray-900 m-1 p-2 rounded hover:bg-gray-400 hover:text-black transition-colors">About Me</a></li>
+                    <li class="inline"><a href="/projects" class="bg-gray-900 m-1 p-2 rounded hover:bg-gray-400 hover:text-black transition-colors">Projects</a></li>
+                    <li class="inline"><a href="/blog" class="bg-gray-900 m-1 p-2 rounded hover:bg-gray-400 hover:text-black transition-colors">Blog</a></li>
+                </ul>
+            </div>
+        </Transition>
+
+        <Transition name="navFocuser">
+            <button @click="toggleMenu()" v-if="menuState.showBG" class="w-full pt-28 bg-white text-gray-50 opacity-60 h-screen relative z-30 hover:cursor-default">
+                This is a hidden message. Pretty cool right?
+            </button>
+        </Transition>
     </nav>
 
-    <div id="pageTitle">
-        <h1>{{params.title}}</h1>
+    <div class="mt-14 bg-black bg-[url('/images/banner.png')] bg-cover bg-no-repeat bg-center">
+        <h1 class="py-20 text-center text-4xl font-bold md:text-5xl lg:text-6xl lg:py-30 xl:py-40">{{params.title}}</h1>
     </div>
 
     <hr>
-        <p id="pageDescription">{{params.description}}</p>
+        <p class="mx-5 text-justify md:w-1/2 md:mx-auto xl:w-1/3 2xl:w-1/4">{{params.description}}</p>
     <hr>
 </header>
 </template>
 
 <style scoped>
-header{
-    position: relative;
-    z-index: 999;
-}
-
-#pageTitle{
-    margin-top: 60px;
-    background-image: url(/images/banner.png);
-    background-color: gray;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}    
-
-#pageTitle h1{
-    text-align: center;
-    font-size: 75px;
-    padding: 150px 10px;
-    color: white;
-}
-
-#pageDescription{
-    margin: 10px auto;
-    width: 40%;
-    text-align: justify;
-    font-size: 20px;
-}
-
-@media screen and (max-width: 661px) {
-    #pageDescription{
-        text-align: center;
-    }
-}
-
-nav{
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0px;
-}
-
-#navLogoTitle{
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    float: left;
-}
-
-#navLogoTitle li{
-    display: inline-block;
-}
-
-#navLogoTitle img{
-    margin-bottom: 2px;
-    margin-right: 5px;
-    height: 35px;
-    width: 35px;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: white;
-}
-
-#navLogoTitle h1{
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 35px;
-}
-
-#navButtons{
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    vertical-align: middle;
-    float: right;
-}
-
-#navButtons li{
-    display: inline-block;
-}
-
-#navButtons a{
-    margin: 5px;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border: 5px solid white;
-    border-radius: 5px;
-    transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
-}
-
-#navButtons a:hover{
-    background-color: gray;
-    border-color: gray;
-    color: white;
-}
-
-@media screen and (max-width: 839px) {
-    #navLogoTitle h1{
-        display: none;
+    .navBar-enter-active,
+    .navBar-leave-active {
+        transition: all 0.5s ease-out;
     }
 
-    #navLogoTitle img{
-        margin-top: 2px;
+    .navBar-enter-from,
+    .navBar-leave-to {
+        transform: translateY(-56px);
+        opacity: 0;
     }
 
-    #pageTitle h1{
-        font-size: 50px;
-        padding: 100px 10px;
-    }    
-}
-
-@media screen and (max-width: 479px) {
-    #navLogoTitle img{
-        display: none;
+    .navFocuser-enter-active,
+    .navFocuser-leave-active {
+        transition: all 0.3s ease-out;
     }
 
-    #navButtons{
-        float: none;
-        text-align: center;
+    .navFocuser-enter-from,
+    .navFocuser-leave-to {
+        opacity: 0;
     }
-}
-
-@media screen and (max-width: 430px) {
-    #navButtons{
-        display: flex;
-        justify-content: center;
-    }
-
-    #navButtons a{
-        margin: 5px 0px;
-        border-radius: 0px;
-    }
-}
-
-@media screen and (max-width: 376px) {
-    #navButtons a{
-        padding: 5px 2px;
-    }
-}
 </style>
