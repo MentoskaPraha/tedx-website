@@ -1,40 +1,39 @@
 <script lang="ts" setup>
-	import contentList from "../components/contentList.vue";
-
-	let mainPages = {
-        "title": "Main Pages",
-        "displayTitle": true,
-        "displayImages": true,
-        "entries":[
-            {
-                "title": "About Me",
-                "description": "See who I am and what social media I have.",
-                "image": "/images/aboutMeLogo.svg",
-                "link": "/about-me",
-                "target": "_self"
-            },
-            {
-                "title": "Projects",
-                "description": "See all the projects I've worked or working on.",
-                "image": "/images/projectLogo.svg",
-                "link": "/projects",
-                "target": "_self"
-            },
-            {
-                "title": "Blog",
-                "description": "A blog in which I update you on development of my projects.",
-                "image": "/images/comingSoonLogo.svg",
-                "link": "/blog",
-                "target": "_self"
-            }
-        ]
-    }
+import { RouterLink } from "vue-router";
+import { mainPages } from "../assets/content.json";
 </script>
 
 <template>
-<main>
-	<contentList :params="mainPages"/>	
+	<div>
+		<h3 class="text-center text-3xl underline mb-4">Main Pages</h3>
 
-	<hr>
-</main>
+		<ul class="mx-4 lg:text-center">
+			<li
+				class="my-4 lg:my-0 lg:inline-block lg:mx-4"
+				v-for="item in mainPages"
+				:key="item.title"
+			>
+				<RouterLink
+					class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity"
+					:to="item.link"
+				>
+					<img
+						class="h-72 bg-white border-neutral-700 border-solid border-4 mb-3"
+						:src="item.image"
+						alt="Entry image."
+					/>
+					<section
+						class="p-2 border-neutral-700 border-solid border-4 bg-black text-center"
+					>
+						<h4 class="mb-1 text-xl font-bold">
+							{{ item.title }}
+						</h4>
+						<p>{{ item.description }}</p>
+					</section>
+				</RouterLink>
+			</li>
+		</ul>
+	</div>
+
+	<hr />
 </template>

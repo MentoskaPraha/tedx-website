@@ -1,6 +1,1 @@
-/// <reference types="vite/client"/>
-
-declare module '*.json' {
-    const data: any
-    export default data
-}
+/// <reference types="vite/client" />

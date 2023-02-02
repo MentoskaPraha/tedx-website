@@ -39,8 +39,44 @@
         {
             "location": "/error_404",
             "title": "Error 404",
-            "description": "The page you're looking for was not found.",
+            "description": "The page you're looking for was not found. Here's a cat picture instead!",
             "image": "/images/siteLogo.svg"
+        }
+    ],
+
+    "navLinks":[
+        {
+            "location": "/home",
+            "name": "Home"
+        },
+        {
+            "location": "/about-me",
+            "name": "About Me"
+        },
+        {
+            "location": "/projects",
+            "name": "Projects"
+        }
+    ],
+
+    "mainPages": [
+        {
+            "title": "About Me",
+            "description": "See who I am and what social media I have.",
+            "image": "/images/aboutMeLogo.svg",
+            "link": "/about-me"
+        },
+        {
+            "title": "Projects",
+            "description": "See all the projects I've worked or working on.",
+            "image": "/images/projectLogo.svg",
+            "link": "/projects"
+        },
+        {
+            "title": "Coming Soon!",
+            "description": "This feature isn't finished yet! Please come back later!",
+            "image": "/images/comingSoonLogo.svg",
+            "link": ""
         }
     ],
 
@@ -60,14 +96,6 @@
         {
             "content": "We are rich, yet we are poor.",
             "author": "Hakainde Hichilema"
-        },
-        {
-            "content": "I don't like the steak in the center of the European Commission, which looks like a bubblebum and tastes like a bubblebum.",
-            "author": "Miloš Zeman"
-        },
-        {
-            "content": "F*ck you Nvidia.",
-            "author": "Linus Torvalds"
         },
         {
             "content": "I know how it feels when everything you think is true becomes a lie!",
@@ -109,7 +137,7 @@
             "title": "Big Chungus Bot",
             "shortDesc": "A Big Chungus themed Discord bot, need I say more?",
             "description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
-            "image": "/images/projects/big-chungus-image.png",
+            "image": "/images/projects/big-chungus-image.webp",
             "share": "big-chungus-bot",
             "git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
             "external": "none"
@@ -118,10 +146,9 @@
 
     "aboutMe": {
         "basicInfo": {
-            "title": "Basic Information",
             "image": "/images/siteLogo.svg",
             "name": "MentoskaPraha",
-            "timezone": "EET/EEST or GMT+2/GMT+3",
+            "timezone": "GMT+2/GMT+3",
             "languages": "English, French and Czech",
             "description": "I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves or Satisfactory."
         },
@@ -186,7 +213,7 @@
             },
             {
                 "title": "Tailwind CSS",
-                "description": "Tailwind CSS is a CSS utility for making website styling easier by adding tools to aid the dev-team.",
+                "description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes to aid with styling.",
                 "link": "https://tailwindcss.com"
             },
             {
