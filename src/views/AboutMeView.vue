@@ -52,9 +52,9 @@ for (let i = 0; i < list.length; i = i + 3) {
 			class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
 		/>
 		<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
-			<h3 class="text-center text-2xl font-bold underline">
+			<h2 class="text-center text-2xl font-bold underline">
 				Basic Information
-			</h3>
+			</h2>
 
 			<p>
 				<strong>My name is: </strong> {{ basicInfo.name }} <br />
@@ -73,7 +73,9 @@ for (let i = 0; i < list.length; i = i + 3) {
 	<hr />
 
 	<div>
-		<h2 class="text-center text-3xl underline mb-4">Technology I use</h2>
+		<h2 class="text-center text-3xl underline mb-4 font-bold">
+			Technology I use
+		</h2>
 		<ul>
 			<contentList
 				v-for="item in techList"

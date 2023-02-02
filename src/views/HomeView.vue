@@ -5,7 +5,7 @@ import { mainPages } from "../assets/content.json";
 
 <template>
 	<div>
-		<h3 class="text-center text-3xl underline mb-4">Main Pages</h3>
+		<h2 class="text-center text-3xl underline mb-4">Main Pages</h2>
 
 		<ul class="mx-4 lg:text-center">
 			<li
@@ -18,16 +18,16 @@ import { mainPages } from "../assets/content.json";
 					:to="item.link"
 				>
 					<img
-						class="h-72 bg-white border-neutral-700 border-solid border-4 mb-3"
+						class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
 						:src="item.image"
 						alt="Entry image."
 					/>
 					<section
 						class="p-2 border-neutral-700 border-solid border-4 bg-black text-center"
 					>
-						<h4 class="mb-1 text-xl font-bold">
+						<h3 class="mb-1 text-xl font-bold">
 							{{ item.title }}
-						</h4>
+						</h3>
 						<p>{{ item.description }}</p>
 					</section>
 				</RouterLink>
