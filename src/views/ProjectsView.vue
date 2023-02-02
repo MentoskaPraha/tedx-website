@@ -53,21 +53,27 @@ for (let i = 0; i < list.length; i = i + 3) {
 
 <template>
 	<div>
-		<h2>My Favorite Project</h2>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			My Favorite Project
+		</h2>
 		<contentBlock :params="favProject" />
 	</div>
 
 	<hr />
 
 	<div>
-		<h2>Random Project</h2>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			Random Project
+		</h2>
 		<contentBlock :params="featProject" />
 	</div>
 
 	<hr />
 
 	<div>
-		<h2>Project List</h2>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			Project List
+		</h2>
 		<ul>
 			<contentList
 				:params="item"
@@ -79,12 +85,3 @@ for (let i = 0; i < list.length; i = i + 3) {
 
 	<hr />
 </template>
-
-<style scoped>
-h2 {
-	font-size: 30px;
-	text-align: center;
-	margin-bottom: 15px;
-	text-decoration: underline;
-}
-</style>
