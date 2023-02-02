@@ -1,91 +1,87 @@
 <script lang="ts" setup>
-    import contentBlock from "../components/contentBlock.vue";
-    import contentList from "../components/contentList.vue";
-    import type { contentBlockParams, contentListParams } from "../types";
-    import content from "../assets/content.json";
+import contentBlock from "../components/contentBlock.vue";
+import contentList from "../components/contentList.vue";
+import type { contentBlockParams, contentListParams } from "../types";
+import content from "../assets/content.json";
 
+let favProject: contentBlockParams;
+let featProject: contentBlockParams;
+let projectsList: contentListParams[] = [];
+const list = content.projects;
 
-    let favProject:contentBlockParams;
-    let featProject:contentBlockParams;
-    let projectsList:contentListParams[] = [];
-    const list = content.projects
+favProject = list.find(
+	(element) => element.share == "big-chungus-bot"
+) as unknown as contentBlockParams;
+favProject.links = true;
 
+const featProjectNum = Math.floor(Math.random() * list.length);
+featProject = list[featProjectNum] as unknown as contentBlockParams;
+featProject.links = true;
 
-    favProject = list.find(element => element.share == "big-chungus-bot") as unknown as contentBlockParams;
-    favProject.links = true;
+for (let i = 0; i < list.length; i = i + 3) {
+	let row: contentListParams = {
+		title: "Row_" + i,
+		displayTitle: false,
+		displayImages: true,
+		entries: [],
+	};
 
-    const featProjectNum = Math.floor(Math.random()*list.length);
-    featProject = list[featProjectNum] as unknown as contentBlockParams;
-    featProject.links = true;
+	for (let j = 0; j < 3; j++) {
+		if (i + j >= list.length) {
+			row.entries.push({
+				title: "Empty",
+				description: "An empty entry. There's not much more to it.",
+				image: "/images/comingSoonLogo.svg",
+				link: "#",
+				target: "_self",
+			});
+		} else {
+			const project = list[i + j];
+			row.entries.push({
+				title: project.title,
+				description: project.shortDesc,
+				image: project.image,
+				link: "/projects/" + project.share,
+				target: "_self",
+			});
+		}
+	}
 
-
-    for(let i = 0; i < list.length; i = i + 3){
-        let row:contentListParams = {
-            title: "",
-            displayTitle: false,
-            displayImages: true,
-            entries: []
-        };
-
-        for(let j = 0; j < 3; j++){
-            if((i + j) >= list.length){
-                row.entries.push({
-                    title: "Empty",
-                    description: "An empty entry. There's not much more to it.",
-                    image: "/images/comingSoonLogo.svg",
-                    link: "#",
-                    target: "_self",
-                });
-            } else{
-                const project = list[i + j];
-                row.entries.push({
-                    title: project.title,
-                    description: project.shortDesc,
-                    image: project.image,
-                    link: "/projects/" + project.share,
-                    target: "_self"
-                });
-            }
-        }
-
-        projectsList.push(row);
-    }
+	projectsList.push(row);
+}
 </script>
 
 <template>
-<main>
-    <div id="favProject">
-        <h2>My Favorite Project</h2>
-        <contentBlock :params="favProject"/>
-    </div>
+	<div>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			My Favorite Project
+		</h2>
+		<contentBlock :params="favProject" />
+	</div>
 
-    <hr>
+	<hr />
 
-    <div id="featuredProject">
-        <h2>Featured Project</h2>
-        <contentBlock :params="featProject"/>
-    </div>
+	<div>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			Random Project
+		</h2>
+		<contentBlock :params="featProject" />
+	</div>
 
-    <hr>
+	<hr />
 
-    
-    <div id="projectsList">
-        <h2>Project List</h2>
-        <li v-for="item in projectsList">
-            <contentList :params="item"/>
-        </li>
-    </div>
+	<div>
+		<h2 class="text-center underline text-3xl font-bold mb-4">
+			Project List
+		</h2>
+		<ul>
+			<contentList
+				:params="item"
+				v-for="item in projectsList"
+				:key="item.title"
+			/>
+		</ul>
+	</div>
 
-    <hr>
-    
-</main>    
+	<hr />
 </template>
-
-<style scoped>
-    h2{
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 15px;
-        text-decoration: underline;
-    }
-</style>

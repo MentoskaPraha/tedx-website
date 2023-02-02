@@ -23,7 +23,6 @@
 	<style>
 		#screenSizeError{
     		display: none;
-    		text-align: center;
   		}
 
   		@media screen and (max-width: 319px){
@@ -31,28 +30,20 @@
       			display: block;
     		}
 
-    		header{
-      			display: none;
-   			}
-
-    		main{
-      			display: none;
-    		}
-
-    		footer{
-      			display: none;
-    		}
+    		#app{
+				display: none;
+			}
   		}
 	</style>
 </head>
 
-<body>
+<body class="font-sans m-0 p-0 bg-gray-900 text-white">
 	<script type="module" src="/src/main.ts"></script>
 	<div id="app"></div>
     
-	<div id="screenSizeError">
-		<h1>Your Screen is too Small</h1>
-		<p>
+	<div id="screenSizeError" class="bg-gray-700 text-slate-50 m-3 p-1 text-center rounded-lg">
+		<h1 class="mb-1 underline text-2xl">Your Screen is too Small!</h1>
+		<p class="text-sm">
 			Your screen is too small to display this website.
 			Please come back on a device with a width of at least 320px.
 		</p>

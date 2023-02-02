@@ -9,7 +9,6 @@ Deployment instructions will not be provided because lazy.
 This website is copyrighted under the GNU General Public License V3 and was made by MentoskaPraha using VSCode, Github and Firebase. Image sources and credits can be found below.
 
 ### Image Source List
-The images listed here are static and will only change during a website update. The rest of the images on the website are dianamic can be changed by updating them in the storage bucket on Firebase.
 - favicon.ico
     - Custom made by Gljue
 - siteLogo.svg
@@ -17,8 +16,6 @@ The images listed here are static and will only change during a website update. 
 - aboutMeLogo.png
     - Custom made by Gljue
 - projectLogo.png
-    - Custom made by Gljue
-- blogLogo.png
     - Custom made by Gljue
 - banner.png
     - Screenshot from Elite Dangerous by MentoskaPraha
