@@ -34,6 +34,4 @@ import { mainPages } from "../assets/content.json";
 			</li>
 		</ul>
 	</div>
-
-	<hr />
 </template>

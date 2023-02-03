@@ -106,6 +106,4 @@ for (let i = 0; i < list.length; i = i + 3) {
 			</div>
 		</ul>
 	</div>
-
-	<hr />
 </template>

@@ -89,6 +89,4 @@ for (let i = 0; i < list.length; i = i + 3) {
 	<hr />
 
 	<contentList :params="socialMedia" />
-
-	<hr />
 </template>

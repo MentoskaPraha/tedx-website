@@ -37,7 +37,7 @@ function copyLink() {
 			<h3 class="text-center text-2xl font-bold underline">
 				{{ params.title }}
 			</h3>
-			<p>{{ params.description }}</p>
+			<p class="text-justify">{{ params.description }}</p>
 
 			<ul class="m-3 text-center" v-if="params.links">
 				<li class="inline-block relative rounded-full mx-2">
@@ -63,6 +63,7 @@ function copyLink() {
 				>
 					<a
 						:href="params.git"
+						target="_blank"
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span
@@ -83,6 +84,7 @@ function copyLink() {
 				>
 					<a
 						:href="params.external"
+						target="_blank"
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span

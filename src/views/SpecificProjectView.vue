@@ -48,6 +48,4 @@ if (project == undefined) {
 			class="bg-white mx-auto w-3/4 md:w-1/2"
 		/>
 	</div>
-
-	<hr />
 </template>

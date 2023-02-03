@@ -20,6 +20,4 @@ XHR.send();
 		alt="Random cat picture."
 		class="bg-white mx-auto w-3/4 md:w-1/2"
 	/>
-
-	<hr />
 </template>
