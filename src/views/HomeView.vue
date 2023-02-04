@@ -5,7 +5,9 @@
 
 <template>
 	<div>
-		<h2 class="text-center text-3xl underline mb-4">Main Pages</h2>
+		<h2 class="text-center text-3xl underline mb-4 font-bold">
+			Main Pages
+		</h2>
 
 		<ul class="mx-4 lg:text-center">
 			<li

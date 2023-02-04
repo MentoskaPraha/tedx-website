@@ -14,7 +14,7 @@
 <template>
 	<div>
 		<h3
-			class="text-center text-3xl underline mb-4"
+			class="text-center text-3xl underline mb-4 font-bold"
 			v-if="params.displayTitle"
 		>
 			{{ params.title }}
