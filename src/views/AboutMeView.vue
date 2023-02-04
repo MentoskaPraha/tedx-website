@@ -1,45 +1,45 @@
 <script lang="ts" setup>
-import contentList from "../components/contentList.vue";
-import type { contentListParams } from "../types";
-import { aboutMe } from "../assets/content.json";
+	import contentList from "../components/contentList.vue";
+	import type { contentListParams } from "../types";
+	import { aboutMe } from "../assets/content.json";
 
-let basicInfo = aboutMe.basicInfo;
-let socialMedia = aboutMe.socialMedia as contentListParams;
-const techList: contentListParams[] = [];
-const list = aboutMe.tech;
+	let basicInfo = aboutMe.basicInfo;
+	let socialMedia = aboutMe.socialMedia as contentListParams;
+	const techList: contentListParams[] = [];
+	const list = aboutMe.tech;
 
-for (let i = 0; i < list.length; i = i + 3) {
-	let row: contentListParams = {
-		title: "Row_" + i,
-		displayTitle: false,
-		displayImages: false,
-		entries: [],
-	};
+	for (let i = 0; i < list.length; i = i + 3) {
+		let row: contentListParams = {
+			title: "Row_" + i,
+			displayTitle: false,
+			displayImages: false,
+			entries: [],
+		};
 
-	for (let j = 0; j < 3; j++) {
-		if (i + j >= list.length) {
-			row.entries.push({
-				title: "Empty",
-				description:
-					"An empty entry. This entry will be filled once I start using more things. It's also here so the rows look complete.",
-				image: "",
-				link: "#",
-				target: "_self",
-			});
-		} else {
-			const tech = list[i + j];
-			row.entries.push({
-				title: tech.title,
-				description: tech.description,
-				image: "",
-				link: tech.link,
-				target: "_blank",
-			});
+		for (let j = 0; j < 3; j++) {
+			if (i + j >= list.length) {
+				row.entries.push({
+					title: "Empty",
+					description:
+						"An empty entry. This entry will be filled once I start using more things. It's also here so the rows look complete.",
+					image: "",
+					link: "#",
+					target: "_self",
+				});
+			} else {
+				const tech = list[i + j];
+				row.entries.push({
+					title: tech.title,
+					description: tech.description,
+					image: "",
+					link: tech.link,
+					target: "_blank",
+				});
+			}
 		}
-	}
 
-	techList.push(row);
-}
+		techList.push(row);
+	}
 </script>
 
 <template>

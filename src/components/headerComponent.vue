@@ -1,67 +1,67 @@
 <script lang="ts" setup>
-import { onMounted, reactive, ref, watch } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import type { headerParams } from "../types";
-import { pageDesc, navLinks } from "../assets/content.json";
+	import { onMounted, reactive, ref, watch } from "vue";
+	import { RouterLink, useRouter } from "vue-router";
+	import type { headerParams } from "../types";
+	import { pageDesc, navLinks } from "../assets/content.json";
 
-let params = reactive({
-	title: "Error",
-	description: "Something went wrong wrong. Error code unavailable.",
-	image: "/images/siteLogo.svg",
-});
+	let params = reactive({
+		title: "Error",
+		description: "Something went wrong wrong. Error code unavailable.",
+		image: "/images/siteLogo.svg",
+	});
 
-const route = ref(useRouter().currentRoute);
+	const route = ref(useRouter().currentRoute);
 
-watch(route, updateHeader);
-onMounted(updateHeader);
+	watch(route, updateHeader);
+	onMounted(updateHeader);
 
-function updateHeader() {
-	const location = route.value.fullPath;
+	function updateHeader() {
+		const location = route.value.fullPath;
 
-	let page: headerParams = pageDesc.find(
-		(element) => element.location == location
-	) as headerParams;
-	if (page == undefined && location.includes("/projects/")) {
-		page = pageDesc.find(
-			(element) => element.location == "projects-view"
+		let page: headerParams = pageDesc.find(
+			(element) => element.location == location
 		) as headerParams;
+		if (page == undefined && location.includes("/projects/")) {
+			page = pageDesc.find(
+				(element) => element.location == "projects-view"
+			) as headerParams;
+		}
+
+		params.title = page.title;
+		params.description = page.description;
+		params.image = page.image;
+
+		if (menuState.show) {
+			menuState.showBG = false;
+			setTimeout(() => {
+				menuState.show = false;
+			}, 100);
+			menuState.buttonText = "☰";
+		}
 	}
 
-	params.title = page.title;
-	params.description = page.description;
-	params.image = page.image;
+	//functions for menu toggle
+	let menuState = reactive({
+		show: false,
+		showBG: false,
+		buttonText: "☰",
+	});
 
-	if (menuState.show) {
-		menuState.showBG = false;
-		setTimeout(() => {
-			menuState.show = false;
-		}, 100);
-		menuState.buttonText = "☰";
+	function toggleMenu() {
+		if (!menuState.show) {
+			menuState.show = true;
+			setTimeout(() => {
+				menuState.showBG = true;
+			}, 300);
+			menuState.buttonText = "×";
+		} else {
+			menuState.showBG = false;
+			setTimeout(() => {
+				menuState.show = false;
+			}, 100);
+			menuState.buttonText = "☰";
+		}
 	}
-}
-
-//functions for menu toggle
-let menuState = reactive({
-	show: false,
-	showBG: false,
-	buttonText: "☰",
-});
-
-function toggleMenu() {
-	if (!menuState.show) {
-		menuState.show = true;
-		setTimeout(() => {
-			menuState.showBG = true;
-		}, 300);
-		menuState.buttonText = "×";
-	} else {
-		menuState.showBG = false;
-		setTimeout(() => {
-			menuState.show = false;
-		}, 100);
-		menuState.buttonText = "☰";
-	}
-}
 </script>
 
 <template>
@@ -144,24 +144,24 @@ function toggleMenu() {
 </template>
 
 <style scoped>
-.navBar-enter-active,
-.navBar-leave-active {
-	transition: all 0.3s ease-out;
-}
+	.navBar-enter-active,
+	.navBar-leave-active {
+		transition: all 0.3s ease-out;
+	}
 
-.navBar-enter-from,
-.navBar-leave-to {
-	transform: translateY(-56px);
-	opacity: 0;
-}
+	.navBar-enter-from,
+	.navBar-leave-to {
+		transform: translateY(-56px);
+		opacity: 0;
+	}
 
-.navFocuser-enter-active,
-.navFocuser-leave-active {
-	transition: all 0.1s ease-out;
-}
+	.navFocuser-enter-active,
+	.navFocuser-leave-active {
+		transition: all 0.1s ease-out;
+	}
 
-.navFocuser-enter-from,
-.navFocuser-leave-to {
-	opacity: 0;
-}
+	.navFocuser-enter-from,
+	.navFocuser-leave-to {
+		opacity: 0;
+	}
 </style>

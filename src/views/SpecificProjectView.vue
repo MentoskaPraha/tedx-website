@@ -1,34 +1,34 @@
 <script lang="ts" setup>
-import { computed, ref } from "vue";
-import { useRoute } from "vue-router";
-import contentBlock from "../components/contentBlock.vue";
-import type { contentBlockParams } from "../types";
-import content from "../assets/content.json";
+	import { computed, ref } from "vue";
+	import { useRoute } from "vue-router";
+	import contentBlock from "../components/contentBlock.vue";
+	import type { contentBlockParams } from "../types";
+	import content from "../assets/content.json";
 
-const route = useRoute();
-const projectId = computed(() => route.params.project as string);
-let notFound = false;
-let image = ref("/images/comingSoonLogo.svg");
+	const route = useRoute();
+	const projectId = computed(() => route.params.project as string);
+	let notFound = false;
+	let image = ref("/images/comingSoonLogo.svg");
 
-const list = content.projects;
-let project = list.find(
-	(element) => element.share == projectId.value
-) as unknown as contentBlockParams;
+	const list = content.projects;
+	let project = list.find(
+		(element) => element.share == projectId.value
+	) as unknown as contentBlockParams;
 
-if (project == undefined) {
-	notFound = true;
-	let XHR = new XMLHttpRequest();
+	if (project == undefined) {
+		notFound = true;
+		let XHR = new XMLHttpRequest();
 
-	XHR.onreadystatechange = function () {
-		if (XHR.readyState == 4 && XHR.status == 200) {
-			image.value = JSON.parse(XHR.responseText).file;
-		}
-	};
-	XHR.open("GET", "https://aws.random.cat/meow");
-	XHR.send();
-} else {
-	project.links = true;
-}
+		XHR.onreadystatechange = function () {
+			if (XHR.readyState == 4 && XHR.status == 200) {
+				image.value = JSON.parse(XHR.responseText).file;
+			}
+		};
+		XHR.open("GET", "https://aws.random.cat/meow");
+		XHR.send();
+	} else {
+		project.links = true;
+	}
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { RouterLink } from "vue-router";
-import { mainPages } from "../assets/content.json";
+	import { RouterLink } from "vue-router";
+	import { mainPages } from "../assets/content.json";
 </script>
 
 <template>

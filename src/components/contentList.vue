@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { reactive } from "vue";
-import type { contentListParams } from "../types";
+	import { reactive } from "vue";
+	import type { contentListParams } from "../types";
 
-const props = defineProps(["params"]);
-const params = reactive({
-	title: props.params.title,
-	displayTitle: props.params.displayTitle,
-	displayImages: props.params.displayImages,
-	entries: props.params.entries,
-}) as contentListParams;
+	const props = defineProps(["params"]);
+	const params = reactive({
+		title: props.params.title,
+		displayTitle: props.params.displayTitle,
+		displayImages: props.params.displayImages,
+		entries: props.params.entries
+	}) as contentListParams;
 </script>
 
 <template>

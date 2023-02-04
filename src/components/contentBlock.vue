@@ -1,27 +1,28 @@
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
-import type { contentBlockParams } from "../types";
+	import { reactive, ref } from "vue";
+	import type { contentBlockParams } from "../types";
 
-const props = defineProps(["params"]);
-const params = reactive({
-	title: props.params.title,
-	description: props.params.description,
-	image: props.params.image,
-	links: props.params.links,
-	share: props.params.share,
-	git: props.params.git,
-	external: props.params.external,
-}) as contentBlockParams;
+	const props = defineProps(["params"]);
+	const params = reactive({
+		title: props.params.title,
+		description: props.params.description,
+		image: props.params.image,
+		links: props.params.links,
+		share: props.params.share,
+		git: props.params.git,
+		external: props.params.external
+	}) as contentBlockParams;
 
-let toolTip = ref("Copy link to this project.");
+	//copy link tooltip
+	let toolTipText = ref("Copy link to this project.");
 
-function copyLink() {
-	const link = window.location.origin + "/projects/" + params.share;
+	function copyLink() {
+		const link = window.location.origin + "/projects/" + params.share;
 
-	navigator.clipboard.writeText(link);
-	toolTip.value = "Copied!";
-	setTimeout(() => (toolTip.value = "Copy link to this project."), 600);
-}
+		navigator.clipboard.writeText(link);
+		toolTipText.value = "Copied!";
+		setTimeout(() => (toolTipText.value = "Copy link to this project."), 600);
+	}
 </script>
 
 <template>
@@ -46,8 +47,8 @@ function copyLink() {
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span
-							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg"
-							>{{ toolTip }}</span
+							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
+							>{{ toolTipText }}</span
 						>
 						<img
 							class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full"
@@ -67,7 +68,7 @@ function copyLink() {
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span
-							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg"
+							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
 							>Link to the project's Github page.</span
 						>
 						<img
@@ -88,7 +89,7 @@ function copyLink() {
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span
-							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg"
+							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
 							>Link to the project's external website.</span
 						>
 						<img
@@ -104,27 +105,18 @@ function copyLink() {
 </template>
 
 <style scoped>
-.toolTipText {
-	visibility: hidden;
-	opacity: 0;
-	transition-property: opacity;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-}
+	.toolTipText {
+		visibility: hidden;
+		opacity: 0;
+	}
 
-.toolTip .toolTipText::after {
-	content: " ";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: black transparent transparent transparent;
-}
+	.toolTipText::after {
+		content: " ";
+		border-color: black transparent transparent transparent;
+	}
 
-.toolTip:hover .toolTipText {
-	visibility: visible;
-	opacity: 1;
-}
+	.toolTip:hover .toolTipText {
+		visibility: visible;
+		opacity: 1;
+	}
 </style>
