@@ -35,7 +35,7 @@
 			menuState.showBG = false;
 			setTimeout(() => {
 				menuState.show = false;
-			}, 100);
+			}, 200);
 			menuState.buttonText = "☰";
 		}
 	}
@@ -157,7 +157,7 @@
 
 	.navFocuser-enter-active,
 	.navFocuser-leave-active {
-		transition: all 0.1s ease-out;
+		transition: all 0.2s ease-out;
 	}
 
 	.navFocuser-enter-from,
