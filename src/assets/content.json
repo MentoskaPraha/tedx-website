@@ -76,7 +76,7 @@
             "title": "Coming Soon!",
             "description": "This feature isn't finished yet! Please come back later!",
             "image": "/images/comingSoonLogo.svg",
-            "link": ""
+            "link": "none"
         }
     ],
 
@@ -150,11 +150,9 @@
 
     "aboutMe": {
         "basicInfo": {
-            "image": "/images/siteLogo.svg",
-            "name": "MentoskaPraha",
-            "timezone": "GMT+2/GMT+3",
-            "languages": "English, French and Czech",
-            "description": "I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves or Satisfactory."
+            "title": "Basic Info",
+            "description": "<strong>My name is:</strong> MentoskaPraha<br /><strong>I speak:</strong> English, French and Czech<br /><strong>My time zone is:</strong>GMT+2<br /><br /><p class='text-center'><strong>A little bit more about me: </strong><br /></p><p class='text-justify'>I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves or Satisfactory.</p>",
+            "image": "/images/siteLogo.svg"
         },
         "socialMedia": {
             "title": "Social Media",
@@ -179,7 +177,7 @@
                     "title": "Coming Soon!",
                     "description": "This social media account is still in the works.",
                     "image": "/images/comingSoonLogo.svg",
-                    "link": "",
+                    "link": "none",
                     "target": "_self"
                 }
             ]

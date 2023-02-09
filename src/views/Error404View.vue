@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 	import { ref } from "vue";
 
-	let image = ref("/images/comingSoonLogo.svg");
+	const image = ref("/images/comingSoonLogo.svg");
 
-	let XHR = new XMLHttpRequest();
+	const XHR = new XMLHttpRequest();
 
 	XHR.onreadystatechange = function () {
 		if (XHR.readyState == 4 && XHR.status == 200) {

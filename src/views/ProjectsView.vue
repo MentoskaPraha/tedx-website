@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 	import contentBlock from "../components/contentBlock.vue";
-	import { RouterLink } from "vue-router";
+	import contentList from "../components/contentList.vue";
 	import type { contentBlockParams, contentListParams } from "../types";
 	import content from "../assets/content.json";
 
 	let favProject: contentBlockParams;
 	let featProject: contentBlockParams;
-	let projectsList: contentListParams[] = [];
+	const projectsList: contentListParams[] = [];
 	const list = content.projects;
 
 	favProject = list.find(
@@ -32,7 +32,7 @@
 					title: "Empty",
 					description: "An empty entry. There's not much more to it.",
 					image: "/images/comingSoonLogo.svg",
-					link: "#",
+					link: "none",
 					target: "_self",
 				});
 			} else {
@@ -41,7 +41,7 @@
 					title: project.title,
 					description: project.shortDesc,
 					image: project.image,
-					link: "/projects/" + project.share,
+					link: (project.share == "none") ? "none" : "/projects/" + project.share,
 					target: "_self",
 				});
 			}
@@ -75,35 +75,12 @@
 			Project List
 		</h2>
 		<ul>
-			<div v-for="item in projectsList" :key="item.title">
-				<ul class="mx-4 lg:text-center">
-					<li
-						class="my-4 lg:my-0 lg:inline-block lg:mx-4"
-						v-for="entry in item.entries"
-						:key="entry.title"
-					>
-						<RouterLink
-							class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity"
-							:to="entry.link"
-						>
-							<img
-								class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-								v-if="item.displayImages"
-								:src="entry.image"
-								alt="An image representing this entry."
-							/>
-							<section
-								class="p-2 border-neutral-700 border-solid border-4 bg-black text-center"
-							>
-								<h4 class="mb-1 text-xl font-bold">
-									{{ entry.title }}
-								</h4>
-								<p>{{ entry.description }}</p>
-							</section>
-						</RouterLink>
-					</li>
-				</ul>
-			</div>
+			<contentList
+				v-for="item in projectsList"
+				:key="item.title"
+				:params="item"
+				class="my-4"
+			/>
 		</ul>
 	</div>
 </template>

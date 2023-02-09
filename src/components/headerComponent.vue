@@ -4,7 +4,7 @@
 	import type { headerParams } from "../types";
 	import { pageDesc, navLinks } from "../assets/content.json";
 
-	let params = reactive({
+	const params = reactive({
 		title: "Error",
 		description: "Something went wrong wrong. Error code unavailable.",
 		image: "/images/siteLogo.svg",

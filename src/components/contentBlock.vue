@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { reactive, ref } from "vue";
+	import { reactive, ref, watch } from "vue";
 	import type { contentBlockParams } from "../types";
 
 	const props = defineProps(["params"]);
@@ -13,8 +13,19 @@
 		external: props.params.external
 	}) as contentBlockParams;
 
+	//update props
+	watch(props, () => {
+		params.title = props.params.title;
+		params.description = props.params.description;
+		params.image = props.params.image;
+		params.links = props.params.links;
+		params.share = props.params.share;
+		params.git = props.params.git;
+		params.external = props.params.external
+	});
+
 	//copy link tooltip
-	let toolTipText = ref("Copy link to this project.");
+	const toolTipText = ref("Copy link to this project.");
 
 	function copyLink() {
 		const link = window.location.origin + "/projects/" + params.share;
@@ -23,6 +34,8 @@
 		toolTipText.value = "Copied!";
 		setTimeout(() => (toolTipText.value = "Copy link to this project."), 600);
 	}
+
+	console.log(params);
 </script>
 
 <template>
@@ -38,7 +51,7 @@
 			<h3 class="text-center text-2xl font-bold underline">
 				{{ params.title }}
 			</h3>
-			<p class="text-justify">{{ params.description }}</p>
+			<p class="text-justify" v-html="params.description"></p>
 
 			<ul class="m-3 text-center" v-if="params.links">
 				<li class="inline-block relative rounded-full mx-2">

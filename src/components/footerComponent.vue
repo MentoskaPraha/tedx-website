@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 	import content from "../assets/content.json";
 
-	let list = content.quotes;
+	const list = content.quotes;
 
 	const quoteNum = Math.floor(Math.random() * list.length);
 	const quote = list[quoteNum];

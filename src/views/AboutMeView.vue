@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+	import contentBlock from "../components/contentBlock.vue";
 	import contentList from "../components/contentList.vue";
 	import type { contentListParams } from "../types";
 	import { aboutMe } from "../assets/content.json";
 
-	let basicInfo = aboutMe.basicInfo;
-	let socialMedia = aboutMe.socialMedia as contentListParams;
+	const basicInfo = aboutMe.basicInfo;
+	const socialMedia = aboutMe.socialMedia as contentListParams;
 	const techList: contentListParams[] = [];
 	const list = aboutMe.tech;
 
@@ -23,7 +24,7 @@
 					description:
 						"An empty entry. This entry will be filled once I start using more things. It's also here so the rows look complete.",
 					image: "",
-					link: "#",
+					link: "none",
 					target: "_self",
 				});
 			} else {
@@ -43,32 +44,7 @@
 </script>
 
 <template>
-	<div
-		class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
-	>
-		<img
-			:src="basicInfo.image"
-			alt="Content Block image."
-			class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
-		/>
-		<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
-			<h2 class="text-center text-2xl font-bold underline">
-				Basic Information
-			</h2>
-
-			<p>
-				<strong>My name is: </strong> {{ basicInfo.name }} <br />
-				<strong>I speak: </strong> {{ basicInfo.languages }} <br />
-				<strong>My time zone is: </strong> {{ basicInfo.timezone }}
-				<br />
-			</p>
-			<br />
-			<p class="text-center">
-				<strong>A little bit more about me: </strong><br />
-			</p>
-			<p class="text-justify">{{ basicInfo.description }}</p>
-		</section>
-	</div>
+	<contentBlock :params="basicInfo" />
 
 	<hr />
 
