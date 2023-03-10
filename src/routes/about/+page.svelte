@@ -56,6 +56,15 @@
 	console.log(techList);
 </script>
 
+<svelte:head>
+	<title>About | MP's Official Website</title>
+
+	<meta
+		name="description"
+		content="This is the about page of MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts and who he is."
+	/>
+</svelte:head>
+
 <ContentBlock params={about} />
 
 <hr />

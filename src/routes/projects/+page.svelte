@@ -55,6 +55,15 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projects | MP's Official Website</title>
+
+	<meta
+		name="description"
+		content="This is the projects page of MentoskaPraha's official website. Here you can view all the information about all of his projects."
+	/>
+</svelte:head>
+
 <div>
 	<h2 class="text-center underline text-3xl font-bold mb-4">
 		My Favorite Project

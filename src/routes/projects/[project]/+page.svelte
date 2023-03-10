@@ -49,6 +49,15 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{data.title} | MP's Official Website</title>
+
+	<meta
+		name="description"
+		content="This is one of MentoskaPraha's many projects. This one is {data.title}. {data.shortDesc}"
+	/>
+</svelte:head>
+
 <ContentBlock params={project} />
 
 <div>
