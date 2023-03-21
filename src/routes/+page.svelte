@@ -1,16 +1,40 @@
 <script lang="ts">
 	import ContentList from "$lib/components/ContentList.svelte";
-	import { mainPages } from "$lib/assets/content.json";
 	import type {
 		contentListEntry,
 		contentListParams
 	} from "$lib/assets/types";
 
+	const mainPages = [
+		{
+			title: "About Me",
+			description: "See who I am and what social media I have.",
+			image: "/images/aboutLogo.svg",
+			link: "/about",
+			target: "_self"
+		},
+		{
+			title: "Projects",
+			description: "See all the projects I've worked or working on.",
+			image: "/images/projectLogo.svg",
+			link: "/projects",
+			target: "_self"
+		},
+		{
+			title: "Coming Soon!",
+			description:
+				"This feature isn't finished yet! Please come back later!",
+			image: "/images/comingSoonLogo.svg",
+			link: "none",
+			target: "_self"
+		}
+	] as unknown as contentListEntry;
+
 	const listParams = {
 		title: "Aero Stinks.",
 		displayTitle: false,
 		displayImages: true,
-		entries: mainPages as unknown as contentListEntry
+		entries: mainPages
 	} as unknown as contentListParams;
 </script>
 

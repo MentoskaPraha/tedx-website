@@ -47,7 +47,7 @@
 						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 					>
 						<span
-							class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
+							class="toolTipText w-40 bg-white text-black absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
 							>{toolTipText}</span
 						>
 						<img
@@ -67,7 +67,7 @@
 							class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 						>
 							<span
-								class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
+								class="toolTipText w-40 bg-white text-black absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
 								>Link to the project's Github page.</span
 							>
 							<img
@@ -88,7 +88,7 @@
 							class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
 						>
 							<span
-								class="toolTipText w-40 bg-black text-white absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
+								class="toolTipText w-40 bg-white text-black absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
 								>Link to the project's external website.</span
 							>
 							<img
@@ -112,7 +112,7 @@
 
 	.toolTipText::after {
 		content: " ";
-		border-color: black transparent transparent transparent;
+		border-color: white transparent transparent transparent;
 	}
 
 	.toolTip:hover .toolTipText {
