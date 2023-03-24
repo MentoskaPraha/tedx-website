@@ -56,6 +56,8 @@
 	external={project.external}
 />
 
+<hr>
+
 <div>
 	<h2 class="text-center underline text-3xl font-bold mb-4">Project List</h2>
 	<ul>

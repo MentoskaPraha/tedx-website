@@ -1,11 +1,10 @@
 <script>
 	import "$lib/assets/styles.css";
-
 	import { fly, fade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
-	import { beforeNavigate } from "$app/navigation";
-
-	import { quotes } from "$lib/assets/content.json";
+	import { afterNavigate, beforeNavigate } from "$app/navigation";
+	import { quotes, siteInfo, legal } from "$lib/assets/content.json";
+	import { page } from "$app/stores";
 
 	const navLinks = [
 		{
@@ -22,10 +21,52 @@
 		}
 	];
 
-	beforeNavigate(toggleMenu);
+	//update navbar
+	let navbar = {
+		title: siteInfo.title,
+		image: "/images/siteLogo.svg"
+	};
+	
+	afterNavigate(() => {
+		switch($page.route.id){
+			default: {
+				navbar = {
+					title: siteInfo.title,
+					image: "/images/siteLogo.svg"
+				};
+
+				break;
+			}
+			case "/about": {
+				navbar = {
+					title: `About | ${siteInfo.title}`,
+					image: "/images/aboutLogo.svg"
+				};
+
+				break;
+			}
+			case "/projects": {
+				navbar = {
+					title: `Projects | ${siteInfo.title}`,
+					image: "/images/projectLogo.svg"
+				};
+
+				break;
+			}
+		}
+
+		if($page.route.id?.includes("/projects/")){
+			navbar = {
+				title: `Projects | ${siteInfo.title}`,
+				image: "/images/projectLogo.svg"
+			};
+		}
+	});
 
 	//functions for menu toggle
 	let menuState = false;
+
+	beforeNavigate(() => toggleMenu());
 
 	function toggleMenu() {
 		if (menuState) {
@@ -44,19 +85,19 @@
 			<ul class="flex place-items-center m-1">
 				<li class="inline">
 					<img
-						src="/images/siteLogo.svg"
+						src="{navbar.image}"
 						alt="Page logo."
 						class="bg-white w-8 h-8 mr-1 md:ml-2"
 					/>
 				</li>
 				<li class="inline">
-					<h1 class="text-xl font-bold text-black">
-						MP's Official Website
+					<h1 class="font-bold text-black text-sm sm:text-xl">
+						{navbar.title}
 					</h1>
 				</li>
 			</ul>
 
-			<div class="flex place-items-center ml-auto sm:mr-6">
+			<div class="flex place-items-center ml-auto mr-3 sm:mr-6">
 				<input
 					id="nav-toggle"
 					class="hidden"
@@ -124,15 +165,13 @@
 		<h1
 			class="py-20 text-center text-4xl font-bold md:text-5xl lg:text-6xl lg:py-30 xl:py-40"
 		>
-			MP's Official Website
+			{siteInfo.title}
 		</h1>
 	</div>
 
 	<hr />
 	<p class="mx-5 text-justify md:w-1/2 md:mx-auto xl:w-1/3 2xl:w-1/4">
-		Welcome to my website. Here you can see all the projects I've worked on,
-		some information about me, how to contact me and my blog in which I post
-		updates about my projects. Enjoy your stay!
+		{siteInfo.description}
 	</p>
 	<hr />
 </header>
@@ -155,20 +194,14 @@
 		<li class="grid auto-rows-auto gap-1 m-4">
 			<h2 class="text-center text-3xl font-bold">Privacy Policy</h2>
 			<p class="text-justify">
-				This website uses no cookie set by the creator. Your activity on
-				this page is not monitored or tracked by the creator. The
-				creator is not responsible for cookies managed by 3rd party
-				services, such as Firebase, Youtube or others.
+				{legal.privacy_policy}
 			</p>
 		</li>
 
 		<li class="grid auto-rows-auto gap-1 m-4">
 			<h2 class="text-center text-3xl font-bold">Copyright</h2>
 			<p class="text-justify">
-				This website was made by MentoskaPraha using VSCode, Github and
-				other tools. All static image sources can be found in the
-				README.md file on Github. This website is published under the
-				GNU General Public License V3.
+				{legal.copyright}
 			</p>
 		</li>
 	</ul>

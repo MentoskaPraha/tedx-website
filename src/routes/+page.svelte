@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { siteInfo } from "$lib/assets/content.json";
 	import ContentList from "$lib/components/ContentList.svelte";
 	import type {
-		contentListEntry,
-		contentListParams
+		contentListEntry
 	} from "$lib/assets/types";
 
 	const mainPages = [
@@ -28,27 +28,22 @@
 			link: "none",
 			target: "_self"
 		}
-	] as unknown as contentListEntry;
-
-	const listParams = {
-		title: "Aero Stinks.",
-		displayTitle: false,
-		displayImages: true,
-		entries: mainPages
-	} as unknown as contentListParams;
+	] as unknown as contentListEntry[];
 </script>
 
 <svelte:head>
-	<title>MP's Official Website</title>
+	<title>{siteInfo.title}</title>
 
 	<meta
 		name="description"
-		content="This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on."
+		content="{siteInfo.metaDescription}"
 	/>
 </svelte:head>
 
 <div>
 	<h2 class="text-center text-3xl underline mb-4 font-bold">Main Pages</h2>
 
-	<ContentList params={listParams} />
+	<ContentList displayTitle={false} entries={mainPages} />
 </div>
+
+<hr>
