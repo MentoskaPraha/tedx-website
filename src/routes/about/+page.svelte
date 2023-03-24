@@ -1,37 +1,18 @@
 <script lang="ts">
 	import ContentBlock from "$lib/components/ContentBlock.svelte";
 	import ContentList from "$lib/components/ContentList.svelte";
-	import { aboutMe } from "$lib/assets/content.json";
-	import type {
-		contentBlockParams,
-		contentListParams
-	} from "$lib/assets/types";
+	import { aboutMe, siteInfo } from "$lib/assets/content.json";
+	import type { contentListEntry } from "$lib/assets/types";
 
-	const about = {
-		title: aboutMe.basicInfo.title,
-		description: aboutMe.basicInfo.description,
-		image: aboutMe.basicInfo.image,
-		links: false,
-		share: "empty",
-		git: "empty",
-		external: "empty"
-	} as contentBlockParams;
-
-	const social = aboutMe.socialMedia as unknown as contentListParams;
-
-	const techList: contentListParams[] = [];
+	const socialMedia = aboutMe.socialMedia as unknown as contentListEntry[];
+	const techList: contentListEntry[][] = [];
 
 	for (let i = 0; i < aboutMe.tech.length; i = i + 3) {
-		let row: contentListParams = {
-			title: "Row_" + i,
-			displayTitle: false,
-			displayImages: false,
-			entries: []
-		};
+		let row: contentListEntry[] = [];
 
 		for (let j = 0; j < 3; j++) {
 			if (i + j >= aboutMe.tech.length) {
-				row.entries.push({
+				row.push({
 					title: "Empty",
 					description:
 						"An empty entry. This entry will be filled once I start using more things. It's also here so the rows look complete.",
@@ -41,7 +22,7 @@
 				});
 			} else {
 				const tech = aboutMe.tech[i + j];
-				row.entries.push({
+				row.push({
 					title: tech.title,
 					description: tech.description,
 					image: "",
@@ -52,20 +33,20 @@
 		}
 		techList.push(row);
 	}
-
-	console.log(techList);
 </script>
 
 <svelte:head>
-	<title>About | MP's Official Website</title>
+	<title>About | {siteInfo.title}</title>
 
-	<meta
-		name="description"
-		content="This is the about page of MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts and who he is."
-	/>
+	<meta name="description" content={siteInfo.about.metaDescription} />
 </svelte:head>
 
-<ContentBlock params={about} />
+<ContentBlock
+	title="About Me"
+	description={aboutMe.basicInfo.description}
+	image={aboutMe.basicInfo.image}
+	links={false}
+/>
 
 <hr />
 
@@ -76,7 +57,11 @@
 	<ul>
 		{#each techList as item}
 			<li class="my-4">
-				<ContentList params={item} />
+				<ContentList
+					displayTitle={false}
+					displayImages={false}
+					entries={item}
+				/>
 			</li>
 		{/each}
 	</ul>
@@ -84,4 +69,6 @@
 
 <hr />
 
-<ContentList params={social} />
+<ContentList title="Social Media" entries={socialMedia} />
+
+<hr />

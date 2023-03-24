@@ -7,7 +7,9 @@ export const csr = true;
 export const prerender = false;
 
 export const load = (({ params }) => {
-	const project = projects.find((element) => element.share == params.project);
+	const project = projects.list.find(
+		(element) => element.share == params.project
+	);
 
 	if (project == undefined) throw error(404, "Not Found");
 

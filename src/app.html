@@ -36,6 +36,10 @@
 		<meta name="theme-color" content="#ffffff" />
 
 		<style>
+			#app {
+				display: contents;
+			}
+
 			#screenSizeError {
 				display: none;
 			}
@@ -54,8 +58,8 @@
 		%sveltekit.head%
 	</head>
 
-	<body class="font-sans m-0 p-0 bg-gray-900 text-white">
-		<div id="app" style="display: contents">%sveltekit.body%</div>
+	<body class="font-sans m-0 p-0 bg-gray-900 text-white h-full">
+		<div id="app">%sveltekit.body%</div>
 
 		<div
 			id="screenSizeError"

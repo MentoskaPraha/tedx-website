@@ -1,22 +1,19 @@
 <script lang="ts" setup>
 	import { page } from "$app/stores";
-	import type { contentBlockParams } from "$lib/assets/types";
 
-	export let params = {
-		title: "",
-		description: "",
-		image: "",
-		links: true,
-		share: "",
-		git: "",
-		external: ""
-	} as contentBlockParams;
+	export let title = "";
+	export let description = "";
+	export let image = "";
+	export let links = true;
+	export let share = "none";
+	export let git = "none";
+	export let external = "none";
 
 	//copy link tooltip
 	let toolTipText = "Copy link to this project.";
 
 	function copyLink() {
-		const link = $page.url.origin + "/projects/" + params.share;
+		const link = $page.url.origin + "/projects/" + share;
 
 		navigator.clipboard.writeText(link);
 		toolTipText = "Copied!";
@@ -28,18 +25,18 @@
 	class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
 >
 	<img
-		src={params.image}
+		src={image}
 		alt="Represents the content displayed in this content block."
 		class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
 	/>
 	<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
 		<h3 class="text-center text-2xl font-bold underline">
-			{params.title}
+			{title}
 		</h3>
 		<p class="text-justify">
-			{@html params.description}
+			{@html description}
 		</p>
-		{#if params.links}
+		{#if links}
 			<ul class="m-3 text-center">
 				<li class="inline-block relative rounded-full mx-2">
 					<button
@@ -58,10 +55,10 @@
 					</button>
 				</li>
 
-				{#if params.git != "none"}
+				{#if git != "none"}
 					<li class="inline-block relative rounded-full mx-2">
 						<a
-							href={params.git}
+							href={git}
 							target="_blank"
 							rel="noreferrer"
 							class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
@@ -79,10 +76,10 @@
 					</li>
 				{/if}
 
-				{#if params.external != "none"}
+				{#if external != "none"}
 					<li class="inline-block relative rounded-full mx-2">
 						<a
-							href={params.external}
+							href={external}
 							target="_blank"
 							rel="noreferrer"
 							class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"

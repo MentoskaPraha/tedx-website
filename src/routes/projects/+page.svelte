@@ -1,36 +1,27 @@
 <script lang="ts">
 	import ContentBlock from "$lib/components/ContentBlock.svelte";
 	import ContentList from "$lib/components/ContentList.svelte";
-	import { projects } from "$lib/assets/content.json";
-	import type {
-		contentBlockParams,
-		contentListParams
-	} from "$lib/assets/types";
+	import { projects, siteInfo } from "$lib/assets/content.json";
+	import type { contentListEntry, projectObject } from "$lib/assets/types";
 
-	let favProject = projects.find(
-		(element) => element.share == "big-chungus-bot"
-	) as unknown as contentBlockParams;
-	favProject.links = true;
+	let favProject = projects.list.find(
+		(element) => element.share == projects.favProject
+	) as projectObject;
 
-	let featProject = projects.find(
+	let featProject = projects.list.find(
 		(element) => element.share == "mp-website"
-	) as unknown as contentBlockParams;
-	////featProject = projects[(Math.floor(Math.random() * projects.length))] as unknown as contentBlockParams;
-	featProject.links = true;
+	) as projectObject;
+	featProject =
+		projects.list[Math.floor(Math.random() * projects.list.length)];
 
-	let projectsList: contentListParams[] = [];
+	let projectsList: contentListEntry[][] = [];
 
-	for (let i = 0; i < projects.length; i = i + 3) {
-		let row: contentListParams = {
-			title: "Row_" + i,
-			displayTitle: false,
-			displayImages: true,
-			entries: []
-		};
+	for (let i = 0; i < projects.list.length; i = i + 3) {
+		let row: contentListEntry[] = [];
 
 		for (let j = 0; j < 3; j++) {
-			if (i + j >= projects.length) {
-				row.entries.push({
+			if (i + j >= projects.list.length) {
+				row.push({
 					title: "Empty",
 					description: "An empty entry. There's not much more to it.",
 					image: "/images/comingSoonLogo.svg",
@@ -38,10 +29,10 @@
 					target: "_self"
 				});
 			} else {
-				const project = projects[i + j];
-				row.entries.push({
+				const project = projects.list[i + j];
+				row.push({
 					title: project.title,
-					description: project.shortDesc,
+					description: "Placeholder description, for now.",
 					image: project.image,
 					link:
 						project.share == "none"
@@ -56,19 +47,24 @@
 </script>
 
 <svelte:head>
-	<title>Projects | MP's Official Website</title>
+	<title>Projects | {siteInfo.title}</title>
 
-	<meta
-		name="description"
-		content="This is the projects page of MentoskaPraha's official website. Here you can view all the information about all of his projects."
-	/>
+	<meta name="description" content={siteInfo.projects.metaDescription} />
 </svelte:head>
 
 <div>
 	<h2 class="text-center underline text-3xl font-bold mb-4">
 		My Favorite Project
 	</h2>
-	<ContentBlock params={favProject} />
+	<ContentBlock
+		title={favProject.title}
+		description={favProject.description}
+		image={favProject.image}
+		links={true}
+		share={favProject.share}
+		git={favProject.git}
+		external={favProject.external}
+	/>
 </div>
 
 <hr />
@@ -77,7 +73,15 @@
 	<h2 class="text-center underline text-3xl font-bold mb-4">
 		Random Project
 	</h2>
-	<ContentBlock params={featProject} />
+	<ContentBlock
+		title={featProject.title}
+		description={featProject.description}
+		image={featProject.image}
+		links={true}
+		share={featProject.share}
+		git={featProject.git}
+		external={featProject.external}
+	/>
 </div>
 
 <hr />
@@ -87,7 +91,7 @@
 	<ul>
 		{#each projectsList as item}
 			<li class="my-4">
-				<ContentList params={item} />
+				<ContentList entries={item} displayTitle={false} />
 			</li>
 		{/each}
 	</ul>
