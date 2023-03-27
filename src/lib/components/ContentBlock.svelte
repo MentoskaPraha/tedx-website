@@ -1,24 +1,10 @@
 <script lang="ts" setup>
-	import { page } from "$app/stores";
-
 	export let title = "";
 	export let description = "";
 	export let image = "";
 	export let links = true;
-	export let share = "none";
 	export let git = "none";
 	export let external = "none";
-
-	//copy link tooltip
-	let toolTipText = "Copy link to this project.";
-
-	function copyLink() {
-		const link = $page.url.origin + "/projects/" + share;
-
-		navigator.clipboard.writeText(link);
-		toolTipText = "Copied!";
-		setTimeout(() => (toolTipText = "Copy link to this project."), 600);
-	}
 </script>
 
 <div
@@ -38,23 +24,6 @@
 		</p>
 		{#if links}
 			<ul class="m-3 text-center">
-				<li class="inline-block relative rounded-full mx-2">
-					<button
-						on:click={copyLink}
-						class="toolTip hover:cursor-pointer inline-block rounded-full bg-black"
-					>
-						<span
-							class="toolTipText w-40 bg-white text-black absolute bottom-full left-1/2 -ml-20 mb-3 rounded-lg transition-opacity after:absolute after:top-full after:left-1/2 after:border-solid after:border-8 after:-ml-2"
-							>{toolTipText}</span
-						>
-						<img
-							class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full"
-							src="/images/shareLink.svg"
-							alt="Copy link icon."
-						/>
-					</button>
-				</li>
-
 				{#if git != "none"}
 					<li class="inline-block relative rounded-full mx-2">
 						<a
@@ -69,7 +38,7 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="/images/github-mark.svg"
+								src="/images/logos/github-mark.svg"
 								alt="Copy link icon."
 							/>
 						</a>

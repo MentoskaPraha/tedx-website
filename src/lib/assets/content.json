@@ -2,13 +2,7 @@
 	"siteInfo": {
 		"title": "MP's Official Website",
 		"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me and how to contact me. Enjoy your stay!",
-		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on.",
-		"about": {
-			"metaDescription": "This is the about page of MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts and who he is."
-		},
-		"projects": {
-			"metaDescription": "This is the projects page of MentoskaPraha's official website. Here you can view all the information about all of his projects."
-		}
+		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on."
 	},
 
 	"aboutMe": {
@@ -20,14 +14,14 @@
 			{
 				"title": "Github",
 				"description": "My Github page. Here you can see all my repos.",
-				"image": "/images/github-mark.svg",
+				"image": "/images/logos/github-mark.svg",
 				"link": "https://github.com/MentoskaPraha",
 				"target": "_blank"
 			},
 			{
 				"title": "Discord",
 				"description": "If you want to contact me via Discord, join this server.",
-				"image": "/images/discord-mark-blue.svg",
+				"image": "/images/logos/discord-mark-blue.svg",
 				"link": "https://discord.gg/QKSDMaYg5R",
 				"target": "_blank"
 			},
@@ -87,18 +81,18 @@
 		"favProject": "big-chungus-bot",
 		"list": [
 			{
+				"id": "mp-website",
 				"title": "MP's Website",
 				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Vue.js for the client and is deployed using Firebase, which is a free world wide developer platform by Google.",
 				"image": "/images/siteLogo.svg",
-				"share": "mp-website",
 				"git": "https://github.com/MentoskaPraha/MP-Website",
 				"external": "none"
 			},
 			{
+				"id": "big-chungus-bot",
 				"title": "Big Chungus Bot",
 				"description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
 				"image": "/images/projects/big-chungus-image.webp",
-				"share": "big-chungus-bot",
 				"git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
 				"external": "none"
 			}

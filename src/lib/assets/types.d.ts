@@ -1,8 +1,8 @@
 export interface projectObject {
+	id: string;
 	title: string;
 	description: string;
 	image: string;
-	share: string;
 	git: string;
 	external: string;
 }
