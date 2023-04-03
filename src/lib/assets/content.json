@@ -1,81 +1,109 @@
 {
-	"pageDesc": [
-		{
-			"location": "/",
-			"title": "MP's Official Website",
-			"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me, how to contact me and my blog in which I post updates about my projects. Enjoy your stay!",
+	"siteInfo": {
+		"title": "MP's Official Website",
+		"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me and how to contact me. Enjoy your stay!",
+		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on.",
+		"keywords": "programmer personal portfolio",
+		"author": "MentoskaPraha"
+	},
+
+	"aboutMe": {
+		"basicInfo": {
+			"description": "<strong>My name is:</strong> MentoskaPraha<br /><strong>I speak:</strong> English, French and Czech<br /><strong>My time zone is:</strong> GMT+2<br /><br /><p class='text-center'><strong>A little bit more about me: </strong><br /></p><p class='text-justify'>I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play game Sea of Thieves or Minecraft.</p>",
 			"image": "/images/siteLogo.svg"
 		},
-		{
-			"location": "/about",
-			"title": "About Me",
-			"description": "Here you can see all the information about me and my contact information. I chose not to share my real name, also please don't stalk me.",
-			"image": "/images/aboutMeLogo.svg"
-		},
-		{
-			"location": "/projects",
-			"title": "Projects",
-			"description": "Here you can see all the projects I've worked on including my favourite one. I know you're not supposed to have a favorite child, but...",
-			"image": "/images/projectLogo.svg"
-		},
-		{
-			"location": "projects-view",
-			"title": "Specific Project View",
-			"description": "Here you can see a specific project and only that project. It's made so you can easily share my creations with others or admire them in detail, which is better done on Github.",
-			"image": "/images/projectLogo.svg"
-		},
-		{
-			"location": "/blog",
-			"title": "Coming Soon!",
-			"description": "The blog feature is not yet finished.",
-			"image": "/images/comingSoonLogo.svg"
-		},
-		{
-			"location": "error",
-			"title": "Error",
-			"description": "Something went wrong wrong. Check below for details.",
-			"image": "/images/siteLogo.svg"
-		}
-	],
+		"socialMedia": [
+			{
+				"title": "Github",
+				"description": "My Github page. Here you can see all my repos.",
+				"image": "/images/logos/github-mark.svg",
+				"link": "https://github.com/MentoskaPraha"
+			},
+			{
+				"title": "Discord",
+				"description": "If you want to contact me via Discord, join this server.",
+				"image": "/images/logos/discord-mark-blue.svg",
+				"link": "https://discord.gg/QKSDMaYg5R"
+			}
+		],
+		"tech": [
+			{
+				"title": "VS-Codium",
+				"image": "/images/logos/vscodium-mark.svg",
+				"description": "VS-Codium is a fork of VS-Code, a program I use to write my code.",
+				"link": "https://vscodium.com/"
+			},
+			{
+				"title": "Github",
+				"image": "/images/logos/github-mark.svg",
+				"description": "Github is a source control tool used to share code.",
+				"link": "https://github.com"
+			},
+			{
+				"title": "Node.js",
+				"image": "/images/logos/nodejs-logo.svg",
+				"description": "Node.js is a back-end runtime used to execute Javascript on a server.",
+				"link": "https://nodejs.org"
+			},
+			{
+				"title": "Typescript",
+				"image": "/images/logos/ts-logo.svg",
+				"description": "Typescript is a Javascript addon that adds type safety to Javascript.",
+				"link": "https://www.typescriptlang.org"
+			},
+			{
+				"title": "Vercel",
+				"image": "/images/logos/vercel-favicon.svg",
+				"description": "Vercel is a hosting platform for websites and other such applications.",
+				"link": "https://vercel.com/"
+			},
+			{
+				"title": "MongoDB",
+				"image": "/images/logos/mongodb-logo.svg",
+				"description": "MongoDB is a document based database used to store user data.",
+				"link": "https://www.mongodb.com"
+			},
+			{
+				"title": "Sveltekit",
+				"image": "/images/logos/sveltekit-logo.svg",
+				"description": "Sveltekit is a framework used for making websites.",
+				"link": "https://kit.svelte.dev"
+			},
+			{
+				"title": "Tailwind CSS",
+				"image": "/images/logos/tailwindcss-logo.svg",
+				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes.",
+				"link": "https://tailwindcss.com"
+			}
+		]
+	},
 
-	"navLinks": [
-		{
-			"location": "/",
-			"name": "Home"
-		},
-		{
-			"location": "/about",
-			"name": "About Me"
-		},
-		{
-			"location": "/projects",
-			"name": "Projects"
-		}
-	],
+	"projects": {
+		"favProject": "big-chungus-bot",
+		"list": [
+			{
+				"id": "mp-website",
+				"title": "MP's Website",
+				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Sveltekit and is deployed using Vercel.",
+				"image": "/images/siteLogo.svg",
+				"git": "https://github.com/MentoskaPraha/MP-Website",
+				"external": "none"
+			},
+			{
+				"id": "big-chungus-bot",
+				"title": "Big Chungus Bot",
+				"description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
+				"image": "/images/projects/big-chungus-image.webp",
+				"git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
+				"external": "none"
+			}
+		]
+	},
 
-	"mainPages": [
-		{
-			"title": "About Me",
-			"description": "See who I am and what social media I have.",
-			"image": "/images/aboutMeLogo.svg",
-			"link": "/about",
-			"target": "_self"
-		},
-		{
-			"title": "Projects",
-			"description": "See all the projects I've worked or working on.",
-			"image": "/images/projectLogo.svg",
-			"link": "/projects",
-			"target": "_self"
-		},
-		{
-			"title": "Coming Soon!",
-			"description": "This feature isn't finished yet! Please come back later!",
-			"image": "/images/comingSoonLogo.svg",
-			"link": "none",
-			"target": "_self"
-		}
-	],
+	"legal": {
+		"privacy_policy": "This website uses no cookie set by the creator. Your activity on this page is not monitored or tracked by the creator. The creator is not responsible for cookies managed by 3rd party services, such as Youtube or others.",
+		"copyright": "This website was made by MentoskaPraha using VSCode, Github and other tools. All static image sources can be found in the README.md file on Github. This website is published under the GNU General Public License V3."
+	},
 
 	"quotes": [
 		{
@@ -121,105 +149,14 @@
 		{
 			"content": "I am ill... but you still work.",
 			"author": "My G10 English Teacher"
-		}
-	],
-
-	"projects": [
-		{
-			"title": "MP's Website",
-			"shortDesc": "This here very website. What else can I say?",
-			"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Vue.js for the client and is deployed using Firebase, which is a free world wide developer platform by Google.",
-			"image": "/images/siteLogo.svg",
-			"share": "mp-website",
-			"git": "https://github.com/MentoskaPraha/MP-Website",
-			"external": "none"
 		},
 		{
-			"title": "Big Chungus Bot",
-			"shortDesc": "A Big Chungus themed Discord bot, need I say more?",
-			"description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
-			"image": "/images/projects/big-chungus-image.webp",
-			"share": "big-chungus-bot",
-			"git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
-			"external": "none"
+			"content": "It's hard.",
+			"author": "Friend from G10 Math"
+		},
+		{
+			"content": "F*ck you Nvidia.",
+			"author": "Linus Torvald"
 		}
-	],
-
-	"aboutMe": {
-		"basicInfo": {
-			"title": "Basic Info",
-			"description": "<strong>My name is:</strong> MentoskaPraha<br /><strong>I speak:</strong> English, French and Czech<br /><strong>My time zone is:</strong> GMT+2<br /><br /><p class='text-center'><strong>A little bit more about me: </strong><br /></p><p class='text-justify'>I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play games like Sea of Thieves or Satisfactory.</p>",
-			"image": "/images/siteLogo.svg"
-		},
-		"socialMedia": {
-			"title": "Social Media",
-			"displayTitle": true,
-			"displayImages": true,
-			"entries": [
-				{
-					"title": "Github",
-					"description": "My Github page. Here you can see all my repos.",
-					"image": "/images/github-mark.svg",
-					"link": "https://github.com/MentoskaPraha",
-					"target": "_blank"
-				},
-				{
-					"title": "Discord",
-					"description": "If you want to contact me via Discord, join this server.",
-					"image": "/images/discord-mark-blue.svg",
-					"link": "https://discord.gg/QKSDMaYg5R",
-					"target": "_blank"
-				},
-				{
-					"title": "Coming Soon!",
-					"description": "This social media account is still in the works.",
-					"image": "/images/comingSoonLogo.svg",
-					"link": "none",
-					"target": "_self"
-				}
-			]
-		},
-		"tech": [
-			{
-				"title": "VS-Code",
-				"description": "Visual Studio Code is a light weight Integrated Development Environment, which I use to write my all of my code.",
-				"link": "https://code.visualstudio.com"
-			},
-			{
-				"title": "Github",
-				"description": "Github is a source control tool, which is an extension of Git. I use this to ensure my code is up to date everywhere.",
-				"link": "https://github.com"
-			},
-			{
-				"title": "Firebase",
-				"description": "Firebase is a cloud service from Google that allows for hosting serverless apps. I use it to deploy my projects.",
-				"link": "https://firebase.google.com"
-			},
-			{
-				"title": "Node.js",
-				"description": "Node.js is a back-end runtime used to execute Javascript on a server. I use this for apps like the Big Chungus Bot.",
-				"link": "https://nodejs.org"
-			},
-			{
-				"title": "Typescript",
-				"description": "Typescript is a Javascript addon that adds type safety to Javascript. I always use this as it's better Javascript.",
-				"link": "https://www.typescriptlang.org"
-			},
-			{
-				"title": "Vue.js",
-				"description": "Vue.js is a framework used for making websites or UIs. I used this framework to create this website.",
-				"link": "https://vuejs.org"
-			},
-			{
-				"title": "Tailwind CSS",
-				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes to aid with styling.",
-				"link": "https://tailwindcss.com"
-			},
-			{
-				"title": "MongoDB",
-				"description": "MongoDB is a document based database used to store user data. I use MongoDB for Big Chungus Bot.",
-				"link": "https://www.mongodb.com"
-			}
-		]
-	}
+	]
 }

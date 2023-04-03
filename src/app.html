@@ -4,9 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta name="keywords" content="programmer" />
-		<meta name="author" content="MentoskaPraha" />
-
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
@@ -36,6 +33,10 @@
 		<meta name="theme-color" content="#ffffff" />
 
 		<style>
+			#app {
+				display: contents;
+			}
+
 			#screenSizeError {
 				display: none;
 			}
@@ -54,8 +55,8 @@
 		%sveltekit.head%
 	</head>
 
-	<body class="font-sans m-0 p-0 bg-gray-900 text-white">
-		<div id="app" style="display: contents">%sveltekit.body%</div>
+	<body class="font-sans m-0 p-0 bg-gray-900 text-white h-full">
+		<div id="app">%sveltekit.body%</div>
 
 		<div
 			id="screenSizeError"

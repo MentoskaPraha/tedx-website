@@ -1,25 +1,8 @@
-export interface headerParams {
-	title: string;
-	description: string;
-	image: string;
-}
-
 export interface projectObject {
-	title: string;
-	shortDesc: string;
-	description: string;
-	image: string;
-	share: string;
-	git: string;
-	external: string;
-}
-
-export interface contentBlockParams {
+	id: string;
 	title: string;
 	description: string;
 	image: string;
-	links: boolean;
-	share: string;
 	git: string;
 	external: string;
 }
@@ -32,9 +15,11 @@ export interface contentListEntry {
 	target: string;
 }
 
-export interface contentListParams {
+export interface specificViewEntry {
 	title: string;
-	displayTitle: boolean;
-	displayImages: boolean;
-	entries: contentListEntry[];
+	description: string;
+	image: string;
+	links: boolean;
+	git: string;
+	external: string;
 }
