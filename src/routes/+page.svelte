@@ -108,6 +108,12 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{siteInfo.title}</title>
+
+	<meta name="description" content={siteInfo.metaDescription} />
+</svelte:head>
+
 <svelte:window on:resize={setBannerHeight} />
 
 <div id="home">

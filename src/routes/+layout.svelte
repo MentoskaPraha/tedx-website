@@ -75,9 +75,6 @@
 </script>
 
 <svelte:head>
-	<title>{siteInfo.title}</title>
-
-	<meta name="description" content={siteInfo.metaDescription} />
 	<meta name="keywords" content={siteInfo.keywords} />
 	<meta name="author" content={siteInfo.author} />
 </svelte:head>
