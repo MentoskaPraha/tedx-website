@@ -41,6 +41,8 @@ This website is copyrighted under the GNU General Public License V3 and was made
 
 -   icons/\*
     -   Custom made by Gljue and MentoskaPraha, with help from realfavicongenerator.net
+-   logos/\*
+    -   All logos not made by external parties.
 -   siteLogo.svg
     -   Custom made by Gljue
 -   banner.webp
@@ -53,7 +55,7 @@ This website is copyrighted under the GNU General Public License V3 and was made
     -   Custom made by MentoskaPraha
 
 > **Note**  
-> All images in the projects folder are project dependant on what the site owner posts and won't be listed here.
+> All images in the projects folder are project dependant on what the site owner posts and won't be listed here. This also sort of applies to all the images in the logos folder.
 
 ## Credits
 
