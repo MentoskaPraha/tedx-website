@@ -29,43 +29,51 @@
 		"tech": [
 			{
 				"title": "VS-Codium",
+				"image": "/images/logos/vscodium-mark.svg",
 				"description": "VS-Codium is a fork of VS-Code, a program I use to write my code.",
 				"link": "https://vscodium.com/"
 			},
 			{
 				"title": "Github",
+				"image": "/images/logos/github-mark.svg",
 				"description": "Github is a source control tool used to share code.",
 				"link": "https://github.com"
 			},
 			{
-				"title": "Vercel",
-				"description": "Vercel is a hosting platform for websites and other such applications.",
-				"link": "https://vercel.com/"
-			},
-			{
 				"title": "Node.js",
+				"image": "/images/logos/nodejs-logo.svg",
 				"description": "Node.js is a back-end runtime used to execute Javascript on a server.",
 				"link": "https://nodejs.org"
 			},
 			{
 				"title": "Typescript",
+				"image": "/images/logos/ts-logo.svg",
 				"description": "Typescript is a Javascript addon that adds type safety to Javascript.",
 				"link": "https://www.typescriptlang.org"
 			},
 			{
+				"title": "Vercel",
+				"image": "/images/logos/vercel-favicon.svg",
+				"description": "Vercel is a hosting platform for websites and other such applications.",
+				"link": "https://vercel.com/"
+			},
+			{
+				"title": "MongoDB",
+				"image": "/images/logos/mongodb-logo.svg",
+				"description": "MongoDB is a document based database used to store user data.",
+				"link": "https://www.mongodb.com"
+			},
+			{
 				"title": "Sveltekit",
+				"image": "/images/logos/sveltekit-logo.svg",
 				"description": "Sveltekit is a framework used for making websites.",
 				"link": "https://kit.svelte.dev"
 			},
 			{
 				"title": "Tailwind CSS",
+				"image": "/images/logos/tailwindcss-logo.svg",
 				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes.",
 				"link": "https://tailwindcss.com"
-			},
-			{
-				"title": "MongoDB",
-				"description": "MongoDB is a document based database used to store user data.",
-				"link": "https://www.mongodb.com"
 			}
 		]
 	},

@@ -14,3 +14,12 @@ export interface contentListEntry {
 	link: string;
 	target: string;
 }
+
+export interface specificViewEntry {
+	title: string;
+	description: string;
+	image: string;
+	links: boolean;
+	git: string;
+	external: string;
+}

@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { siteInfo, aboutMe, projects } from "$lib/assets/content.json";
-	import type { contentListEntry, projectObject } from "$lib/assets/types";
+	import type {
+		contentListEntry,
+		projectObject,
+		specificViewEntry
+	} from "$lib/assets/types";
 	import ContentBlock from "$lib/components/ContentBlock.svelte";
 	import ContentList from "$lib/components/ContentList.svelte";
+	import SpecificView from "$lib/components/SpecificView.svelte";
 	import { onMount } from "svelte";
 
 	//set banner height
@@ -28,7 +33,7 @@
 		entry = {
 			title: tech.title,
 			description: tech.description,
-			image: "",
+			image: tech.image,
 			link: tech.link,
 			target: "_blank"
 		};
@@ -58,12 +63,12 @@
 	) as projectObject;
 
 	let featProject: projectObject;
-	while (true) {
+	do {
 		featProject =
 			projects.list[Math.floor(Math.random() * projects.list.length)];
 
 		if (featProject.id != projects.favProject) break;
-	}
+	} while (featProject);
 
 	let projectsList: contentListEntry[] = [];
 
@@ -81,6 +86,25 @@
 		};
 
 		projectsList.push(entry);
+	}
+
+	let specificViewList: specificViewEntry[] = [];
+
+	for (let i = 0; i < projects.list.length; i++) {
+		let entry: specificViewEntry;
+
+		const project = projects.list[i];
+
+		entry = {
+			title: project.title,
+			description: project.description,
+			image: project.image,
+			links: true,
+			git: project.git,
+			external: project.external
+		};
+
+		specificViewList.push(entry);
 	}
 </script>
 
@@ -117,11 +141,7 @@
 
 	<hr />
 
-	<ContentList
-		title={"Technology I use"}
-		displayImages={false}
-		entries={techList}
-	/>
+	<ContentList title={"Technology I use"} entries={techList} />
 
 	<hr />
 
@@ -164,6 +184,10 @@
 	<hr />
 
 	<ContentList title="Project List" entries={projectsList} />
+
+	<hr />
+
+	<SpecificView title="Specific Project View" entries={specificViewList} />
 </div>
 
 <hr />

@@ -192,7 +192,7 @@
 	</ul>
 </footer>
 
-<style>
+<style scoped>
 	.nav-button,
 	.nav-button::before,
 	.nav-button::after {

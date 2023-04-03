@@ -18,45 +18,45 @@
 	let errorRight = false;
 
 	onMount(() => {
-		if(width >= 1024){
-			if(entries.length == 2) {
+		if (width >= 1024) {
+			if (entries.length == 2) {
 				index = 1;
 				extraLeft = true;
 				buttons = false;
 				return;
 			}
-			if(entries.length >= 3) {
+			if (entries.length >= 3) {
 				index = 1;
 				extraLeft = true;
 				extraRight = true;
-				if(entries.length > 3) buttons = true;
+				if (entries.length > 3) buttons = true;
 				return;
 			}
-		} else{
+		} else {
 			extraLeft = false;
 			extraRight = false;
 			buttons = true;
 		}
 	});
 
-	function listResize(){
-		if(width >= 1024){
-			if(entries.length == 2) {
+	function listResize() {
+		if (width >= 1024) {
+			if (entries.length == 2) {
 				index = 1;
 				extraLeft = true;
 				buttons = false;
 				return;
 			}
-			if(entries.length >= 3) {
-				if(index == entries.length - 1) index -= 1;
-				if(index == 0) index += 1;
+			if (entries.length >= 3) {
+				if (index == entries.length - 1) index -= 1;
+				if (index == 0) index += 1;
 
 				extraLeft = true;
 				extraRight = true;
-				if(entries.length > 3) buttons = true;
+				if (entries.length > 3) buttons = true;
 				return;
 			}
-		} else{
+		} else {
 			extraLeft = false;
 			extraRight = false;
 			buttons = true;
@@ -66,10 +66,12 @@
 	function nextEntry() {
 		let newIndex = index + 1;
 
-		if(width >= 1024){
+		if (width >= 1024) {
 			if (newIndex + 1 > entries.length - 1) {
 				errorRight = true;
-				setTimeout(() => {errorRight = false}, 350);
+				setTimeout(() => {
+					errorRight = false;
+				}, 350);
 				return;
 			}
 
@@ -78,9 +80,11 @@
 			return;
 		}
 
-		if (newIndex > entries.length - 1){
+		if (newIndex > entries.length - 1) {
 			errorRight = true;
-			setTimeout(() => {errorRight = false}, 350);
+			setTimeout(() => {
+				errorRight = false;
+			}, 350);
 			return;
 		}
 
@@ -90,10 +94,12 @@
 	function prevEntry() {
 		let newIndex = index - 1;
 
-		if(width >= 1024){
-			if (newIndex - 1 < 0){
+		if (width >= 1024) {
+			if (newIndex - 1 < 0) {
 				errorLeft = true;
-				setTimeout(() => {errorLeft = false}, 350);
+				setTimeout(() => {
+					errorLeft = false;
+				}, 350);
 				return;
 			}
 
@@ -102,9 +108,11 @@
 			return;
 		}
 
-		if (newIndex < 0){
+		if (newIndex < 0) {
 			errorLeft = true;
-			setTimeout(() => {errorLeft = false}, 350);
+			setTimeout(() => {
+				errorLeft = false;
+			}, 350);
 			return;
 		}
 
@@ -131,7 +139,7 @@
 					<li
 						class="my-4 mx-2 inline-block"
 						draggable="false"
-						in:fade={{ delay: 0, duration: 1000 }}
+						in:fade={{ delay: 0, duration: 500 }}
 					>
 						{#if item.link != "none"}
 							<a
@@ -156,12 +164,14 @@
 									<h4 class="mb-1 text-xl font-bold">
 										{item.title}
 									</h4>
-									<p class="line-clamp-3">{item.description}</p>
+									<p class="line-clamp-3">
+										{item.description}
+									</p>
 								</section>
 							</a>
 						{:else}
 							<div
-								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity hover:cursor-pointer"
+								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
 							>
 								{#if displayImages}
 									<img
@@ -176,7 +186,9 @@
 									<h4 class="mb-1 text-xl font-bold">
 										{item.title}
 									</h4>
-									<p class="line-clamp-3">{item.description}</p>
+									<p class="line-clamp-3">
+										{item.description}
+									</p>
 								</section>
 							</div>
 						{/if}
@@ -190,7 +202,7 @@
 				<li
 					class="my-4 mx-2 inline-block"
 					draggable="false"
-					in:fade={{ delay: 0, duration: 1000 }}
+					in:fade={{ delay: 0, duration: 500 }}
 				>
 					{#if item.link != "none"}
 						<a
@@ -220,7 +232,7 @@
 						</a>
 					{:else}
 						<div
-							class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity hover:cursor-pointer"
+							class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
 						>
 							{#if displayImages}
 								<img
@@ -249,7 +261,7 @@
 					<li
 						class="my-4 mx-2 inline-block"
 						draggable="false"
-						in:fade={{ delay: 0, duration: 1000 }}
+						in:fade={{ delay: 0, duration: 500 }}
 					>
 						{#if item.link != "none"}
 							<a
@@ -279,7 +291,7 @@
 							</a>
 						{:else}
 							<div
-								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity hover:cursor-pointer"
+								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
 							>
 								{#if displayImages}
 									<img
@@ -307,23 +319,27 @@
 	{#if buttons}
 		<div class="flex place-content-center m-4">
 			<button
-				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all {errorLeft ? "bg-red-600 hover:opacity-100":""}"
+				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all"
 				name="Previous entry."
 				on:click={prevEntry}
 			>
 				<img
-					class="w-16 h-16"
+					class="w-16 h-16 rounded-full {errorLeft
+						? 'bg-red-600'
+						: ''}"
 					src="/images/arrow-left.svg"
 					alt="Left arrow."
 				/>
 			</button>
 			<button
-				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all {errorRight ? "bg-red-600 hover:opacity-100":""}"
+				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all"
 				name="Next entry"
 				on:click={nextEntry}
 			>
 				<img
-					class="w-16 h-16"
+					class="w-16 h-16 rounded-full {errorRight
+						? 'bg-red-600'
+						: ''}"
 					src="/images/arrow-right.svg"
 					alt="Left arrow."
 				/>
