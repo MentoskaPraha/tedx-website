@@ -2,7 +2,9 @@
 	"siteInfo": {
 		"title": "MP's Official Website",
 		"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me and how to contact me. Enjoy your stay!",
-		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on."
+		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on.",
+		"keywords": "programmer personal portfolio",
+		"author": "MentoskaPraha"
 	},
 
 	"aboutMe": {
@@ -15,63 +17,54 @@
 				"title": "Github",
 				"description": "My Github page. Here you can see all my repos.",
 				"image": "/images/logos/github-mark.svg",
-				"link": "https://github.com/MentoskaPraha",
-				"target": "_blank"
+				"link": "https://github.com/MentoskaPraha"
 			},
 			{
 				"title": "Discord",
 				"description": "If you want to contact me via Discord, join this server.",
 				"image": "/images/logos/discord-mark-blue.svg",
-				"link": "https://discord.gg/QKSDMaYg5R",
-				"target": "_blank"
-			},
-			{
-				"title": "Coming Soon!",
-				"description": "This social media account is still in the works.",
-				"image": "/images/comingSoonLogo.svg",
-				"link": "none",
-				"target": "_self"
+				"link": "https://discord.gg/QKSDMaYg5R"
 			}
 		],
 		"tech": [
 			{
-				"title": "VS-Code",
-				"description": "Visual Studio Code is a light weight Integrated Development Environment, which I use to write my all of my code.",
-				"link": "https://code.visualstudio.com"
+				"title": "VS-Codium",
+				"description": "VS-Codium is a fork of VS-Code, a program I use to write my code.",
+				"link": "https://vscodium.com/"
 			},
 			{
 				"title": "Github",
-				"description": "Github is a source control tool, which is an extension of Git. I use this to ensure my code is up to date everywhere.",
+				"description": "Github is a source control tool used to share code.",
 				"link": "https://github.com"
 			},
 			{
-				"title": "Firebase",
-				"description": "Firebase is a cloud service from Google that allows for hosting serverless apps. I use it to deploy my projects.",
-				"link": "https://firebase.google.com"
+				"title": "Vercel",
+				"description": "Vercel is a hosting platform for websites and other such applications.",
+				"link": "https://vercel.com/"
 			},
 			{
 				"title": "Node.js",
-				"description": "Node.js is a back-end runtime used to execute Javascript on a server. I use this for apps like the Big Chungus Bot.",
+				"description": "Node.js is a back-end runtime used to execute Javascript on a server.",
 				"link": "https://nodejs.org"
 			},
 			{
 				"title": "Typescript",
-				"description": "Typescript is a Javascript addon that adds type safety to Javascript. I always use this as it's better Javascript.",
+				"description": "Typescript is a Javascript addon that adds type safety to Javascript.",
 				"link": "https://www.typescriptlang.org"
 			},
 			{
 				"title": "Sveltekit",
-				"description": "Sveltekit is a framework used for making websites or GUIs. I used this framework to create this website.",
+				"description": "Sveltekit is a framework used for making websites.",
 				"link": "https://kit.svelte.dev"
 			},
 			{
 				"title": "Tailwind CSS",
-				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes to aid with styling.",
+				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes.",
 				"link": "https://tailwindcss.com"
 			},
 			{
 				"title": "MongoDB",
-				"description": "MongoDB is a document based database used to store user data. I use MongoDB for Big Chungus Bot.",
+				"description": "MongoDB is a document based database used to store user data.",
 				"link": "https://www.mongodb.com"
 			}
 		]
@@ -83,7 +76,7 @@
 			{
 				"id": "mp-website",
 				"title": "MP's Website",
-				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Vue.js for the client and is deployed using Firebase, which is a free world wide developer platform by Google.",
+				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Sveltekit and is deployed using Vercel.",
 				"image": "/images/siteLogo.svg",
 				"git": "https://github.com/MentoskaPraha/MP-Website",
 				"external": "none"

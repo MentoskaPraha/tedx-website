@@ -78,6 +78,8 @@
 	<title>{siteInfo.title}</title>
 
 	<meta name="description" content={siteInfo.metaDescription} />
+	<meta name="keywords" content={siteInfo.keywords} />
+	<meta name="author" content={siteInfo.author} />
 </svelte:head>
 
 <nav class="fixed top-0 z-50 w-full">
@@ -163,34 +165,32 @@
 	<slot />
 </main>
 
-{#if $page.route.id != "/"}
-	<footer class="bg-black pb-4">
-		<ul class="p-4">
-			<li>
-				<p class="text-center text-2xl">"{quote.content}"</p>
-			</li>
-			<li>
-				<p class="text-center text-lg">- {quote.author}</p>
-			</li>
-		</ul>
+<footer class="bg-black pb-4">
+	<ul class="p-4">
+		<li>
+			<p class="text-center text-2xl">"{quote.content}"</p>
+		</li>
+		<li>
+			<p class="text-center text-lg">- {quote.author}</p>
+		</li>
+	</ul>
 
-		<ul class="md:grid md:grid-cols-2 md:gap-4 md:mx-4">
-			<li class="grid auto-rows-auto gap-1 m-4">
-				<h2 class="text-center text-3xl font-bold">Privacy Policy</h2>
-				<p class="text-justify">
-					{legal.privacy_policy}
-				</p>
-			</li>
+	<ul class="md:grid md:grid-cols-2 md:gap-4 md:mx-4">
+		<li class="grid auto-rows-auto gap-1 m-4">
+			<h2 class="text-center text-3xl font-bold">Privacy Policy</h2>
+			<p class="text-justify">
+				{legal.privacy_policy}
+			</p>
+		</li>
 
-			<li class="grid auto-rows-auto gap-1 m-4">
-				<h2 class="text-center text-3xl font-bold">Copyright</h2>
-				<p class="text-justify">
-					{legal.copyright}
-				</p>
-			</li>
-		</ul>
-	</footer>
-{/if}
+		<li class="grid auto-rows-auto gap-1 m-4">
+			<h2 class="text-center text-3xl font-bold">Copyright</h2>
+			<p class="text-justify">
+				{legal.copyright}
+			</p>
+		</li>
+	</ul>
+</footer>
 
 <style>
 	.nav-button,

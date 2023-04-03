@@ -17,34 +17,39 @@
 	}
 
 	//setup about section
-	const socialMedia = aboutMe.socialMedia as unknown as contentListEntry[];
-	const techList: contentListEntry[][] = [];
+	const socialMedia: contentListEntry[] = [];
+	const techList: contentListEntry[] = [];
 
-	for (let i = 0; i < aboutMe.tech.length; i = i + 3) {
-		let row: contentListEntry[] = [];
+	for (let i = 0; i < aboutMe.tech.length; i++) {
+		let entry: contentListEntry;
 
-		for (let j = 0; j < 3; j++) {
-			if (i + j >= aboutMe.tech.length) {
-				row.push({
-					title: "Empty",
-					description:
-						"An empty entry. This entry will be filled once I start using more things. It's also here so the rows look complete.",
-					image: "",
-					link: "none",
-					target: "_self"
-				});
-			} else {
-				const tech = aboutMe.tech[i + j];
-				row.push({
-					title: tech.title,
-					description: tech.description,
-					image: "",
-					link: tech.link,
-					target: "_blank"
-				});
-			}
-		}
-		techList.push(row);
+		const tech = aboutMe.tech[i];
+
+		entry = {
+			title: tech.title,
+			description: tech.description,
+			image: "",
+			link: tech.link,
+			target: "_blank"
+		};
+
+		techList.push(entry);
+	}
+
+	for (let i = 0; i < aboutMe.socialMedia.length; i++) {
+		let entry: contentListEntry;
+
+		const social = aboutMe.socialMedia[i];
+
+		entry = {
+			title: social.title,
+			description: social.description,
+			image: social.image,
+			link: social.link,
+			target: "_blank"
+		};
+
+		socialMedia.push(entry);
 	}
 
 	//setup projects section
@@ -52,41 +57,30 @@
 		(element) => element.id == projects.favProject
 	) as projectObject;
 
-	let featProject = projects.list.find(
-		(element) => element.id == "mp-website"
-	) as projectObject;
-	featProject =
-		projects.list[Math.floor(Math.random() * projects.list.length)];
+	let featProject: projectObject;
+	while (true) {
+		featProject =
+			projects.list[Math.floor(Math.random() * projects.list.length)];
 
-	let projectsList: contentListEntry[][] = [];
+		if (featProject.id != projects.favProject) break;
+	}
 
-	for (let i = 0; i < projects.list.length; i = i + 3) {
-		let row: contentListEntry[] = [];
+	let projectsList: contentListEntry[] = [];
 
-		for (let j = 0; j < 3; j++) {
-			if (i + j >= projects.list.length) {
-				row.push({
-					title: "Empty",
-					description: "An empty entry. There's not much more to it.",
-					image: "/images/comingSoonLogo.svg",
-					link: "none",
-					target: "_self"
-				});
-			} else {
-				const project = projects.list[i + j];
-				row.push({
-					title: project.title,
-					description: "Placeholder description, for now.",
-					image: project.image,
-					link:
-						project.id == "none"
-							? "none"
-							: "/projects/" + project.id,
-					target: "_self"
-				});
-			}
-		}
-		projectsList.push(row);
+	for (let i = 0; i < projects.list.length; i++) {
+		let entry: contentListEntry;
+
+		const project = projects.list[i];
+
+		entry = {
+			title: project.title,
+			description: project.description,
+			image: project.image,
+			link: "none",
+			target: "_blank"
+		};
+
+		projectsList.push(entry);
 	}
 </script>
 
@@ -123,22 +117,11 @@
 
 	<hr />
 
-	<div>
-		<h2 class="text-center text-3xl underline mb-4 font-bold">
-			Technology I use
-		</h2>
-		<ul>
-			{#each techList as item}
-				<li class="my-4">
-					<ContentList
-						displayTitle={false}
-						displayImages={false}
-						entries={item}
-					/>
-				</li>
-			{/each}
-		</ul>
-	</div>
+	<ContentList
+		title={"Technology I use"}
+		displayImages={false}
+		entries={techList}
+	/>
 
 	<hr />
 
@@ -180,16 +163,7 @@
 
 	<hr />
 
-	<div>
-		<h2 class="text-center underline text-3xl font-bold mb-4">
-			Project List
-		</h2>
-		<ul>
-			{#each projectsList as item}
-				<li class="my-4">
-					<ContentList entries={item} displayTitle={false} />
-				</li>
-			{/each}
-		</ul>
-	</div>
+	<ContentList title="Project List" entries={projectsList} />
 </div>
+
+<hr />

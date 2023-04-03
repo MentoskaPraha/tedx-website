@@ -31,33 +31,29 @@ This will create a folder called build and the files inside this folder can be u
 
 > **Make sure to upload the files, not the folder!**
 
+### Changing Images
+
 ## Copyright
 
 This website is copyrighted under the GNU General Public License V3 and was made by MentoskaPraha using VSCode, Github and Firebase. Image sources and credits can be found below.
 
 ### Image Source List
 
--   favicon.ico
-    -   Custom made by Gljue
+-   icons/\*
+    -   Custom made by Gljue and MentoskaPraha, with help from realfavicongenerator.net
 -   siteLogo.svg
     -   Custom made by Gljue
--   aboutMeLogo.png
-    -   Custom made by Gljue
--   projectLogo.png
-    -   Custom made by Gljue
--   banner.png
+-   banner.webp
     -   Screenshot from Elite Dangerous by MentoskaPraha
--   github-mark.svg
-    -   The official Github logo from Github.
--   discord-mark-blue.svg
-    -   The official Discord logo from Discord.
--   shareLink.svg
-    -   Custom made by Gljue
 -   externalLink.svg
     -   Custom made by Gljue
+-   arrow-left.svg
+    -   Custom made by MentoskaPraha
+-   arrow-right.svg
+    -   Custom made by MentoskaPraha
 
 > **Note**  
-> All images in the projects folder are project dependant and will not be listed here as they are not relevant to deploying it to your own version.
+> All images in the projects folder are project dependant on what the site owner posts and won't be listed here.
 
 ## Credits
 
