@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 	import type { contentListEntry } from "$lib/assets/types";
 	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
+	import ContentListEntry from "$lib/components/ContentListEntry.svelte";
+	import ContentListButtons from "./ContentListButtons.svelte";
 
 	export let title = "";
 	export let displayTitle = true;
@@ -63,11 +64,25 @@
 		}
 	}
 
-	function nextEntry() {
-		let newIndex = index + 1;
+	function buttonInteraction(event: CustomEvent<{ leftButton: boolean }>) {
+		if (!event.detail.leftButton) {
+			let newIndex = index + 1;
 
-		if (width >= 1024) {
-			if (newIndex + 1 > entries.length - 1) {
+			if (width >= 1024) {
+				if (newIndex + 1 > entries.length - 1) {
+					errorRight = true;
+					setTimeout(() => {
+						errorRight = false;
+					}, 350);
+					return;
+				}
+
+				index = newIndex;
+
+				return;
+			}
+
+			if (newIndex > entries.length - 1) {
 				errorRight = true;
 				setTimeout(() => {
 					errorRight = false;
@@ -76,26 +91,25 @@
 			}
 
 			index = newIndex;
-
 			return;
-		}
+		} else {
+			let newIndex = index - 1;
 
-		if (newIndex > entries.length - 1) {
-			errorRight = true;
-			setTimeout(() => {
-				errorRight = false;
-			}, 350);
-			return;
-		}
+			if (width >= 1024) {
+				if (newIndex - 1 < 0) {
+					errorLeft = true;
+					setTimeout(() => {
+						errorLeft = false;
+					}, 350);
+					return;
+				}
 
-		index = newIndex;
-	}
+				index = newIndex;
 
-	function prevEntry() {
-		let newIndex = index - 1;
+				return;
+			}
 
-		if (width >= 1024) {
-			if (newIndex - 1 < 0) {
+			if (newIndex < 0) {
 				errorLeft = true;
 				setTimeout(() => {
 					errorLeft = false;
@@ -104,19 +118,8 @@
 			}
 
 			index = newIndex;
-
 			return;
 		}
-
-		if (newIndex < 0) {
-			errorLeft = true;
-			setTimeout(() => {
-				errorLeft = false;
-			}, 350);
-			return;
-		}
-
-		index = newIndex;
 	}
 </script>
 
@@ -136,62 +139,15 @@
 		{#if extraLeft}
 			{#each [entries[index - 1]] as item (index)}
 				{#key index}
-					<li
-						class="my-4 mx-2 inline-block"
-						draggable="false"
-						in:fade={{ delay: 0, duration: 500 }}
-					>
-						{#if item.link != "none"}
-							<a
-								class="block w-72 border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity"
-								href={item.link}
-								target={item.target}
-								rel="noreferrer"
-								draggable="false"
-							>
-								{#if displayImages}
-									<img
-										class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-										src={item.image}
-										alt="Representation of entry in content list."
-										draggable="false"
-									/>
-								{/if}
-								<section
-									class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-									draggable="false"
-								>
-									<h4 class="mb-1 text-xl font-bold">
-										{item.title}
-									</h4>
-									<p class="line-clamp-3">
-										{item.description}
-									</p>
-								</section>
-							</a>
-						{:else}
-							<div
-								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
-							>
-								{#if displayImages}
-									<img
-										class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-										src={item.image}
-										alt="Representation of entry in content list."
-									/>
-								{/if}
-								<section
-									class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-								>
-									<h4 class="mb-1 text-xl font-bold">
-										{item.title}
-									</h4>
-									<p class="line-clamp-3">
-										{item.description}
-									</p>
-								</section>
-							</div>
-						{/if}
+					<li class="my-4 mx-2 inline-block">
+						<ContentListEntry
+							title={item.title}
+							description={item.description}
+							image={item.image}
+							displayImage={displayImages}
+							link={item.link}
+							target={item.target}
+						/>
 					</li>
 				{/key}
 			{/each}
@@ -199,58 +155,15 @@
 
 		{#each [entries[index]] as item (index)}
 			{#key index}
-				<li
-					class="my-4 mx-2 inline-block"
-					draggable="false"
-					in:fade={{ delay: 0, duration: 500 }}
-				>
-					{#if item.link != "none"}
-						<a
-							class="block w-72 border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity"
-							href={item.link}
-							target={item.target}
-							rel="noreferrer"
-							draggable="false"
-						>
-							{#if displayImages}
-								<img
-									class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-									src={item.image}
-									alt="Representation of entry in content list."
-									draggable="false"
-								/>
-							{/if}
-							<section
-								class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-								draggable="false"
-							>
-								<h4 class="mb-1 text-xl font-bold">
-									{item.title}
-								</h4>
-								<p class="line-clamp-3">{item.description}</p>
-							</section>
-						</a>
-					{:else}
-						<div
-							class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
-						>
-							{#if displayImages}
-								<img
-									class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-									src={item.image}
-									alt="Representation of entry in content list."
-								/>
-							{/if}
-							<section
-								class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-							>
-								<h4 class="mb-1 text-xl font-bold">
-									{item.title}
-								</h4>
-								<p class="line-clamp-3">{item.description}</p>
-							</section>
-						</div>
-					{/if}
+				<li class="my-4 mx-2 inline-block">
+					<ContentListEntry
+						title={item.title}
+						description={item.description}
+						image={item.image}
+						displayImage={displayImages}
+						link={item.link}
+						target={item.target}
+					/>
 				</li>
 			{/key}
 		{/each}
@@ -258,58 +171,15 @@
 		{#if extraRight}
 			{#each [entries[index + 1]] as item (index)}
 				{#key index}
-					<li
-						class="my-4 mx-2 inline-block"
-						draggable="false"
-						in:fade={{ delay: 0, duration: 500 }}
-					>
-						{#if item.link != "none"}
-							<a
-								class="block w-72 border-neutral-700 border-solid border-4 rounded-md hover:opacity-50 transition-opacity"
-								href={item.link}
-								target={item.target}
-								rel="noreferrer"
-								draggable="false"
-							>
-								{#if displayImages}
-									<img
-										class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-										src={item.image}
-										alt="Representation of entry in content list."
-										draggable="false"
-									/>
-								{/if}
-								<section
-									class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-									draggable="false"
-								>
-									<h4 class="mb-1 text-xl font-bold">
-										{item.title}
-									</h4>
-									<p>{item.description}</p>
-								</section>
-							</a>
-						{:else}
-							<div
-								class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
-							>
-								{#if displayImages}
-									<img
-										class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-										src={item.image}
-										alt="Representation of entry in content list."
-									/>
-								{/if}
-								<section
-									class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
-								>
-									<h4 class="mb-1 text-xl font-bold">
-										{item.title}
-									</h4>
-									<p>{item.description}</p>
-								</section>
-							</div>
-						{/if}
+					<li class="my-4 mx-2 inline-block">
+						<ContentListEntry
+							title={item.title}
+							description={item.description}
+							image={item.image}
+							displayImage={displayImages}
+							link={item.link}
+							target={item.target}
+						/>
 					</li>
 				{/key}
 			{/each}
@@ -317,33 +187,10 @@
 	</ul>
 
 	{#if buttons}
-		<div class="flex place-content-center m-4">
-			<button
-				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all"
-				name="Previous entry."
-				on:click={prevEntry}
-			>
-				<img
-					class="w-16 h-16 rounded-full {errorLeft
-						? 'bg-red-600'
-						: ''}"
-					src="/images/arrow-left.svg"
-					alt="Left arrow."
-				/>
-			</button>
-			<button
-				class="m-4 w-16 h-16 bg-white rounded-full hover:opacity-50 transition-all"
-				name="Next entry"
-				on:click={nextEntry}
-			>
-				<img
-					class="w-16 h-16 rounded-full {errorRight
-						? 'bg-red-600'
-						: ''}"
-					src="/images/arrow-right.svg"
-					alt="Left arrow."
-				/>
-			</button>
-		</div>
+		<ContentListButtons
+			{errorLeft}
+			{errorRight}
+			on:clicked={buttonInteraction}
+		/>
 	{/if}
 </div>
