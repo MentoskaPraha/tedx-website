@@ -22,7 +22,7 @@
 	>
 		<img
 			class="w-16 h-16 rounded-full {errorLeft ? 'bg-red-600' : ''}"
-			src="/images/arrow-left.svg"
+			src="{import.meta.env.BASE_URL}/images/arrow-left.svg"
 			alt="Left arrow."
 		/>
 	</button>
@@ -33,7 +33,7 @@
 	>
 		<img
 			class="w-16 h-16 rounded-full {errorRight ? 'bg-red-600' : ''}"
-			src="/images/arrow-right.svg"
+			src="{import.meta.env.BASE_URL}/images/arrow-right.svg"
 			alt="Left arrow."
 		/>
 	</button>

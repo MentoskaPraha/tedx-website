@@ -61,7 +61,7 @@
 					>
 						<img
 							class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-							src={item.image}
+							src="{import.meta.env.BASE_URL}{item.image}"
 							alt="Representation of entry in content list."
 						/>
 						<section

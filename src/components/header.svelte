@@ -34,7 +34,7 @@
 		<ul class="flex place-items-center">
 			<li class="inline">
 				<img
-					src="/images/siteLogo.svg"
+					src="{import.meta.env.BASE_URL}/images/siteLogo.svg"
 					alt="Page logo."
 					class="bg-black w-28 mr-1 md:ml-2"
 				/>

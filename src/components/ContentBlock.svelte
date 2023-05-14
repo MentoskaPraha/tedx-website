@@ -11,7 +11,7 @@
 	class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-start md:gap-4"
 >
 	<img
-		src={image}
+		src="{import.meta.env.BASE_URL}{image}"
 		alt="Represents the content displayed in this content block."
 		class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
 	/>
@@ -38,7 +38,7 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="/images/logos/github-mark.svg"
+								src="{import.meta.env.BASE_URL}/images/logos/github-mark.svg"
 								alt="Copy link icon."
 							/>
 						</a>
@@ -59,7 +59,7 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="/images/externalLink.svg"
+								src="{import.meta.env.BASE_URL}/images/externalLink.svg"
 								alt="Copy link icon."
 							/>
 						</a>

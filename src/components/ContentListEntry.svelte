@@ -21,7 +21,7 @@
 		{#if displayImage}
 			<img
 				class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-				src={image}
+				src="{import.meta.env.BASE_URL}{image}"
 				alt="Representation of entry in content list."
 				draggable="false"
 			/>
