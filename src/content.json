@@ -14,7 +14,7 @@
 			{
 				"title": "Instagram",
 				"description": "The Instagram account for this TEDx Event.",
-				"image": "/images/logos/instagram-logo.svg",
+				"image": "images/logos/instagram-logo.svg",
 				"link": "#",
 				"target": "_self"
 			}

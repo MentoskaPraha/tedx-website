@@ -4,23 +4,23 @@
 
 	const navLinks = [
 		{
-			location: "/",
+			location: `${import.meta.env.BASE_URL}`,
 			name: "Home"
 		},
 		{
-			location: "/about",
+			location: `${import.meta.env.BASE_URL}about`,
 			name: "About"
 		},
 		{
-			location: "/event",
+			location: `${import.meta.env.BASE_URL}event`,
 			name: "Event"
 		},
 		{
-			location: "/speakers",
+			location: `${import.meta.env.BASE_URL}speakers`,
 			name: "Speakers"
 		},
 		{
-			location: "/sponsors",
+			location: `${import.meta.env.BASE_URL}sponsors`,
 			name: "Sponsors"
 		}
 	];
@@ -34,7 +34,7 @@
 		<ul class="flex place-items-center">
 			<li class="inline">
 				<img
-					src="{import.meta.env.BASE_URL}/images/siteLogo.svg"
+					src="{import.meta.env.BASE_URL}images/siteLogo.svg"
 					alt="Page logo."
 					class="bg-black w-28 mr-1 md:ml-2"
 				/>
