@@ -36,7 +36,9 @@
 				<img
 					src="{import.meta.env.BASE_URL}images/siteLogo.svg"
 					alt="Page logo."
-					class="bg-black w-28 mr-1 md:ml-2"
+					width="112"
+					height="49"
+					class="bg-black mr-1 md:ml-2"
 				/>
 			</li>
 		</ul>

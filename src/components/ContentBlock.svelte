@@ -38,7 +38,8 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="{import.meta.env.BASE_URL}images/logos/github-mark.svg"
+								src="{import.meta.env
+									.BASE_URL}images/logos/github-mark.svg"
 								alt="Copy link icon."
 							/>
 						</a>
@@ -59,7 +60,8 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="{import.meta.env.BASE_URL}images/externalLink.svg"
+								src="{import.meta.env
+									.BASE_URL}images/externalLink.svg"
 								alt="Copy link icon."
 							/>
 						</a>
