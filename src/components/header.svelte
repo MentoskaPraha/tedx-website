@@ -12,36 +12,25 @@
 			name: "About"
 		},
 		{
-			location: `${import.meta.env.BASE_URL}event`,
-			name: "Event"
-		},
-		{
 			location: `${import.meta.env.BASE_URL}speakers`,
 			name: "Speakers"
-		},
-		{
-			location: `${import.meta.env.BASE_URL}sponsors`,
-			name: "Sponsors"
 		}
 	];
 
 	//functions for menu toggle
 	let menuState = false;
+	$: document.body.classList[menuState ? "add" : "remove"]("scroll-lock");
 </script>
 
 <nav class="fixed top-0 z-50 w-full">
-	<div class="flex flex-wrap bg-black relative z-50 h-14">
-		<ul class="flex place-items-center">
-			<li class="inline">
-				<img
-					src="{import.meta.env.BASE_URL}images/siteLogo.svg"
-					alt="Page logo."
-					width="112"
-					height="49"
-					class="bg-black mr-1 md:ml-2"
-				/>
-			</li>
-		</ul>
+	<div class="flex flex-wrap bg-black relative z-50 h-17">
+		<img
+			src="{import.meta.env.BASE_URL}images/siteLogo.svg"
+			alt="Page logo."
+			width="200"
+			height="68"
+			class="bg-black mr-1 md:ml-2"
+		/>
 
 		<div class="flex place-items-center ml-auto mr-3 sm:mr-6">
 			<input
@@ -70,7 +59,7 @@
 					easing: quintOut
 				}}
 				on:click={() => (menuState = false)}
-				class="pt-28 bg-white text-gray-100 opacity-60 z-30 fixed w-full h-full hover:cursor-default transition-opacity"
+				class="pt-28 bg-white text-gray-100 opacity-60 z-50 fixed w-full h-full hover:cursor-default transition-opacity"
 			>
 				This is a hidden message. Pretty cool right?
 			</button>
@@ -91,7 +80,7 @@
 					opacity: 0,
 					easing: quintOut
 				}}
-				class="bg-tedRed z-40 ml-auto"
+				class="bg-tedRed z-50 ml-auto"
 			>
 				<ul>
 					{#each navLinks as item, index}

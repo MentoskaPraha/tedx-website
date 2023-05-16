@@ -5,6 +5,9 @@ module.exports = {
 		extend: {
 			colors: {
 				tedRed: "#EB0028"
+			},
+			spacing: {
+				17: "4.25rem"
 			}
 		}
 	},
