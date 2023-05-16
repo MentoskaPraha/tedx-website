@@ -1,6 +1,6 @@
-# TedX Website
+# TEDx Website
 
-This is the code for a TedX Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently. The website here is not only an example, but also the website for TedX at the American International School of Bucharest.
+This is the code for a TedX Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently. The website here is not only an example, but also the website for TEDx at the American International School of Bucharest.
 
 This website is designed to be hosted on any static deployment platform.
 
@@ -43,7 +43,7 @@ If you wish to change an image, simple replace the image and ensure it has the s
 
 ## Copyright
 
-This website is copyrighted under the MIT License and was made by MentoskaPraha using VSCode, Github and Firebase. Image sources and credits can be found below.
+This website is copyrighted under the MIT License and was made by MentoskaPraha using VSCode, Github, Astro and Svelte. Image sources and credits can be found below.
 
 ### Image Source List
 
@@ -63,7 +63,7 @@ This website is copyrighted under the MIT License and was made by MentoskaPraha 
     -   Custom made by MentoskaPraha
 
 > **Note**  
-> All images in the projects folder are project dependant on what the site owner posts and won't be listed here. This also sort of applies to all the images in the logos folder.
+> All images in the speakers folder are website dependant on what the site owner posts and won't be listed here. This also sort of applies to all the images in the logos folder.
 
 ## Credits
 
