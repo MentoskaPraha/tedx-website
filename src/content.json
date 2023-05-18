@@ -1,43 +1,27 @@
 {
 	"siteInfo": {
-		"title": "Tedx AISB 2023",
-		"description": "Welcome to the official website for the 2023 Tedx event at the American International School of Bucharest. For event details, please check the event page and for speaker details please check the speakers page. Links to both can be found below.",
-		"metaDescription": "This is the official website for the 2023 TedxAmericanInternationalSchoolofBucharest event.",
+		"title": "TEDx AISB 2023",
+		"metaDescription": "This is the official website for the 2023 TEDxAmericanInternationalSchoolofBucharest event.",
 		"keywords": "tedx ted-talks American-International-School-Bucharest AISB Romania 2023",
 		"author": "MentoskaPraha"
 	},
 
 	"about": {
-		"description": "This is the about page, here you can see more information about Tedx and the conference.",
-		"metaDescription": "This is the about page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more information about Tedx and the conference.",
-		"socialMedia": [
-			{
-				"title": "Instagram",
-				"description": "The Instagram account for this TEDx Event.",
-				"image": "images/logos/instagram-logo.svg",
-				"link": "#",
-				"target": "_self"
-			}
-		]
+		"metaDescription": "This is the about page for the 2023 TEDxAmericanInternationalSchoolofBucharest event. Here you can see more information about TEDx and past conferences.",
+		"instagram": "https://www.instagram.com/tedxamericanintschoolbucharest/"
 	},
 
 	"event": {
-		"description": "This is the event page, here you can see more specific details about the conference.",
-		"metaDescription": "This is the event page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more specific information about the conference.",
 		"eventName": "AmericanInternationalSchoolofBucharest",
 		"year": "2023",
 		"theme": "Small Changes, Big Impacts.",
-		"date": "To Be Determined"
+		"date": "9th of September 2023",
+		"location": "AISB SCHOOL, Bulevardul Pipera 196, Voluntari 077190, Romania",
+		"googleMapsEmbedURL": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5688.55405613986!2d26.145610000000005!3d44.52996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b21d456c0b18cb%3A0x6cc1920e1563e4d7!2sAISB%20SCHOOL!5e0!3m2!1sen!2sro!4v1684243562084!5m2!1sen!2sro"
 	},
 
 	"speakers": {
-		"description": "This is the speakers page, here you can see more details about the speakers for this event.",
-		"metaDescription": "This is the speakers page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more details about the speakers for this event."
-	},
-
-	"sponsors": {
-		"description": "This is the sponsors page, here you can see more specific details about the sponsors of this conference.",
-		"metaDescription": "This is the sponsors page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more specific information about this conference."
+		"metaDescription": "This is the speakers page for the 2023 TEDxAmericanInternationalSchoolofBucharest event. Here you can see more details about the speakers for this event."
 	},
 
 	"legal": {

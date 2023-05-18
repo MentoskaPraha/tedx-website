@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
 import { siteInfo } from "../content.json";
-import BaseBody from "../components/baseBody.astro";
-import BaseHead from "../components/baseHead.astro";
+import BaseBody from "../layouts/baseBody.astro";
+import BaseHead from "../layouts/baseHead.astro";
 import PageLayout from "../layouts/pageLayout.astro";
-import Banner from "../components/Banner.svelte";
+import Banner from "../components/Banner.astro";
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,12 @@ import Banner from "../components/Banner.svelte";
 
 	<BaseBody>
 		<PageLayout>
-			<Banner title="Error 404" description="Not Found" client:load />
+			<Banner />
+			<div class="bg-black p-4">
+				<h1 class="text-center font-bold text-3xl underline pb-4">
+					Error 404: Not Found
+				</h1>
+			</div>
 		</PageLayout>
 	</BaseBody>
 </html>

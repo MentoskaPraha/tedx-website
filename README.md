@@ -1,6 +1,6 @@
 # TEDx Website
 
-This is the code for a TedX Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently. The website here is not only an example, but also the website for TEDx at the American International School of Bucharest.
+This is the code for a TEDx Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently. The website here is not only an example, but also the website for TEDx at the American International School of Bucharest.
 
 This website is designed to be hosted on any static deployment platform.
 

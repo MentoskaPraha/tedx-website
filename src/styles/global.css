@@ -5,3 +5,7 @@
 hr {
 	@apply rounded border-2 border-white bg-white m-4;
 }
+
+.scroll-lock {
+	overflow-y: hidden;
+}
