@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
 import { siteInfo, speakers } from "../content.json";
-import BaseBody from "../components/baseBody.astro";
-import BaseHead from "../components/baseHead.astro";
+import BaseBody from "../layouts/baseBody.astro";
+import BaseHead from "../layouts/baseHead.astro";
 import PageLayout from "../layouts/pageLayout.astro";
+import Banner from "../components/Banner.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,23 +16,12 @@ import PageLayout from "../layouts/pageLayout.astro";
 
 	<BaseBody>
 		<PageLayout>
-			<div
-				class="banner mt-17 flex justify-center items-center bg-cover bg-no-repeat bg-center"
-				style=`background-image: url(${import.meta.env.BASE_URL}images/banner.webp); height: 500px;`
-			>
-				<img
-					src=`${import.meta.env.BASE_URL}images/siteLogo.svg`
-					alt="Page logo."
-					width="800"
-					height="270"
-					class="bg-black rounded"
-				/>
-			</div>
+			<Banner />
 
 			<div class="m-4 p-4 bg-tedRed rounded">
-				<h2 class="text-center font-bold text-4xl underline mb-2">
+				<h1 class="text-center font-bold text-4xl underline mb-2">
 					Coming Soon!
-				</h2>
+				</h1>
 				<p
 					class="mx-5 text-justify md:w-1/2 md:mx-auto xl:w-1/3 2xl:w-1/4"
 				>

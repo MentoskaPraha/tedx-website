@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { fly, fade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
+	import { about } from "../content.json";
 
 	const navLinks = [
 		{
@@ -22,13 +23,14 @@
 	$: document.body.classList[menuState ? "add" : "remove"]("scroll-lock");
 </script>
 
-<nav class="fixed top-0 z-50 w-full">
+<nav class="fixed top-0 z-50 w-screen">
 	<div class="flex flex-wrap bg-black relative z-50 h-17">
 		<img
 			src="{import.meta.env.BASE_URL}images/siteLogo.svg"
 			alt="Page logo."
 			width="200"
 			height="68"
+			draggable="false"
 			class="bg-black mr-1 md:ml-2"
 		/>
 
@@ -109,6 +111,27 @@
 			</div>
 		</div>
 	{/if}
+
+	<div
+		title="Social media."
+		class="fixed top-3/4 w-32 bg-white z-50 shadow-2xl rounded-r"
+	>
+		<div class="flex m-2">
+			<h1 class="font-bold text-tedRed">Follow Us:</h1>
+			<a
+				class="ml-1"
+				href={about.instagram}
+				target="_blank"
+				rel="noopener noreferrer"
+				><img
+					src="{import.meta.env.BASE_URL}images/logos/instagram.svg"
+					alt="Instagram Icon"
+					width="25"
+					height="25"
+				/></a
+			>
+		</div>
+	</div>
 </nav>
 
 <style scoped>

@@ -4,8 +4,8 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 export default defineConfig({
-	site: "https://mentoskapraha.github.io/tedx-website",
-	base: "/tedx-website",
+	site: "https://tedx.aisb.ro",
+	base: "/",
 	integrations: [
 		sitemap(),
 		tailwind({

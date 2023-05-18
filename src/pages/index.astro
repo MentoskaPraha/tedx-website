@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
 import { siteInfo } from "../content.json";
-import BaseBody from "../components/baseBody.astro";
-import BaseHead from "../components/baseHead.astro";
+import BaseBody from "../layouts/baseBody.astro";
+import BaseHead from "../layouts/baseHead.astro";
 import PageLayout from "../layouts/pageLayout.astro";
 import HomePageBoxes from "../components/HomePageBoxes.svelte";
+import Banner from "../components/Banner.astro";
 ---
 
 <!DOCTYPE html>
@@ -16,18 +17,7 @@ import HomePageBoxes from "../components/HomePageBoxes.svelte";
 
 	<BaseBody>
 		<PageLayout>
-			<div
-				class="banner mt-17 flex justify-center items-center bg-cover bg-no-repeat bg-center"
-				style=`background-image: url(${import.meta.env.BASE_URL}images/banner.webp); height: 500px;`
-			>
-				<img
-					src=`${import.meta.env.BASE_URL}images/siteLogo.svg`
-					alt="Page logo."
-					width="800"
-					height="270"
-					class="bg-black rounded"
-				/>
-			</div>
+			<Banner />
 
 			<hr />
 

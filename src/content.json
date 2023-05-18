@@ -8,12 +8,7 @@
 
 	"about": {
 		"metaDescription": "This is the about page for the 2023 TEDxAmericanInternationalSchoolofBucharest event. Here you can see more information about TEDx and past conferences.",
-		"socialMedia": [
-			{
-				"icon": "images/logos/instagram-logo.svg",
-				"link": "https://www.instagram.com/tedxamericanintschoolbucharest/"
-			}
-		]
+		"instagram": "https://www.instagram.com/tedxamericanintschoolbucharest/"
 	},
 
 	"event": {
