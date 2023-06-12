@@ -114,12 +114,13 @@
 
 	<div
 		title="Social media."
-		class="fixed top-3/4 w-32 bg-white z-50 shadow-2xl rounded-r"
+		class="fixed top-3/4 w-36 bg-white z-50 shadow-2xl rounded-r"
+		id="social-media"
 	>
 		<div class="flex m-2">
 			<h1 class="font-bold text-tedRed">Follow Us:</h1>
 			<a
-				class="ml-1"
+				class="ml-4"
 				href={about.instagram}
 				target="_blank"
 				rel="noopener noreferrer"
@@ -135,6 +136,20 @@
 </nav>
 
 <style scoped>
+	#social-media{
+		left: -135px;
+		transition: left;
+		transition-duration: 0.25s;
+	}
+
+	#social-media:focus{
+		left: 0px;
+	}
+
+	#social-media:hover{
+		left: 0px;
+	}
+
 	.nav-button,
 	.nav-button::before,
 	.nav-button::after {

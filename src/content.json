@@ -21,7 +21,16 @@
 	},
 
 	"speakers": {
-		"metaDescription": "This is the speakers page for the 2023 TEDxAmericanInternationalSchoolofBucharest event. Here you can see more details about the speakers for this event."
+		"metaDescription": "This is the speakers page for the 2023 TEDxAmericanInternationalSchoolofBucharest event. Here you can see more details about the speakers for this event.",
+		"list": [
+			{
+				"id": "",
+				"name": "",
+				"about": "",
+				"instagram": "",
+				"other": ""
+			}
+		]
 	},
 
 	"legal": {
