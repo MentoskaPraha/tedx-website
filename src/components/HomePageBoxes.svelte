@@ -15,7 +15,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="grid lg:grid lg:gap-12 lg:items-center m-4">
+	<div class="lg:grid lg:gap-12 lg:items-center m-4" id="grid">
 		<div
 			class="shadow bg-tedRed rounded w-64 h-64 mx-auto sm:mx-0 sm:w-96 sm:h-96 p-4 my-6 lg:my-0"
 		>
@@ -167,7 +167,7 @@
 
 <style scoped>
 	@media (min-width: 1024px) {
-		.grid {
+		#grid {
 			grid-template-columns: 384px 384px;
 		}
 	}

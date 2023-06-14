@@ -3,7 +3,7 @@
     import SpeakerPageBox from "./SpeakerPageBox.svelte";
 </script>
 <div class="flex justify-center">
-	<div class="grid lg:grid lg:gap-12 lg:items-center m-4">
+	<div class="lg:grid lg:gap-12 lg:items-center m-4" id="grid">
         {#each speakers.list as speaker}
             <SpeakerPageBox
                 id={speaker.id}
@@ -18,8 +18,14 @@
 
 <style scoped>
     @media (min-width: 1024px) {
-		.grid {
+		#grid {
 			grid-template-columns: 384px 384px;
 		}
 	}
+
+    @media (min-width: 1280px) {
+        #grid {
+            grid-template-columns: 384px 384px 384px;
+        }
+    }
 </style>
