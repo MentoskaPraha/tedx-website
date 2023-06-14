@@ -20,6 +20,8 @@
 
 	//functions for menu toggle
 	let menuState = false;
+	let socialMediaState = false;
+	$: document.getElementById("social-media")?.classList[socialMediaState ? "add" : "remove"]("left-0");
 	$: document.body.classList[menuState ? "add" : "remove"]("scroll-lock");
 </script>
 
@@ -112,10 +114,11 @@
 		</div>
 	{/if}
 
-	<div
+	<button
 		title="Social media."
-		class="fixed top-3/4 w-36 bg-white z-50 shadow-2xl rounded-r"
+		class="fixed top-3/4 w-36 bg-white z-50 shadow-2xl rounded-r cursor-default"
 		id="social-media"
+		on:click={() => socialMediaState = !socialMediaState}
 	>
 		<div class="flex m-2">
 			<h1 class="font-bold text-tedRed">Follow Us:</h1>
@@ -132,7 +135,7 @@
 				/></a
 			>
 		</div>
-	</div>
+	</button>
 </nav>
 
 <style scoped>
